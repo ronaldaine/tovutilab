@@ -1,0 +1,711 @@
+/* ========================================
+   CONTACT SALES PAGE - STRIPE INSPIRED
+   Multi-Step Form with Progressive Disclosure
+   ======================================== */
+
+/* ========================================
+   MAIN SECTION LAYOUT
+   ======================================== */
+
+   .contact-section {
+    min-height: 100vh;
+    padding: 120px 24px 80px;
+    background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+}
+
+.contact-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* ========================================
+   LEFT SIDE - INFORMATION
+   ======================================== */
+
+.contact-info {
+    position: sticky;
+    top: 120px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-main-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--shadeFiveColor);
+    margin: 0;
+}
+
+.contact-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--shadeThreeColor);
+    margin: 0;
+}
+
+/* Benefits List */
+.contact-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(169, 96, 238, 0.1), rgba(0, 72, 229, 0.1));
+    border-radius: 12px;
+    color: var(--blendIntersection);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.benefit-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--shadeFiveColor);
+    margin: 0 0 8px 0;
+}
+
+.benefit-text p {
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.trust-item i {
+    color: var(--gradientColorZero);
+    font-size: 16px;
+}
+
+/* ========================================
+   RIGHT SIDE - FORM CARD
+   ======================================== */
+
+.contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   PROGRESS INDICATOR
+   ======================================== */
+
+.form-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active .step-number {
+    background: linear-gradient(135deg, var(--gradientColorZero), var(--blendIntersection));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(169, 96, 238, 0.3);
+}
+
+.progress-step.completed .step-number {
+    background: var(--blendIntersection);
+    color: #ffffff;
+}
+
+.step-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.progress-step.active .step-label {
+    color: var(--blendIntersection);
+}
+
+.progress-line {
+    flex: 1;
+    height: 2px;
+    background: #e5e7eb;
+    margin: 0 8px;
+    position: relative;
+    top: -12px;
+}
+
+/* ========================================
+   FORM HEADER
+   ======================================== */
+
+.form-header {
+    margin-bottom: 32px;
+}
+
+.form-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--shadeFiveColor);
+    margin: 0 0 12px 0;
+}
+
+.form-description {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ========================================
+   FORM STEPS
+   ======================================== */
+
+.multi-step-form {
+    position: relative;
+}
+
+.form-step {
+    display: none;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   FORM GROUPS & INPUTS
+   ======================================== */
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--shadeFiveColor);
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #ef4444;
+    margin-left: 4px;
+}
+
+.optional {
+    color: #9ca3af;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    color: var(--shadeFiveColor);
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--blendIntersection);
+    box-shadow: 0 0 0 3px rgba(0, 72, 229, 0.1);
+}
+
+.form-control::placeholder {
+    color: #9ca3af;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-hint {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 6px;
+}
+
+.error-message {
+    display: none;
+    font-size: 13px;
+    color: #ef4444;
+    margin-top: 6px;
+}
+
+.error-message.visible {
+    display: block;
+}
+
+.form-control.error,
+.form-select.error {
+    border-color: #ef4444;
+}
+
+.form-control.error:focus,
+.form-select.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* ========================================
+   RADIO BUTTONS (STYLED)
+   ======================================== */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    position: relative;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-label {
+    display: block;
+    padding: 16px 20px;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    color: var(--shadeFiveColor);
+    font-weight: 500;
+}
+
+.radio-option input[type="radio"]:checked + .radio-label {
+    border-color: var(--blendIntersection);
+    background: rgba(0, 72, 229, 0.05);
+    color: var(--blendIntersection);
+}
+
+.radio-label:hover {
+    border-color: var(--blendIntersection);
+}
+
+.radio-option input[type="radio"]:focus + .radio-label {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   CHECKBOX STYLING
+   ======================================== */
+
+.checkbox-group {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--blendIntersection);
+}
+
+.checkbox-label {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+/* ========================================
+   FORM NAVIGATION BUTTONS
+   ======================================== */
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gradientColorZero), var(--blendIntersection));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(169, 96, 238, 0.3);
+    margin-left: auto;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(169, 96, 238, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: var(--shadeFiveColor);
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.btn-primary:disabled,
+.btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.form-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-radius: 16px;
+    z-index: 10;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e5e7eb;
+    border-top-color: var(--blendIntersection);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.form-loading p {
+    font-size: 15px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ========================================
+   SECURITY NOTICE
+   ======================================== */
+
+.security-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    background: rgba(0, 72, 229, 0.05);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.security-notice i {
+    color: var(--blendIntersection);
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .contact-info {
+        position: static;
+    }
+
+    .contact-main-title {
+        font-size: 40px;
+    }
+
+    .contact-subtitle {
+        font-size: 18px;
+    }
+
+    .form-card {
+        padding: 32px;
+    }
+
+    .form-progress {
+        margin-bottom: 32px;
+    }
+
+    .step-label {
+        display: none;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 767px) {
+    .contact-section {
+        padding: 100px 16px 60px;
+    }
+
+    .contact-container {
+        gap: 40px;
+    }
+
+    .contact-main-title {
+        font-size: 32px;
+    }
+
+    .contact-subtitle {
+        font-size: 16px;
+    }
+
+    .contact-benefits {
+        gap: 24px;
+    }
+
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .benefit-text h3 {
+        font-size: 16px;
+    }
+
+    .benefit-text p {
+        font-size: 14px;
+    }
+
+    .trust-indicators {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form-card {
+        padding: 24px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .form-description {
+        font-size: 14px;
+    }
+
+    .form-progress {
+        margin-bottom: 24px;
+    }
+
+    .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .progress-line {
+        margin: 0 4px;
+        top: -8px;
+    }
+
+    .form-navigation {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+
+    .btn-primary {
+        margin-left: 0;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.form-control:focus-visible,
+.form-select:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-step,
+    .btn-primary,
+    .btn-secondary,
+    .radio-label,
+    .form-control,
+    .form-select {
+        animation: none;
+        transition: none;
+    }
+
+    .spinner {
+        animation: none;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .contact-section {
+        padding: 20px;
+        background: #ffffff;
+    }
+
+    .form-card {
+        box-shadow: none;
+        border: 1px solid #000000;
+    }
+
+    .form-navigation,
+    .security-notice,
+    .form-progress {
+        display: none;
+    }
+
+    .form-step {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+}

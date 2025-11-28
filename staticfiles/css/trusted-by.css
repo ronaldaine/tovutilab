@@ -1,0 +1,402 @@
+/* ========================================
+   TRUSTED BY SECTION - Stripe Style
+   Professional Company Logo Showcase
+   ======================================== */
+
+   .trusted-by-section {
+    padding: 80px 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle top border accent */
+.trusted-by-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 72, 229, 0.1) 50%, 
+        transparent 100%);
+}
+
+.trusted-by-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   SECTION LABEL
+   ======================================== */
+
+.trusted-by-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 0 48px 0;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ========================================
+   LOGO GRID LAYOUT
+   ======================================== */
+
+.trusted-by-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px 64px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 64px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 180px;
+    height: 60px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+/* Staggered animation delays for smooth entrance */
+.logo-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.logo-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.logo-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.logo-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.logo-wrapper:nth-child(5) { animation-delay: 0.5s; }
+.logo-wrapper:nth-child(6) { animation-delay: 0.6s; }
+.logo-wrapper:nth-child(7) { animation-delay: 0.7s; }
+.logo-wrapper:nth-child(8) { animation-delay: 0.8s; }
+
+.logo-wrapper:hover {
+    transform: scale(1.08);
+}
+
+/* ========================================
+   COMPANY LOGO STYLES
+   ======================================== */
+
+.company-logo {
+    width: 100%;
+    height: auto;
+    max-height: 40px;
+    color: #4b5563;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.logo-wrapper:hover .company-logo {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+/* Individual logo hover effects */
+.logo-wrapper:hover .google-logo {
+    opacity: 1;
+}
+
+.logo-wrapper:hover .marriott-logo {
+    opacity: 0.9;
+}
+
+.logo-wrapper:hover .shopify-logo {
+    opacity: 0.9;
+}
+
+.logo-wrapper:hover .airbnb-logo {
+    opacity: 0.9;
+}
+
+.logo-wrapper:hover .urbn-logo {
+    opacity: 1;
+}
+
+/* ========================================
+   OPTIONAL MARQUEE EFFECT
+   Additional scrolling logos banner
+   ======================================== */
+
+.trusted-by-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 32px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 32px;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+}
+
+.marquee-content {
+    display: flex;
+    gap: 64px;
+    animation: marqueeScroll 40s linear infinite;
+    width: fit-content;
+}
+
+.marquee-item {
+    font-size: 16px;
+    font-weight: 600;
+    color: #9ca3af;
+    white-space: nowrap;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.marquee-item:hover {
+    opacity: 0.8;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause marquee animation on hover */
+.trusted-by-marquee:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* ========================================
+   ENTRANCE ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 0.6;
+        transform: translateY(0);
+    }
+}
+
+/* Label animation completes to full opacity */
+.trusted-by-label {
+    animation-name: fadeInUpFull;
+}
+
+@keyframes fadeInUpFull {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px - 1023px)
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .trusted-by-section {
+        padding: 64px 24px;
+    }
+
+    .trusted-by-label {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+
+    .trusted-by-logos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 48px;
+    }
+
+    .logo-wrapper {
+        max-width: 160px;
+        height: 50px;
+    }
+
+    .company-logo {
+        max-height: 35px;
+    }
+
+    .marquee-content {
+        gap: 48px;
+        animation-duration: 35s;
+    }
+
+    .marquee-item {
+        font-size: 15px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (320px - 767px)
+   ======================================== */
+
+@media (max-width: 767px) {
+    .trusted-by-section {
+        padding: 48px 16px;
+    }
+
+    .trusted-by-label {
+        font-size: 11px;
+        margin-bottom: 32px;
+        letter-spacing: 1px;
+    }
+
+    .trusted-by-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 24px;
+        margin-bottom: 48px;
+    }
+
+    .logo-wrapper {
+        max-width: 140px;
+        height: 45px;
+    }
+
+    .company-logo {
+        max-height: 30px;
+    }
+
+    .trusted-by-marquee {
+        padding: 24px 0;
+        margin-top: 24px;
+    }
+
+    .marquee-content {
+        gap: 32px;
+        animation-duration: 30s;
+    }
+
+    .marquee-item {
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (< 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    .trusted-by-section {
+        padding: 40px 16px;
+    }
+
+    .trusted-by-logos {
+        gap: 24px 16px;
+    }
+
+    .logo-wrapper {
+        max-width: 120px;
+        height: 40px;
+    }
+
+    .company-logo {
+        max-height: 28px;
+    }
+
+    .marquee-item {
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY FEATURES
+   ======================================== */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .logo-wrapper,
+    .trusted-by-label {
+        animation: none;
+        opacity: 0.6;
+    }
+
+    .marquee-content {
+        animation: none;
+    }
+
+    .logo-wrapper:hover {
+        transform: none;
+    }
+
+    .trusted-by-label {
+        opacity: 1;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .company-logo {
+        opacity: 1;
+        filter: grayscale(0%);
+    }
+
+    .trusted-by-section {
+        background: #ffffff;
+        border-bottom: 2px solid #000000;
+    }
+
+    .trusted-by-section::before {
+        background: #000000;
+    }
+
+    .marquee-item {
+        opacity: 1;
+        color: #000000;
+    }
+}
+
+/* Focus states for accessibility */
+.logo-wrapper:focus-visible {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Print styles */
+@media print {
+    .trusted-by-marquee {
+        display: none;
+    }
+
+    .company-logo {
+        opacity: 1;
+        filter: grayscale(0%);
+    }
+
+    .trusted-by-section {
+        background: #ffffff;
+        page-break-inside: avoid;
+    }
+}
+
