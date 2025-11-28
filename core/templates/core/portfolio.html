@@ -1,0 +1,548 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Our Portfolio{% endblock %}
+{% block description %}Explore our portfolio of successful web development projects. From e-commerce platforms to SaaS applications, see how we transform businesses through technology.{% endblock %}
+
+
+{% block content %}
+<!-- Portfolio Hero Section -->
+<section class="portfolio-hero-section">
+    <div class="portfolio-hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="portfolio-hero-container">
+        <div class="portfolio-hero-content">
+            <!-- Badge -->
+            <div class="portfolio-hero-badge" data-aos="fade-up">
+                <i class="fas fa-trophy"></i>
+                <span>500+ Projects Delivered</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="portfolio-hero-title" data-aos="fade-up" data-aos-delay="100">
+                Our Work Speaks for
+                <span class="gradient-text">Itself</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="portfolio-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Discover how we've helped businesses transform their digital presence with 
+                cutting-edge web solutions, innovative designs, and measurable results.
+            </p>
+
+            <!-- Stats -->
+            <div class="portfolio-hero-stats" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-item">
+                    <span class="stat-value">500+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">98%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">50+</span>
+                    <span class="stat-label">Awards</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">15+</span>
+                    <span class="stat-label">Years</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="portfolio-scroll-indicator" data-aos="fade-up" data-aos-delay="400">
+        <span>Scroll to explore projects</span>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="portfolio-filter-section">
+    <div class="portfolio-filter-container">
+        <div class="portfolio-filter-wrapper">
+            <!-- Filter Buttons -->
+            <div class="portfolio-filter-buttons" role="tablist" aria-label="Project categories">
+                <button class="portfolio-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+                    All Projects
+                </button>
+                <button class="portfolio-filter-btn" data-filter="ecommerce" role="tab" aria-selected="false">
+                    E-Commerce
+                </button>
+                <button class="portfolio-filter-btn" data-filter="saas" role="tab" aria-selected="false">
+                    SaaS
+                </button>
+                <button class="portfolio-filter-btn" data-filter="corporate" role="tab" aria-selected="false">
+                    Corporate
+                </button>
+                <button class="portfolio-filter-btn" data-filter="startup" role="tab" aria-selected="false">
+                    Startups
+                </button>
+                <button class="portfolio-filter-btn" data-filter="marketplace" role="tab" aria-selected="false">
+                    Marketplace
+                </button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="portfolio-search-wrapper">
+                <input 
+                    type="text" 
+                    class="portfolio-search-input" 
+                    placeholder="Search projects..."
+                    aria-label="Search projects"
+                    id="portfolioSearch"
+                >
+                <i class="fas fa-search portfolio-search-icon"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid Section -->
+<section class="portfolio-grid-section">
+    <div class="portfolio-grid-container">
+        <!-- Project Grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+            
+            <!-- Project 1: TechFlow SaaS Platform -->
+            <article class="portfolio-card" data-category="saas" data-aos="fade-up">
+                <a href="#" class="portfolio-card-link" data-project="techflow">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" 
+                            alt="TechFlow SaaS Platform"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">SaaS Platform</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Django</span>
+                                <span class="portfolio-tag">React</span>
+                                <span class="portfolio-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">TechFlow Analytics</h3>
+                        <p class="portfolio-card-description">
+                            Enterprise analytics platform processing 10M+ events daily with real-time dashboards and AI-powered insights.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>+350% Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 2: LuxeStyle E-Commerce -->
+            <article class="portfolio-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="100">
+                <a href="#" class="portfolio-card-link" data-project="luxestyle">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" 
+                            alt="LuxeStyle E-Commerce Platform"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">E-Commerce</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Django</span>
+                                <span class="portfolio-tag">Stripe</span>
+                                <span class="portfolio-tag">AWS</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">LuxeStyle Fashion</h3>
+                        <p class="portfolio-card-description">
+                            Premium fashion e-commerce platform with AI-powered recommendations, AR try-on, and seamless checkout.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>$2M+ Revenue</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 3: GlobalTech Corporate -->
+            <article class="portfolio-card" data-category="corporate" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="portfolio-card-link" data-project="globaltech">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" 
+                            alt="GlobalTech Corporate Website"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">Corporate</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">CMS</span>
+                                <span class="portfolio-tag">SEO</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">GlobalTech Industries</h3>
+                        <p class="portfolio-card-description">
+                            Enterprise corporate website with multilingual support, advanced CMS, and investor relations portal.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2023</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>500K+ Visitors</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 4: HealthHub Marketplace -->
+            <article class="portfolio-card" data-category="marketplace" data-aos="fade-up">
+                <a href="#" class="portfolio-card-link" data-project="healthhub">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop" 
+                            alt="HealthHub Medical Marketplace"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">Marketplace</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Django</span>
+                                <span class="portfolio-tag">Vue.js</span>
+                                <span class="portfolio-tag">Redis</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">HealthHub Connect</h3>
+                        <p class="portfolio-card-description">
+                            Healthcare marketplace connecting patients with specialists, featuring telemedicine and secure messaging.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>50K+ Users</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 5: StartupLaunch Platform -->
+            <article class="portfolio-card" data-category="startup" data-aos="fade-up" data-aos-delay="100">
+                <a href="#" class="portfolio-card-link" data-project="startuplaunch">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop" 
+                            alt="StartupLaunch Platform"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">Startup</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">React</span>
+                                <span class="portfolio-tag">Node.js</span>
+                                <span class="portfolio-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">StartupLaunch</h3>
+                        <p class="portfolio-card-description">
+                            MVP development platform helping startups launch faster with pre-built modules and scalable architecture.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>200+ Launches</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 6: FoodieMarket E-Commerce -->
+            <article class="portfolio-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="portfolio-card-link" data-project="foodiemarket">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&h=600&fit=crop" 
+                            alt="FoodieMarket E-Commerce"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">E-Commerce</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Shopify</span>
+                                <span class="portfolio-tag">Custom API</span>
+                                <span class="portfolio-tag">Mobile</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">FoodieMarket</h3>
+                        <p class="portfolio-card-description">
+                            Gourmet food delivery platform with subscription boxes, recipe integration, and local vendor marketplace.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2023</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>$1.5M+ GMV</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 7: CloudSync SaaS -->
+            <article class="portfolio-card" data-category="saas" data-aos="fade-up">
+                <a href="#" class="portfolio-card-link" data-project="cloudsync">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" 
+                            alt="CloudSync SaaS Platform"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">SaaS Platform</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Python</span>
+                                <span class="portfolio-tag">Kubernetes</span>
+                                <span class="portfolio-tag">GraphQL</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">CloudSync Pro</h3>
+                        <p class="portfolio-card-description">
+                            Cloud storage and collaboration platform with end-to-end encryption and real-time synchronization.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>1PB+ Storage</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 8: UrbanSpaces Marketplace -->
+            <article class="portfolio-card" data-category="marketplace" data-aos="fade-up" data-aos-delay="100">
+                <a href="#" class="portfolio-card-link" data-project="urbanspaces">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" 
+                            alt="UrbanSpaces Real Estate Marketplace"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">Marketplace</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">Django</span>
+                                <span class="portfolio-tag">Maps API</span>
+                                <span class="portfolio-tag">3D Tours</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">UrbanSpaces</h3>
+                        <p class="portfolio-card-description">
+                            Real estate marketplace with virtual tours, AI-powered matching, and integrated mortgage pre-approval.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2023</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-home"></i>
+                                <span>10K+ Listings</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Project 9: FinanceFlow Startup -->
+            <article class="portfolio-card" data-category="startup" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="portfolio-card-link" data-project="financeflow">
+                    <div class="portfolio-card-image">
+                        <img 
+                            src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop" 
+                            alt="FinanceFlow Fintech Startup"
+                            loading="lazy"
+                        >
+                        <div class="portfolio-card-overlay">
+                            <div class="portfolio-card-overlay-content">
+                                <i class="fas fa-arrow-right"></i>
+                                <span>View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card-content">
+                        <div class="portfolio-card-header">
+                            <span class="portfolio-card-category">Startup</span>
+                            <div class="portfolio-card-tags">
+                                <span class="portfolio-tag">React Native</span>
+                                <span class="portfolio-tag">Blockchain</span>
+                                <span class="portfolio-tag">Plaid</span>
+                            </div>
+                        </div>
+                        <h3 class="portfolio-card-title">FinanceFlow</h3>
+                        <p class="portfolio-card-description">
+                            Personal finance app with AI budgeting, investment tracking, and cryptocurrency integration.
+                        </p>
+                        <div class="portfolio-card-meta">
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2024</span>
+                            </div>
+                            <div class="portfolio-meta-item">
+                                <i class="fas fa-chart-pie"></i>
+                                <span>$500M AUM</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+
+        <!-- Load More Button -->
+        <div class="portfolio-load-more" id="portfolioLoadMore">
+            <button class="portfolio-load-more-btn">
+                <span>Load More Projects</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+
+        <!-- Empty State (Hidden by default) -->
+        <div class="portfolio-empty-state" id="portfolioEmptyState" style="display: none;">
+            <div class="empty-state-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <h3 class="empty-state-title">No projects found</h3>
+            <p class="empty-state-text">Try adjusting your filters or search terms</p>
+            <button class="empty-state-btn" id="resetFilters">
+                Clear Filters
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="portfolio-cta-section">
+    <div class="portfolio-cta-container">
+        <div class="portfolio-cta-content">
+            <h2 class="portfolio-cta-title">Ready to Start Your Project?</h2>
+            <p class="portfolio-cta-description">
+                Let's create something amazing together. Our team is ready to bring your vision to life.
+            </p>
+        </div>
+        <div class="portfolio-cta-actions">
+            <a href="{% url 'contact' %}" class="portfolio-cta-btn-primary">
+                Get Started
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="{% url 'services:services_list' %}" class="portfolio-cta-btn-secondary">
+                View Services
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

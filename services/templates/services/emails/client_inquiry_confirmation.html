@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We've Received Your Inquiry</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #002c59;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background: linear-gradient(135deg, #a960ee, #ff333d);
+            padding: 40px 30px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-image {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .email-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .email-header p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .email-body {
+            padding: 40px 30px;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #002c59;
+            margin-bottom: 20px;
+        }
+        .content-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        .next-steps {
+            background-color: #f9fafb;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 30px 0;
+        }
+        .next-steps h2 {
+            margin: 0 0 20px 0;
+            font-size: 18px;
+            color: #003ab9;
+        }
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .step:last-child {
+            margin-bottom: 0;
+        }
+        .step-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #a960ee, #ff333d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .step-content h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: #002c59;
+        }
+        .step-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        .inquiry-summary {
+            background-color: #f0f4ff;
+            border-left: 4px solid #0048e5;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        .inquiry-summary h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            color: #003ab9;
+        }
+        .summary-row {
+            display: flex;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 72, 229, 0.1);
+        }
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+        .summary-label {
+            flex: 0 0 120px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #4b5563;
+        }
+        .summary-value {
+            flex: 1;
+            font-size: 14px;
+            color: #002c59;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #a960ee, #ff333d);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .contact-info {
+            background-color: #f9fafb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .contact-info h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            color: #003ab9;
+        }
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: #4b5563;
+        }
+        .contact-info a {
+            color: #0048e5;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .email-footer {
+            background-color: #f9fafb;
+            padding: 30px;
+            text-align: center;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 8px;
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: #9ca3af;
+            margin: 10px 0;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                margin: 20px;
+            }
+            .email-header {
+                padding: 30px 20px;
+            }
+            .email-body {
+                padding: 30px 20px;
+            }
+            .logo-image {
+                max-width: 160px;
+            }
+            .step {
+                flex-direction: column;
+            }
+            .summary-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .summary-label {
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="logo-container">
+                <img src="{{ logo_url }}" alt="Cascade Digital" class="logo-image">
+            </div>
+            <h1>✓ We've Received Your Inquiry!</h1>
+            <p>Thank you for considering Cascade Digital</p>
+        </div>
+        
+        <div class="email-body">
+            <p class="greeting">Hi {{ inquiry.full_name }},</p>
+            
+            <p class="content-text">
+                Thank you for reaching out to Cascade Digital! We're excited about the possibility of working with you on your <strong>{{ inquiry.project_type }}</strong> project.
+            </p>
+            
+            <p class="content-text">
+                Our senior developers are currently reviewing your project details and will get back to you with a personalized response within <strong>24 hours</strong>. We take the time to carefully evaluate each project to ensure we can deliver exceptional results that exceed your expectations.
+            </p>
+            
+            <!-- Inquiry Summary -->
+            <div class="inquiry-summary">
+                <h3>📋 Your Inquiry Summary</h3>
+                {% if service %}
+                <div class="summary-row">
+                    <div class="summary-label">Service:</div>
+                    <div class="summary-value">{{ service.title }}</div>
+                </div>
+                {% endif %}
+                <div class="summary-row">
+                    <div class="summary-label">Project Type:</div>
+                    <div class="summary-value">{{ inquiry.project_type }}</div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-label">Budget Range:</div>
+                    <div class="summary-value">{{ inquiry.get_budget_display }}</div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-label">Timeline:</div>
+                    <div class="summary-value">{{ inquiry.get_timeline_display }}</div>
+                </div>
+                <div class="summary-row">
+                    <div class="summary-label">Submitted:</div>
+                    <div class="summary-value">{{ inquiry.created_at|date:"F d, Y g:i A" }}</div>
+                </div>
+            </div>
+            
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h2>What Happens Next?</h2>
+                
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <div class="step-content">
+                        <h3>Project Review</h3>
+                        <p>Our team is analyzing your requirements and researching the best solutions for your specific needs.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <div class="step-content">
+                        <h3>Personalized Consultation</h3>
+                        <p>We'll schedule a call or video meeting to discuss your project in detail, answer questions, and provide expert recommendations.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <div class="step-content">
+                        <h3>Custom Proposal</h3>
+                        <p>You'll receive a detailed project proposal with accurate timelines, costs, technology recommendations, and our development approach.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="content-text">
+                In the meantime, feel free to explore our portfolio and case studies to see examples of our work. If you have any additional questions or information to add, simply reply to this email.
+            </p>
+            
+            <center>
+                <a href="{{ site_url }}/portfolio/" class="cta-button">View Our Portfolio</a>
+            </center>
+            
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Need to Reach Us?</h3>
+                <p><strong>Email:</strong> <a href="mailto:hello@cascadedigital.com">hello@cascadedigital.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><strong>Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM EST</p>
+            </div>
+            
+            <p class="content-text" style="margin-top: 30px;">
+                We're looking forward to bringing your vision to life!
+            </p>
+            
+            <p class="content-text">
+                <strong>Best regards,</strong><br>
+                The Cascade Digital Team
+            </p>
+        </div>
+        
+        <div class="email-footer">
+            <div class="social-links">
+                <a href="#">LinkedIn</a> •
+                <a href="#">Twitter</a> •
+                <a href="#">Facebook</a> •
+                <a href="#">Instagram</a>
+            </div>
+            
+            <p class="footer-text">
+                © 2025 Cascade Digital. All rights reserved.
+            </p>
+            
+            <p class="footer-text">
+                This email was sent to {{ inquiry.email }} because you submitted an inquiry through our website.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

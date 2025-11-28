@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Service Inquiry</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #002c59;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background: linear-gradient(135deg, #a960ee, #ff333d);
+            padding: 40px 30px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .logo-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        .logo-gradient {
+            background: linear-gradient(135deg, #90e0ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .email-body {
+            padding: 40px 30px;
+        }
+        .alert-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #0048e5;
+            color: #ffffff;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .priority-high {
+            background-color: #ff333d;
+        }
+        .info-section {
+            margin-bottom: 30px;
+        }
+        .info-section h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #003ab9;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .info-row {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid #f5f7fa;
+        }
+        .info-label {
+            flex: 0 0 140px;
+            font-weight: 600;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .info-value {
+            flex: 1;
+            color: #002c59;
+            font-size: 14px;
+        }
+        .info-value a {
+            color: #0048e5;
+            text-decoration: none;
+        }
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+        .description-box {
+            background-color: #f9fafb;
+            border-left: 4px solid #0048e5;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #a960ee, #ff333d);
+            color: #ffffff;
+        }
+        .btn-secondary {
+            background-color: #f0f0f0;
+            color: #002c59;
+        }
+        .email-footer {
+            background-color: #f9fafb;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .metadata {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+        .metadata p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <div class="logo-container">
+                <h2 class="logo-text">
+                    Cascade <span class="logo-gradient">Digital</span>
+                </h2>
+            </div>
+            <h1>🎯 New Service Inquiry</h1>
+        </div>
+        
+        <div class="email-body">
+            {% if inquiry.is_high_value %}
+            <span class="alert-badge priority-high">HIGH VALUE INQUIRY</span>
+            {% else %}
+            <span class="alert-badge">Priority Score: {{ inquiry.get_priority_score }}/10</span>
+            {% endif %}
+            
+            <!-- Contact Information -->
+            <div class="info-section">
+                <h2>📋 Contact Information</h2>
+                <div class="info-row">
+                    <div class="info-label">Name:</div>
+                    <div class="info-value">{{ inquiry.full_name }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Email:</div>
+                    <div class="info-value">
+                        <a href="mailto:{{ inquiry.email }}">{{ inquiry.email }}</a>
+                    </div>
+                </div>
+                {% if inquiry.phone %}
+                <div class="info-row">
+                    <div class="info-label">Phone:</div>
+                    <div class="info-value">
+                        <a href="tel:{{ inquiry.phone }}">{{ inquiry.phone }}</a>
+                    </div>
+                </div>
+                {% endif %}
+                {% if inquiry.company %}
+                <div class="info-row">
+                    <div class="info-label">Company:</div>
+                    <div class="info-value">{{ inquiry.company }}</div>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Project Details -->
+            <div class="info-section">
+                <h2>💼 Project Details</h2>
+                {% if service %}
+                <div class="info-row">
+                    <div class="info-label">Service:</div>
+                    <div class="info-value">{{ service.title }}</div>
+                </div>
+                {% endif %}
+                <div class="info-row">
+                    <div class="info-label">Project Type:</div>
+                    <div class="info-value">{{ inquiry.project_type }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Budget:</div>
+                    <div class="info-value">{{ inquiry.get_budget_display_verbose }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Timeline:</div>
+                    <div class="info-value">{{ inquiry.get_timeline_display }}</div>
+                </div>
+                {% if inquiry.reference_url %}
+                <div class="info-row">
+                    <div class="info-label">Reference URL:</div>
+                    <div class="info-value">
+                        <a href="{{ inquiry.reference_url }}" target="_blank">{{ inquiry.reference_url|truncatechars:50 }}</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Project Description -->
+            <div class="info-section">
+                <h2>📝 Project Description</h2>
+                <div class="description-box">
+                    {{ inquiry.project_description|linebreaks }}
+                </div>
+                
+                {% if inquiry.additional_notes %}
+                <h2 style="margin-top: 20px;">📌 Additional Notes</h2>
+                <div class="description-box">
+                    {{ inquiry.additional_notes|linebreaks }}
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="{{ admin_url }}" class="btn btn-primary">
+                    View in Admin Panel
+                </a>
+                <a href="mailto:{{ inquiry.email }}?subject=Re: Your Project Inquiry - Cascade Digital" class="btn btn-secondary">
+                    Reply to Client
+                </a>
+            </div>
+            
+            <!-- Metadata -->
+            <div class="metadata">
+                <p><strong>Submission Details:</strong></p>
+                <p>Submitted: {{ inquiry.created_at|date:"F d, Y g:i A" }}</p>
+                <p>IP Address: {{ inquiry.ip_address|default:"Not recorded" }}</p>
+                <p>Inquiry ID: #{{ inquiry.id }}</p>
+            </div>
+        </div>
+        
+        <div class="email-footer">
+            <p>This is an automated notification from Cascade Digital.</p>
+            <p>Please respond to the client within 24 hours.</p>
+        </div>
+    </div>
+</body>
+</html>

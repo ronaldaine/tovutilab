@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact Inquiry</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background: linear-gradient(135deg, #a960ee, #0048e5);
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .email-body {
+            padding: 30px;
+        }
+        .alert-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .alert-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #856404;
+        }
+        .info-section {
+            margin-bottom: 30px;
+        }
+        .info-section h2 {
+            font-size: 18px;
+            color: #0048e5;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .info-row {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #666666;
+            width: 180px;
+            flex-shrink: 0;
+        }
+        .info-value {
+            color: #333333;
+            flex: 1;
+        }
+        .description-box {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .action-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #a960ee, #0048e5);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .email-footer {
+            background: #f9fafb;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #666666;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-high {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .badge-medium {
+            background: #fef3c7;
+            color: #d97706;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="email-header">
+            <h1>🎯 New Contact Inquiry</h1>
+        </div>
+
+        <!-- Body -->
+        <div class="email-body">
+            <div class="alert-box">
+                <strong>Action Required</strong>
+                A new contact inquiry has been submitted. Please review and respond within 24 hours.
+            </div>
+
+            <!-- Personal Information -->
+            <div class="info-section">
+                <h2>👤 Contact Information</h2>
+                <div class="info-row">
+                    <div class="info-label">Full Name:</div>
+                    <div class="info-value"><strong>{{ inquiry.full_name }}</strong></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Email:</div>
+                    <div class="info-value"><a href="mailto:{{ inquiry.email }}">{{ inquiry.email }}</a></div>
+                </div>
+                {% if inquiry.phone %}
+                <div class="info-row">
+                    <div class="info-label">Phone:</div>
+                    <div class="info-value"><a href="tel:{{ inquiry.phone }}">{{ inquiry.phone }}</a></div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Company Information -->
+            <div class="info-section">
+                <h2>🏢 Company Details</h2>
+                <div class="info-row">
+                    <div class="info-label">Company Name:</div>
+                    <div class="info-value"><strong>{{ inquiry.company_name }}</strong></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Country:</div>
+                    <div class="info-value">{{ inquiry.country }}</div>
+                </div>
+                {% if inquiry.job_title %}
+                <div class="info-row">
+                    <div class="info-label">Job Title:</div>
+                    <div class="info-value">{{ inquiry.job_title }}</div>
+                </div>
+                {% endif %}
+                {% if inquiry.company_size %}
+                <div class="info-row">
+                    <div class="info-label">Company Size:</div>
+                    <div class="info-value">{{ inquiry.get_company_size_display }}</div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Project Details -->
+            <div class="info-section">
+                <h2>📋 Project Details</h2>
+                <div class="info-row">
+                    <div class="info-label">Project Type:</div>
+                    <div class="info-value"><strong>{{ inquiry.project_type }}</strong></div>
+                </div>
+                {% if inquiry.service %}
+                <div class="info-row">
+                    <div class="info-label">Service:</div>
+                    <div class="info-value">{{ inquiry.service.title }}</div>
+                </div>
+                {% endif %}
+                <div class="info-row">
+                    <div class="info-label">Timeline:</div>
+                    <div class="info-value">
+                        <span class="badge badge-medium">{{ inquiry.get_timeline_display }}</span>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Budget Range:</div>
+                    <div class="info-value">
+                        <span class="badge badge-high">{{ inquiry.get_budget_range_display }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Description -->
+            <div class="info-section">
+                <h2>📝 Project Description</h2>
+                <div class="description-box">
+                    {{ inquiry.project_description|linebreaks }}
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            {% if inquiry.reference_url or inquiry.additional_notes %}
+            <div class="info-section">
+                <h2>💡 Additional Information</h2>
+                {% if inquiry.reference_url %}
+                <div class="info-row">
+                    <div class="info-label">Reference URL:</div>
+                    <div class="info-value"><a href="{{ inquiry.reference_url }}" target="_blank">{{ inquiry.reference_url }}</a></div>
+                </div>
+                {% endif %}
+                {% if inquiry.additional_notes %}
+                <div class="info-row">
+                    <div class="info-label">Additional Notes:</div>
+                    <div class="info-value">{{ inquiry.additional_notes }}</div>
+                </div>
+                {% endif %}
+                {% if inquiry.how_did_you_hear %}
+                <div class="info-row">
+                    <div class="info-label">Source:</div>
+                    <div class="info-value">{{ inquiry.get_how_did_you_hear_display }}</div>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Action Button -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="{{ admin_url }}" class="action-button">
+                    View in Admin Panel →
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="email-footer">
+            <p>Submitted on {{ inquiry.created_at|date:"F d, Y" }} at {{ inquiry.created_at|time:"g:i A" }}</p>
+            <p>Inquiry ID: #{{ inquiry.id }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,649 @@
+/* ========================================
+   SERVICE CARD SLIDER (SCS) - Stripe-Inspired
+   Prefix: scs- (Service Card Slider)
+   ======================================== */
+
+   .scs-section {
+    padding: 100px 24px;
+    background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.scs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADER
+   ======================================== */
+
+.scs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+    gap: 32px;
+}
+
+.scs-header-content {
+    flex: 1;
+    max-width: 700px;
+}
+
+.scs-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blendIntersection);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 0 16px 0;
+}
+
+.scs-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--shadeFiveColor);
+    margin: 0 0 20px 0;
+}
+
+.scs-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ========================================
+   NAVIGATION ARROWS
+   ======================================== */
+
+.scs-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.scs-nav-arrow {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid rgba(0, 72, 229, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--blendIntersection);
+    font-size: 16px;
+}
+
+.scs-nav-arrow:hover {
+    background: var(--blendIntersection);
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 72, 229, 0.2);
+}
+
+.scs-nav-arrow:active {
+    transform: scale(0.95);
+}
+
+.scs-nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ========================================
+   SLIDER WRAPPER
+   ======================================== */
+
+.scs-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -12px;
+}
+
+.scs-slider {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0 12px;
+    cursor: grab;
+}
+
+.scs-slider:active {
+    cursor: grabbing;
+}
+
+/* ========================================
+   SERVICE CARD
+   ======================================== */
+
+.scs-card {
+    flex: 0 0 calc(33.333% - 16px);
+    min-width: 380px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 72, 229, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    user-select: none;
+}
+
+.scs-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 72, 229, 0.15);
+    border-color: rgba(0, 72, 229, 0.25);
+}
+
+/* ========================================
+   SERVICE CARD IMAGE
+   ======================================== */
+
+.scs-card-image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(169, 96, 238, 0.1), rgba(0, 72, 229, 0.1));
+}
+
+.scs-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.scs-card:hover .scs-card-image img {
+    transform: scale(1.05);
+}
+
+.scs-card-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scs-card:hover .scs-card-image-overlay {
+    opacity: 1;
+}
+
+/* ========================================
+   SERVICE CARD CONTENT
+   ======================================== */
+
+.scs-card-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+/* Service Badge */
+.scs-card-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, rgba(169, 96, 238, 0.08), rgba(0, 72, 229, 0.08));
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blendIntersection);
+    width: fit-content;
+}
+
+.scs-card-badge i {
+    font-size: 14px;
+}
+
+/* Service Title */
+.scs-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--shadeFiveColor);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.scs-card:hover .scs-card-title {
+    color: var(--blendIntersection);
+}
+
+/* Service Description */
+.scs-card-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+    flex: 1;
+}
+
+/* ========================================
+   SERVICE CARD FEATURES
+   ======================================== */
+
+.scs-card-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.scs-card-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--shadeFiveColor);
+}
+
+.scs-card-features li i {
+    color: var(--gradientColorZero);
+    font-size: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   SERVICE CARD FOOTER
+   ======================================== */
+
+.scs-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Service Meta (Price & Delivery) */
+.scs-card-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.scs-card-price,
+.scs-card-delivery {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.scs-card-price i,
+.scs-card-delivery i {
+    color: var(--blendIntersection);
+    font-size: 14px;
+}
+
+/* Service Link */
+.scs-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blendIntersection);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.scs-card-link:hover {
+    gap: 12px;
+    color: var(--shadeThreeColor);
+}
+
+.scs-card-link i {
+    transition: transform 0.3s ease;
+}
+
+.scs-card-link:hover i {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   CLIENT LOGOS
+   ======================================== */
+
+.scs-card-clients {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.scs-client-logo {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 72, 229, 0.05);
+    border-radius: 6px;
+    color: #6b7280;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.scs-client-logo:hover {
+    opacity: 1;
+    background: rgba(0, 72, 229, 0.1);
+}
+
+/* ========================================
+   SLIDER INDICATORS
+   ======================================== */
+
+.scs-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 48px;
+}
+
+.scs-indicator-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 72, 229, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+}
+
+.scs-indicator-dot.active {
+    width: 32px;
+    border-radius: 4px;
+    background: var(--blendIntersection);
+}
+
+.scs-indicator-dot:hover {
+    background: var(--blendIntersection);
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.scs-no-services {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+.scs-no-services i {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.3;
+}
+
+.scs-no-services p {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px - 1023px)
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .scs-section {
+        padding: 80px 24px;
+    }
+
+    .scs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 48px;
+    }
+
+    .scs-title {
+        font-size: 36px;
+    }
+
+    .scs-description {
+        font-size: 16px;
+    }
+
+    .scs-card {
+        flex: 0 0 calc(50% - 12px);
+        min-width: 320px;
+    }
+
+    .scs-card-image {
+        height: 200px;
+    }
+
+    .scs-card-title {
+        font-size: 22px;
+    }
+
+    .scs-nav-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (320px - 767px)
+   ======================================== */
+
+@media (max-width: 767px) {
+    .scs-section {
+        padding: 60px 16px;
+    }
+
+    .scs-header {
+        margin-bottom: 32px;
+    }
+
+    .scs-label {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .scs-title {
+        font-size: 28px;
+    }
+
+    .scs-description {
+        font-size: 15px;
+    }
+
+    .scs-nav {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .scs-nav-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .scs-slider-wrapper {
+        margin: 0 -8px;
+    }
+
+    .scs-slider {
+        gap: 16px;
+        padding: 0 8px;
+    }
+
+    .scs-card {
+        flex: 0 0 calc(100% - 16px);
+        min-width: 280px;
+        max-width: 400px;
+    }
+
+    .scs-card-image {
+        height: 180px;
+    }
+
+    .scs-card-content {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .scs-card-title {
+        font-size: 20px;
+    }
+
+    .scs-card-description {
+        font-size: 14px;
+    }
+
+    .scs-card-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .scs-indicators {
+        margin-top: 32px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (< 400px)
+   ======================================== */
+
+@media (max-width: 399px) {
+    .scs-card {
+        min-width: 260px;
+    }
+
+    .scs-card-image {
+        height: 160px;
+    }
+
+    .scs-card-content {
+        padding: 16px;
+    }
+
+    .scs-card-title {
+        font-size: 18px;
+    }
+
+    .scs-card-features {
+        display: none;
+    }
+
+    .scs-card-clients {
+        display: none;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.scs-nav-arrow:focus-visible,
+.scs-indicator-dot:focus-visible {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 2px;
+}
+
+.scs-card-link:focus-visible {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .scs-slider,
+    .scs-card,
+    .scs-card-image img,
+    .scs-nav-arrow,
+    .scs-card-link,
+    .scs-indicator-dot {
+        transition: none;
+    }
+
+    .scs-card:hover {
+        transform: none;
+    }
+
+    .scs-card:hover .scs-card-image img {
+        transform: none;
+    }
+}
+
+/* ========================================
+   HIGH CONTRAST MODE
+   ======================================== */
+
+@media (prefers-contrast: high) {
+    .scs-card {
+        border: 2px solid var(--blendIntersection);
+    }
+
+    .scs-card:hover {
+        border-color: var(--shadeFiveColor);
+    }
+
+    .scs-nav-arrow {
+        border: 2px solid var(--blendIntersection);
+    }
+
+    .scs-card-link {
+        text-decoration: underline;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .scs-nav,
+    .scs-indicators {
+        display: none;
+    }
+
+    .scs-card {
+        page-break-inside: avoid;
+        border: 1px solid #000000;
+        box-shadow: none;
+    }
+
+    .scs-slider {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        transform: none !important;
+    }
+}

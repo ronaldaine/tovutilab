@@ -1,0 +1,321 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Contact Sales - Get a Custom Quote{% endblock %}
+{% block description %}Get in touch with our sales team for a custom quote tailored to your needs.{% endblock %}
+
+
+{% block content %}
+<!-- Contact Sales Section -->
+<section class="contact-section">
+    <div class="contact-container">
+        <!-- Left Side: Information -->
+        <div class="contact-info">
+            <div class="info-content">
+                <h1 class="contact-main-title">Let's build something amazing together</h1>
+                <p class="contact-subtitle">
+                    Tell us about your project and we'll get back to you within 24 hours 
+                    with a detailed proposal and timeline.
+                </p>
+
+                <!-- Key Benefits -->
+                <div class="contact-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>24-hour response time</h3>
+                            <p>Our team reviews every inquiry and responds within one business day</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>No commitment required</h3>
+                            <p>Get a detailed quote with no obligation to proceed</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Expert consultation</h3>
+                            <p>Direct access to senior developers and project managers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>15+ Projects Delivered</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star"></i>
+                        <span>98% Client Satisfaction</span>
+                    </div>
+                    <!-- <div class="trust-item">
+                        <i class="fas fa-award"></i>
+                        <span>50+ Industry Awards</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Multi-Step Form -->
+        <div class="contact-form-wrapper">
+            <div class="form-card">
+                <!-- Progress Indicator -->
+                <div class="form-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <span class="step-label">Personal</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <span class="step-label">Company</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <span class="step-label">Project</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-number">4</div>
+                        <span class="step-label">Details</span>
+                    </div>
+                </div>
+
+                <!-- Form Header -->
+                <div class="form-header">
+                    <h2 class="form-title" id="form-title">Let's get you to the right place</h2>
+                    <p class="form-description" id="form-description">We just need a few quick details.</p>
+                </div>
+
+                <!-- Multi-Step Form -->
+                <form method="post" action="{% url 'contact' %}" id="contactForm" class="multi-step-form" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Honeypot -->
+                    {{ form.website }}
+
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" data-step="1">
+                        <div class="form-group">
+                            <label for="{{ form.full_name.id_for_label }}" class="form-label">
+                                {{ form.full_name.label }}
+                                <span class="required">*</span>
+                            </label>
+                            {{ form.full_name }}
+                            <div class="error-message" id="error-{{ form.full_name.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">
+                                {{ form.email.label }}
+                                <span class="required">*</span>
+                            </label>
+                            {{ form.email }}
+                            <div class="error-message" id="error-{{ form.email.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.phone.id_for_label }}" class="form-label">
+                                {{ form.phone.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.phone }}
+                            <div class="error-message" id="error-{{ form.phone.id_for_label }}"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Company Information -->
+                    <div class="form-step" data-step="2">
+                        <div class="form-group">
+                            <label for="{{ form.company_name.id_for_label }}" class="form-label">
+                                {{ form.company_name.label }}
+                                <span class="required">*</span>
+                            </label>
+                            {{ form.company_name }}
+                            <div class="error-message" id="error-{{ form.company_name.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.country.id_for_label }}" class="form-label">
+                                {{ form.country.label }}
+                                <span class="required">*</span>
+                            </label>
+                            {{ form.country }}
+                            <div class="error-message" id="error-{{ form.country.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.job_title.id_for_label }}" class="form-label">
+                                {{ form.job_title.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.job_title }}
+                            <div class="error-message" id="error-{{ form.job_title.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.company_size.id_for_label }}" class="form-label">
+                                {{ form.company_size.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.company_size }}
+                            <div class="error-message" id="error-{{ form.company_size.id_for_label }}"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Project Details -->
+                    <div class="form-step" data-step="3">
+                        <div class="form-group">
+                            <label for="{{ form.project_type.id_for_label }}" class="form-label">
+                                {{ form.project_type.label }}
+                                <span class="required">*</span>
+                            </label>
+                            {{ form.project_type }}
+                            <div class="error-message" id="error-{{ form.project_type.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.service.id_for_label }}" class="form-label">
+                                {{ form.service.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.service }}
+                            <div class="error-message" id="error-{{ form.service.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.project_description.id_for_label }}" class="form-label">
+                                {{ form.project_description.label }}
+                                <span class="required">*</span>
+                            </label>
+                            {{ form.project_description }}
+                            <div class="form-hint">Minimum 20 characters. Be as detailed as possible.</div>
+                            <div class="error-message" id="error-{{ form.project_description.id_for_label }}"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Timeline & Budget -->
+                    <div class="form-step" data-step="4">
+                        <div class="form-group">
+                            <label class="form-label">
+                                {{ form.timeline.label }}
+                                <span class="required">*</span>
+                            </label>
+                            <div class="radio-group">
+                                {% for choice in form.timeline %}
+                                <div class="radio-option">
+                                    {{ choice.tag }}
+                                    <label for="{{ choice.id_for_label }}" class="radio-label">
+                                        {{ choice.choice_label }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="error-message" id="error-{{ form.timeline.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                {{ form.budget_range.label }}
+                                <span class="required">*</span>
+                            </label>
+                            <div class="radio-group">
+                                {% for choice in form.budget_range %}
+                                <div class="radio-option">
+                                    {{ choice.tag }}
+                                    <label for="{{ choice.id_for_label }}" class="radio-label">
+                                        {{ choice.choice_label }}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="error-message" id="error-{{ form.budget_range.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.reference_url.id_for_label }}" class="form-label">
+                                {{ form.reference_url.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.reference_url }}
+                            <div class="form-hint">Share a website or design that inspires you</div>
+                            <div class="error-message" id="error-{{ form.reference_url.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.additional_notes.id_for_label }}" class="form-label">
+                                {{ form.additional_notes.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.additional_notes }}
+                            <div class="error-message" id="error-{{ form.additional_notes.id_for_label }}"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.how_did_you_hear.id_for_label }}" class="form-label">
+                                {{ form.how_did_you_hear.label }}
+                                <span class="optional">(optional)</span>
+                            </label>
+                            {{ form.how_did_you_hear }}
+                            <div class="error-message" id="error-{{ form.how_did_you_hear.id_for_label }}"></div>
+                        </div>
+
+                        <!-- Agreement Checkbox -->
+                        <div class="form-group checkbox-group">
+                            <div class="checkbox-wrapper">
+                                {{ form.agree_to_contact }}
+                                <label for="{{ form.agree_to_contact.id_for_label }}" class="checkbox-label">
+                                    {{ form.agree_to_contact.label }}
+                                </label>
+                            </div>
+                            <div class="error-message" id="error-{{ form.agree_to_contact.id_for_label }}"></div>
+                        </div>
+                    </div>
+
+                    <!-- Form Navigation -->
+                    <div class="form-navigation">
+                        <button type="button" class="btn-secondary btn-back" id="btnBack" style="display: none;">
+                            <i class="fas fa-arrow-left"></i>
+                            Back
+                        </button>
+                        <button type="button" class="btn-primary btn-continue" id="btnContinue">
+                            Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button type="submit" class="btn-primary btn-submit" id="btnSubmit" style="display: none;">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Inquiry
+                        </button>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div class="form-loading" id="formLoading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Submitting your inquiry...</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Security Badge -->
+            <div class="security-notice">
+                <i class="fas fa-lock"></i>
+                <span>Your information is secure and confidential</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

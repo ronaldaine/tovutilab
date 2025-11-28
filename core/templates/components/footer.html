@@ -1,0 +1,180 @@
+{% load static %}
+<footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <!-- Main Footer Content -->
+            <div class="footer-content">
+                <!-- Footer Grid - Multiple Columns -->
+                <div class="footer-grid">
+                    <!-- Column 1: Products & Services -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Products & Services</h3>
+                        <ul class="footer-links">
+                            {% for service in featured_services %}
+                            <li>
+                                <a href="{{ service.get_absolute_url }}">
+                                    {{ service.title }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                            
+                            {# Get additional services if featured services are less than 9 #}
+                            {% if featured_services|length < 9 %}
+                                {% for category in service_categories|slice:":3" %}
+                                    {% for service in category.active_services|slice:":3" %}
+                                        {% if forloop.parentloop.counter0|add:forloop.counter0 < 9 %}
+                                        <li>
+                                            <a href="{{ service.get_absolute_url }}">
+                                                {{ service.title }}
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
+                            
+                            {# "View All" link at the bottom #}
+                            {% if service_count > 9 %}
+                            <li>
+                                <a href="{% url 'services:services_list' %}" style="font-weight: 600;">
+                                    View All Services →
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+    
+                    <!-- Column 2: Solutions -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Solutions</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Startups</a></li>
+                            <li><a href="#">Enterprises</a></li>
+                            <li><a href="#">E-Commerce</a></li>
+                            <li><a href="#">SaaS Platforms</a></li>
+                            <li><a href="#">Marketplaces</a></li>
+                            <li><a href="#">Healthcare</a></li>
+                            <li><a href="#">Finance</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Nonprofits</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Column 3: Resources -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Resources</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Guides & Tutorials</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Downloads</a></li>
+                            <li><a href="#">Support Center</a></li>
+                            <li><a href="#">API Reference</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- Column 4: Company -->
+                    <div class="footer-column">
+                        <h3 class="footer-heading">Company</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Press & Media</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Contact Sales</a></li>
+                            <li><a href="#">Become a Partner</a></li>
+                            <li><a href="#">Investors</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <!-- Left: Logo and Copyright -->
+                    <div class="footer-brand">
+                        <a href="/" class="footer-logo" aria-label="Cascade Digital Home">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 0L32 16L16 32L0 16L16 0Z" fill="url(#footerLogoGradient)"/>
+                                <defs>
+                                    <linearGradient id="footerLogoGradient" x1="0" y1="0" x2="32" y2="32">
+                                        <stop offset="0%" stop-color="#a960ee"/>
+                                        <stop offset="100%" stop-color="#ff333d"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="footer-logo-text">TovutiLab</span>
+                        </a>
+                        <p class="footer-copyright">© 2025 TovutiLab, Inc.</p>
+                    </div>
+    
+                    <!-- Center: Legal Links -->
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+    
+                    <!-- Right: Social Media and Language Selector -->
+                    <div class="footer-extras">
+                        <!-- Social Links -->
+                        <div class="footer-social">
+                            <a href="#" aria-label="Follow us on Twitter" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="Follow us on LinkedIn" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" aria-label="Follow us on GitHub" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="Follow us on Facebook" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+    
+                        <!-- Language/Region Selector -->
+                        <button class="footer-language-selector" aria-label="Select language and region">
+                            <i class="fas fa-globe"></i>
+                            <span>United States (English)</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Language/Region Selector Dropdown (Hidden by default) -->
+        <div class="language-dropdown" id="languageDropdown" hidden>
+            <div class="language-dropdown-content">
+                <h3 class="language-dropdown-title">Select your language</h3>
+                <div class="language-options">
+                    <button class="language-option active">
+                        <i class="fas fa-check"></i>
+                        <span>English (United States)</span>
+                    </button>
+                    <button class="language-option">
+                        <span>Español (España)</span>
+                    </button>
+                    <button class="language-option">
+                        <span>Français (France)</span>
+                    </button>
+                    <button class="language-option">
+                        <span>Deutsch (Deutschland)</span>
+                    </button>
+                    <button class="language-option">
+                        <span>日本語 (日本)</span>
+                    </button>
+                    <button class="language-option">
+                        <span>中文 (简体)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>

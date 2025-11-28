@@ -1,0 +1,977 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Transform Your Digital Future{% endblock %}
+{% block description %}TovutiLab creates cutting-edge web applications and digital experiences. Partner with industry-leading developers to transform your business.{% endblock %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" role="banner">
+    <!-- Animated Background -->
+    <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Badge -->
+            <div class="hero-badge" data-aos="fade-up">
+                <i class="fas fa-star"></i>
+                <span>Trusted by 500+ companies worldwide</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                Build the future of
+                <span class="gradient-text">digital experiences</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Transform your business with cutting-edge web applications, stunning designs, 
+                and innovative solutions that drive real results.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="#" class="hero-btn hero-btn-primary">
+                    Start Your Project
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#" class="hero-btn hero-btn-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    View Our Work
+                </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="hero-proof" data-aos="fade-up" data-aos-delay="400">
+                <div class="proof-stats">
+                    <div class="proof-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>500+</strong> Projects Delivered</span>
+                    </div>
+                    <div class="proof-item">
+                        <i class="fas fa-users"></i>
+                        <span><strong>98%</strong> Client Satisfaction</span>
+                    </div>
+                    <div class="proof-item">
+                        <i class="fas fa-award"></i>
+                        <span><strong>50+</strong> Industry Awards</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+            <div class="visual-card card-1">
+                <div class="card-header">
+                    <div class="card-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="card-actions">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="code-line"></div>
+                    <div class="code-line short"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line medium"></div>
+                    <div class="code-line"></div>
+                </div>
+            </div>
+
+            <div class="visual-card card-2">
+                <div class="card-metric">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="metric-data">
+                        <span class="metric-value">+247%</span>
+                        <span class="metric-label">Growth</span>
+                    </div>
+                </div>
+                <div class="sparkline">
+                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                        <polyline 
+                            points="0,25 20,20 40,15 60,10 80,5 100,0" 
+                            fill="none" 
+                            stroke="url(#sparklineGradient)" 
+                            stroke-width="2"
+                        />
+                        <defs>
+                            <linearGradient id="sparklineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#a960ee" />
+                                <stop offset="100%" stop-color="#ff333d" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="visual-card card-3">
+                <div class="card-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-badge badge-1">
+                <i class="fas fa-rocket"></i>
+                <span>Fast Deploy</span>
+            </div>
+
+            <div class="floating-badge badge-2">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="500">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Trusted By Section -->
+<section class="trusted-by-section">
+    <div class="trusted-by-container">
+        <p class="trusted-by-label">Trusted by industry leaders</p>
+        
+        <div class="trusted-by-logos">
+            <!-- Row 1 -->
+            <div class="logo-wrapper">
+                <svg class="company-logo" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- OpenAI Logo -->
+                    <text x="10" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="currentColor">OpenAI</text>
+                </svg>
+            </div>
+            
+            <div class="logo-wrapper">
+                <svg class="company-logo" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Amazon Logo -->
+                    <text x="10" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="currentColor">amazon</text>
+                    <path d="M60 22 Q70 25, 80 22" stroke="#FF9900" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            
+            <div class="logo-wrapper">
+                <svg class="company-logo google-logo" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Google Logo -->
+                    <text x="10" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="600">
+                        <tspan fill="#4285F4">G</tspan>
+                        <tspan fill="#EA4335">o</tspan>
+                        <tspan fill="#FBBC04">o</tspan>
+                        <tspan fill="#4285F4">g</tspan>
+                        <tspan fill="#34A853">l</tspan>
+                        <tspan fill="#EA4335">e</tspan>
+                    </text>
+                </svg>
+            </div>
+            
+            <div class="logo-wrapper">
+                <svg class="company-logo" viewBox="0 0 140 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Anthropic Logo -->
+                    <text x="10" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="currentColor" letter-spacing="1">ANTHROPIC</text>
+                </svg>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="logo-wrapper">
+                <svg class="company-logo marriott-logo" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Marriott Logo (M symbol) -->
+                    <path d="M30 10 L40 25 L50 10 L50 30 L45 30 L45 18 L40 25 L35 18 L35 30 L30 30 Z" fill="#A41034"/>
+                    <text x="25" y="38" font-family="Arial, sans-serif" font-size="8" font-weight="400" fill="#A41034" letter-spacing="2">MARRIOTT</text>
+                </svg>
+            </div>
+            
+            <div class="logo-wrapper">
+                <svg class="company-logo shopify-logo" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Shopify Logo -->
+                    <path d="M15 8 L18 8 L18 22 L15 22 Z M12 10 L12 20 L10 21 L10 9 Z" fill="#95BF47"/>
+                    <text x="22" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="currentColor">Shopify</text>
+                </svg>
+            </div>
+            
+            <div class="logo-wrapper">
+                <svg class="company-logo airbnb-logo" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Airbnb Logo -->
+                    <path d="M20 12 Q25 8, 30 12 Q32 16, 30 20 Q25 24, 20 20 Q18 16, 20 12 Z" fill="#FF5A5F" opacity="0.8"/>
+                    <text x="35" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="500" fill="currentColor">airbnb</text>
+                </svg>
+            </div>
+            
+            <div class="logo-wrapper">
+                <svg class="company-logo urbn-logo" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+                    <!-- URBN Logo -->
+                    <rect x="25" y="8" width="30" height="24" fill="currentColor"/>
+                    <text x="30" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">URBN</text>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Optional: Add a marquee effect for more logos -->
+        <div class="trusted-by-marquee" aria-hidden="true">
+            <div class="marquee-content">
+                <span class="marquee-item">Microsoft</span>
+                <span class="marquee-item">Netflix</span>
+                <span class="marquee-item">Stripe</span>
+                <span class="marquee-item">Meta</span>
+                <span class="marquee-item">Tesla</span>
+                <span class="marquee-item">Adobe</span>
+                <span class="marquee-item">Salesforce</span>
+                <span class="marquee-item">IBM</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="marquee-item">Microsoft</span>
+                <span class="marquee-item">Netflix</span>
+                <span class="marquee-item">Stripe</span>
+                <span class="marquee-item">Meta</span>
+                <span class="marquee-item">Tesla</span>
+                <span class="marquee-item">Adobe</span>
+                <span class="marquee-item">Salesforce</span>
+                <span class="marquee-item">IBM</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modular Solutions Section -->
+<section class="modular-solutions-section">
+    <div class="modular-solutions-container">
+        <!-- Left Content Column -->
+        <div class="modular-content">
+            <p class="modular-label" data-aos="fade-up">Modular solutions</p>
+            
+            <h2 class="modular-title" data-aos="fade-up" data-aos-delay="100">
+                A fully integrated suite of web development and digital services
+            </h2>
+            
+            <p class="modular-description" data-aos="fade-up" data-aos-delay="200">
+                Reduce costs, accelerate growth, and scale your business more efficiently with our fully integrated, cutting-edge platform. Use Cascade Digital to handle all of your web development needs, manage digital operations, and launch (or transform) your online presence.
+            </p>
+        </div>
+
+        <!-- Right Visual Column - Service Cards Grid -->
+        <div class="modular-visual" data-aos="fade-left" data-aos-delay="300">
+            <!-- Grid of service icons -->
+            <div class="services-grid">
+                <!-- Background service cards (decorative) -->
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+                <div class="service-card-placeholder"></div>
+            </div>
+
+            <!-- Connection Lines -->
+            <svg class="connection-lines" viewBox="0 0 400 600" preserveAspectRatio="none">
+                <line x1="200" y1="0" x2="200" y2="600" stroke="rgba(0, 72, 229, 0.2)" stroke-width="2"/>
+                <line x1="200" y1="150" x2="350" y2="150" stroke="rgba(0, 72, 229, 0.2)" stroke-width="2"/>
+                <line x1="200" y1="300" x2="350" y2="300" stroke="rgba(0, 72, 229, 0.2)" stroke-width="2"/>
+                <line x1="200" y1="450" x2="350" y2="450" stroke="rgba(0, 72, 229, 0.2)" stroke-width="2"/>
+            </svg>
+
+            <!-- Featured Service Cards -->
+            <div class="featured-service-card card-web" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="card-title">Web Development</h3>
+            </div>
+
+            <div class="featured-service-card card-design" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="card-title">UI/UX Design</h3>
+            </div>
+
+            <div class="featured-service-card card-ecommerce" data-aos="fade-up" data-aos-delay="600">
+                <div class="card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3 class="card-title">E-Commerce</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Payment Gateway Services Section -->
+<section class="pgs-section">
+    <div class="pgs-container">
+        <!-- Left Content Column -->
+        <div class="pgs-content">
+            <!-- Service Badge -->
+            <div class="pgs-badge">
+                <div class="pgs-badge-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <span class="pgs-badge-text">Payment Integration</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h2 class="pgs-title" data-aos="fade-up">
+                Accept and optimize payments, globally
+            </h2>
+
+            <!-- Description -->
+            <p class="pgs-description" data-aos="fade-up" data-aos-delay="100">
+                Increase authorization rates, offer local payment methods to boost conversion, and reduce fraud using AI-powered solutions. Seamlessly integrate secure payment gateways into your web applications.
+            </p>
+
+            <!-- CTA Button -->
+            <a href="#" class="pgs-cta-btn" data-aos="fade-up" data-aos-delay="200">
+                Start with Payment Integration
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <!-- See Also Links -->
+            <div class="pgs-links" data-aos="fade-up" data-aos-delay="300">
+                <p class="pgs-links-label">See also</p>
+                <ul class="pgs-links-list">
+                    <li>
+                        <a href="{% url 'ecommerce' %}" class="pgs-service-link">
+                            <span class="pgs-link-text">E-Commerce Solutions</span>
+                            <span class="pgs-link-desc">for building complete online stores with payment processing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="pgs-service-link">
+                            <span class="pgs-link-text">Security & Compliance</span>
+                            <span class="pgs-link-desc">for PCI-DSS compliance and fraud protection</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="pgs-service-link">
+                            <span class="pgs-link-text">API Development</span>
+                            <span class="pgs-link-desc">for custom payment gateway integrations</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Visual Column - Payment Interface Mockup -->
+        <div class="pgs-visual" data-aos="fade-left" data-aos-delay="200">
+            <!-- Floating decorative icons -->
+            <div class="pgs-floating-icon pgs-icon-1">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="pgs-floating-icon pgs-icon-2">
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="pgs-floating-icon pgs-icon-3">
+                <i class="fas fa-globe"></i>
+            </div>
+
+            <!-- Payment Interface Card -->
+            <div class="pgs-interface-card">
+                <!-- Product Preview -->
+                <div class="pgs-product-preview">
+                    <div class="pgs-product-image">
+                        <div class="pgs-image-placeholder">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                    </div>
+                    <div class="pgs-product-info">
+                        <p class="pgs-product-name">Macbook Pro</p>
+                        <p class="pgs-product-price">$1,566.00</p>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="pgs-payment-methods">
+                    <!-- Apple Pay Button -->
+                    <button class="pgs-method-btn pgs-apple-pay">
+                        <i class="fab fa-apple"></i>
+                        <span>Pay</span>
+                    </button>
+
+                    <!-- PayPal Button -->
+                    <button class="pgs-method-btn pgs-paypal">
+                        <i class="fab fa-paypal"></i>
+                        <span>PayPal</span>
+                    </button>
+                </div>
+
+                <!-- Divider -->
+                <div class="pgs-divider">
+                    <span>or pay with card</span>
+                </div>
+
+                <!-- Payment Form -->
+                <form class="pgs-form">
+                    <!-- Card Number -->
+                    <div class="pgs-form-group">
+                        <label for="pgs-card-number">Card Information</label>
+                        <div class="pgs-input-wrapper pgs-card-number-wrapper">
+                            <input 
+                                type="text" 
+                                id="pgs-card-number" 
+                                placeholder="1234 5678 9012 3456" 
+                                class="pgs-form-input"
+                                maxlength="19"
+                            >
+                            <div class="pgs-card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expiry and CVV -->
+                    <div class="pgs-form-row">
+                        <div class="pgs-form-group pgs-half">
+                            <input 
+                                type="text" 
+                                placeholder="MM / YY" 
+                                class="pgs-form-input"
+                                maxlength="7"
+                            >
+                        </div>
+                        <div class="pgs-form-group pgs-half">
+                            <input 
+                                type="text" 
+                                placeholder="CVV" 
+                                class="pgs-form-input"
+                                maxlength="4"
+                            >
+                            <i class="fas fa-question-circle pgs-cvv-info"></i>
+                        </div>
+                    </div>
+
+                    <!-- Cardholder Name -->
+                    <div class="pgs-form-group">
+                        <label for="pgs-cardholder-name">Cardholder Name</label>
+                        <input 
+                            type="text" 
+                            id="pgs-cardholder-name" 
+                            placeholder="John Doe" 
+                            class="pgs-form-input"
+                        >
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="pgs-submit-btn">
+                        <i class="fas fa-lock"></i>
+                        Pay $1,566.00
+                    </button>
+
+                    <!-- Security Badge -->
+                    <div class="pgs-security-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secured by 256-bit SSL encryption</span>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Trusted Payment Providers -->
+            <div class="pgs-providers">
+                <p class="pgs-providers-label">Powered by</p>
+                <div class="pgs-providers-logos">
+                    <i class="fab fa-stripe"></i>
+                    <i class="fab fa-paypal"></i>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Get Started CTA Section -->
+<section class="get-started-section">
+    <div class="get-started-container">
+        <!-- Left Content Column (Sticky on Desktop) -->
+        <div class="get-started-content">
+            <div class="content-wrapper">
+                <!-- Section Badge -->
+                <div class="started-badge" data-aos="fade-up">
+                    <i class="fas fa-rocket"></i>
+                    <span>Get Started in Minutes</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h2 class="started-title" data-aos="fade-up" data-aos-delay="100">
+                    Turn your vision into reality in three simple steps
+                </h2>
+
+                <!-- Description -->
+                <p class="started-description" data-aos="fade-up" data-aos-delay="200">
+                    Our streamlined process makes it easy to get started. From initial consultation to project launch, we guide you every step of the way with transparency and expertise.
+                </p>
+
+                <!-- Process Steps -->
+                <div class="process-steps" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="step-number">
+                            <span>01</span>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Share Your Vision</h3>
+                            <p class="step-description">
+                                Fill out our comprehensive project brief. Tell us about your project type, scope, timeline, and budget. Our intelligent form adapts to your needs, ensuring we gather all the right information.
+                            </p>
+                            <div class="step-features">
+                                <div class="step-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>5-minute form</span>
+                                </div>
+                                <div class="step-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>No commitment required</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="step-number">
+                            <span>02</span>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Expert Consultation</h3>
+                            <p class="step-description">
+                                Within 24 hours, our senior developers review your project and schedule a personalized consultation. We'll discuss technical requirements, provide accurate estimates, and answer all your questions.
+                            </p>
+                            <div class="step-features">
+                                <div class="step-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>24-hour response time</span>
+                                </div>
+                                <div class="step-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Detailed project roadmap</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="step-number">
+                            <span>03</span>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Development & Launch</h3>
+                            <p class="step-description">
+                                Once approved, we immediately begin development using agile methodology. You'll receive regular updates, preview builds, and have direct access to your dedicated project manager throughout the process.
+                            </p>
+                            <div class="step-features">
+                                <div class="step-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Weekly progress updates</span>
+                                </div>
+                                <div class="step-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Guaranteed timeline delivery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="started-cta" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#project-form" class="started-btn-primary">
+                        Start Your Project Now
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <p class="cta-note">
+                        <i class="fas fa-shield-alt"></i>
+                        No credit card required. Free consultation included.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Visual Column - Animated Phone Mockup (Sticky on Desktop) -->
+        <div class="get-started-visual">
+            <div class="visual-sticky-wrapper">
+                <!-- Phone Device Frame -->
+                <div class="phone-mockup" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Phone Notch -->
+                    <div class="phone-notch"></div>
+
+                    <!-- Phone Screen -->
+                    <div class="phone-screen">
+                        <!-- App Interface - Step 1: Form View -->
+                        <div class="app-interface step-1 active">
+                            <!-- Header -->
+                            <div class="app-header">
+                                <button class="back-btn">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                                <h3>Project Brief</h3>
+                                <div class="progress-indicator">1/3</div>
+                            </div>
+
+                            <!-- Form Content -->
+                            <div class="app-content">
+                                <div class="form-section">
+                                    <label class="form-label">Project Type</label>
+                                    <div class="project-types">
+                                        <button class="project-type-btn active">
+                                            <i class="fas fa-globe"></i>
+                                            <span>Website</span>
+                                        </button>
+                                        <button class="project-type-btn">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>E-Commerce</span>
+                                        </button>
+                                        <button class="project-type-btn">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <span>Web App</span>
+                                        </button>
+                                        <button class="project-type-btn">
+                                            <i class="fas fa-code"></i>
+                                            <span>Custom</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Budget Range</label>
+                                    <div class="budget-slider">
+                                        <input type="range" min="5000" max="100000" value="25000" class="slider">
+                                        <div class="budget-value">$25,000</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Timeline</label>
+                                    <select class="form-select">
+                                        <option>ASAP (2-4 weeks)</option>
+                                        <option selected>Flexible (1-2 months)</option>
+                                        <option>Planned (3+ months)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Continue Button -->
+                            <div class="app-footer">
+                                <button class="app-btn-primary continue-btn">
+                                    Continue
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- App Interface - Step 2: Details View -->
+                        <div class="app-interface step-2">
+                            <div class="app-header">
+                                <button class="back-btn">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                                <h3>Project Details</h3>
+                                <div class="progress-indicator">2/3</div>
+                            </div>
+
+                            <div class="app-content">
+                                <div class="form-section">
+                                    <label class="form-label">Project Description</label>
+                                    <textarea class="form-textarea" rows="4" placeholder="Tell us about your project vision...">Building a modern e-commerce platform for sustainable fashion products...</textarea>
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Key Features</label>
+                                    <div class="feature-tags">
+                                        <span class="feature-tag active">
+                                            <i class="fas fa-check"></i>
+                                            User Authentication
+                                        </span>
+                                        <span class="feature-tag active">
+                                            <i class="fas fa-check"></i>
+                                            Payment Integration
+                                        </span>
+                                        <span class="feature-tag">
+                                            <i class="fas fa-plus"></i>
+                                            Add Feature
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Inspiration (Optional)</label>
+                                    <input type="text" class="form-input" placeholder="Website URL or reference">
+                                </div>
+                            </div>
+
+                            <div class="app-footer">
+                                <button class="app-btn-primary continue-btn">
+                                    Continue
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- App Interface - Step 3: Contact View -->
+                        <div class="app-interface step-3">
+                            <div class="app-header">
+                                <button class="back-btn">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                                <h3>Contact Info</h3>
+                                <div class="progress-indicator">3/3</div>
+                            </div>
+
+                            <div class="app-content">
+                                <div class="form-section">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-input" value="Sarah Johnson">
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-input" value="sarah.j@email.com">
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Phone Number (Optional)</label>
+                                    <input type="tel" class="form-input" placeholder="+1 (555) 123-4567">
+                                </div>
+
+                                <div class="form-section">
+                                    <label class="form-label">Company</label>
+                                    <input type="text" class="form-input" value="EcoFashion Co.">
+                                </div>
+
+                                <div class="consent-checkbox">
+                                    <input type="checkbox" id="consent" checked>
+                                    <label for="consent">I agree to receive project updates and communication</label>
+                                </div>
+                            </div>
+
+                            <div class="app-footer">
+                                <button class="app-btn-primary submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Submit Project Brief
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- App Interface - Step 4: Success View -->
+                        <div class="app-interface step-4">
+                            <div class="app-content success-content">
+                                <div class="success-icon">
+                                    <div class="checkmark-circle">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+
+                                <h3 class="success-title">Project Brief Submitted!</h3>
+                                <p class="success-message">
+                                    Thank you, Sarah! Our senior developers are reviewing your project now. You'll receive a response within 24 hours.
+                                </p>
+
+                                <div class="next-steps-card">
+                                    <h4>What Happens Next?</h4>
+                                    <ul class="next-steps-list">
+                                        <li>
+                                            <i class="fas fa-envelope"></i>
+                                            Check your email for confirmation
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-calendar-alt"></i>
+                                            We'll schedule your consultation
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-file-alt"></i>
+                                            Receive your project proposal
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <button class="app-btn-secondary">
+                                    View Project Dashboard
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phone Home Indicator -->
+                    <div class="phone-home-indicator"></div>
+                </div>
+
+                <!-- Floating Elements -->
+                <div class="floating-element element-1">
+                    <i class="fas fa-comments"></i>
+                    <span>Live Chat Support</span>
+                </div>
+
+                <div class="floating-element element-2">
+                    <i class="fas fa-clock"></i>
+                    <span>24h Response</span>
+                </div>
+
+                <div class="floating-element element-3">
+                    <i class="fas fa-shield-check"></i>
+                    <span>Secure & Confidential</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Card Slider Section -->
+<section class="scs-section">
+    <div class="scs-container">
+        <!-- Section Header -->
+        <div class="scs-header">
+            <div class="scs-header-content">
+                <p class="scs-label" data-aos="fade-up">Our Services</p>
+                <h2 class="scs-title" data-aos="fade-up" data-aos-delay="100">
+                    Support for any business type
+                </h2>
+                <p class="scs-description" data-aos="fade-up" data-aos-delay="200">
+                    From global AI companies to category-defining marketplaces, successful 
+                    businesses across industries grow and scale with TovutiLab.
+                </p>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <div class="scs-nav" data-aos="fade-left" data-aos-delay="300">
+                <button class="scs-nav-arrow scs-nav-prev" aria-label="Previous services">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="scs-nav-arrow scs-nav-next" aria-label="Next services">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Services Slider -->
+        <div class="scs-slider-wrapper" data-aos="fade-up" data-aos-delay="400">
+            <div class="scs-slider">
+                {% for service in services %}
+                {% if service.is_active %}
+                <div class="scs-card">
+                    <!-- Service Image -->
+                    <div class="scs-card-image">
+                        <img 
+                            src="{{ service.image_url }}" 
+                            alt="{{ service.title }}"
+                            loading="lazy"
+                        >
+                        <div class="scs-card-image-overlay"></div>
+                    </div>
+
+                    <!-- Service Content -->
+                    <div class="scs-card-content">
+                        <!-- Category Badge -->
+                        <div class="scs-card-badge">
+                            <i class="{{ service.icon_class }}"></i>
+                            <span>{{ service.category.name }}</span>
+                        </div>
+
+                        <!-- Service Title -->
+                        <h3 class="scs-card-title">{{ service.title }}</h3>
+
+                        <!-- Service Description -->
+                        <p class="scs-card-description">
+                            {{ service.short_description }}
+                        </p>
+
+                        <!-- Service Features (if available) -->
+                        {% if service.features %}
+                        <ul class="scs-card-features">
+                            {% for feature in service.features|slice:":3" %}
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <span>{{ feature }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        <!-- Service Footer -->
+                        <div class="scs-card-footer">
+                            <div class="scs-card-meta">
+                                {% if service.price_starting_at %}
+                                <div class="scs-card-price">
+                                    <i class="fas fa-tag"></i>
+                                    <span>{{ service.get_price_display }}</span>
+                                </div>
+                                {% endif %}
+                                
+                                {% if service.delivery_time_days %}
+                                <div class="scs-card-delivery">
+                                    <i class="fas fa-clock"></i>
+                                    <span>{{ service.get_delivery_display }}</span>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- CTA Link -->
+                            <a href="{{ service.get_absolute_url }}" class="scs-card-link">
+                                Learn more
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Client Logos (Optional - can be added to model) -->
+                        <div class="scs-card-clients">
+                            <!-- These would come from a related ClientLogo model or similar -->
+                            <div class="scs-client-logo">
+                                <i class="fab fa-slack"></i>
+                            </div>
+                            <div class="scs-client-logo">
+                                <i class="fab fa-spotify"></i>
+                            </div>
+                            <div class="scs-client-logo">
+                                <i class="fab fa-stripe"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% empty %}
+                <div class="scs-no-services">
+                    <i class="fas fa-inbox"></i>
+                    <p>No services available at the moment.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Slider Indicators -->
+        <div class="scs-indicators" data-aos="fade-up" data-aos-delay="500">
+            <!-- Dynamically generated by JavaScript -->
+        </div>
+    </div>
+</section>
+{% endblock %}

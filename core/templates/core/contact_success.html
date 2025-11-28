@@ -1,0 +1,275 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Thank You - Contact Inquiry Received{% endblock %}
+
+{% block extra_css %}
+<style>
+    .success-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 24px 80px;
+        background: linear-gradient(135deg, var(--shadeFiveColor) 0%, var(--shadeThreeColor) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .success-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+    }
+
+    .success-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        animation: float 20s ease-in-out infinite;
+    }
+
+    .success-orb-1 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--gradientColorZero), transparent);
+        top: -200px;
+        right: -200px;
+    }
+
+    .success-orb-2 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, var(--gradientColorTwo), transparent);
+        bottom: -150px;
+        left: -150px;
+        animation-delay: -10s;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(30px, -30px) scale(1.1); }
+    }
+
+    .success-card {
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+        width: 100%;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 60px 48px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        animation: slideInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .success-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
+        background: linear-gradient(135deg, var(--gradientColorZero), var(--blendIntersection));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: scaleIn 0.5s ease-out 0.3s both;
+    }
+
+    .success-icon i {
+        font-size: 40px;
+        color: #ffffff;
+    }
+
+    @keyframes scaleIn {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .success-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--shadeFiveColor);
+        margin: 0 0 16px 0;
+    }
+
+    .success-message {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #6b7280;
+        margin: 0 0 40px 0;
+    }
+
+    .success-steps {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .success-steps h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--shadeFiveColor);
+        margin: 0 0 20px 0;
+    }
+
+    .success-step-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .success-step-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .success-step-item i {
+        color: var(--gradientColorZero);
+        font-size: 18px;
+        margin-top: 2px;
+    }
+
+    .success-step-item span {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 1.5;
+    }
+
+    .success-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .success-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .success-btn-primary {
+        background: linear-gradient(135deg, var(--gradientColorZero), var(--blendIntersection));
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(169, 96, 238, 0.3);
+    }
+
+    .success-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(169, 96, 238, 0.4);
+    }
+
+    .success-btn-secondary {
+        background: #ffffff;
+        color: var(--shadeFiveColor);
+        border: 1px solid #d1d5db;
+    }
+
+    .success-btn-secondary:hover {
+        background: #f9fafb;
+    }
+
+    @media (max-width: 767px) {
+        .success-card {
+            padding: 40px 24px;
+        }
+
+        .success-title {
+            font-size: 24px;
+        }
+
+        .success-message {
+            font-size: 16px;
+        }
+
+        .success-steps {
+            padding: 24px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="success-section">
+    <div class="success-background">
+        <div class="success-orb success-orb-1"></div>
+        <div class="success-orb success-orb-2"></div>
+    </div>
+
+    <div class="success-card">
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
+        </div>
+
+        <h1 class="success-title">Thank You!</h1>
+        <p class="success-message">
+            We've received your inquiry and our team is already reviewing your project details. 
+            You'll hear from us within 24 hours.
+        </p>
+
+        <div class="success-steps">
+            <h3>What Happens Next?</h3>
+            <ul class="success-step-list">
+                <li class="success-step-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Check your email for a confirmation message</span>
+                </li>
+                <li class="success-step-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Our team will review your requirements within 24 hours</span>
+                </li>
+                <li class="success-step-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>We'll reach out to schedule a consultation call</span>
+                </li>
+                <li class="success-step-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Receive a detailed proposal and timeline</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="success-actions">
+            <a href="{% url 'home' %}" class="success-btn success-btn-primary">
+                <i class="fas fa-home"></i>
+                Return to Home
+            </a>
+            <a href="{% url 'services:services_list' %}" class="success-btn success-btn-secondary">
+                <i class="fas fa-th"></i>
+                Explore Our Services
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

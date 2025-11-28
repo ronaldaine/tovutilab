@@ -1,0 +1,315 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+
+
+{% block content %}
+<!-- Services List Page -->
+
+<section class="hero-section" role="banner">
+    <!-- Animated Background -->
+    <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Badge -->
+            <div class="hero-badge" data-aos="fade-up">
+                <i class="fas fa-star"></i>
+                <span>Trusted by 500+ companies worldwide</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                What We Offer 
+                <span class="gradient-text">Your Business</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                
+            </p>
+        </div>
+
+        <!-- Hero Visual (keeping your existing cards) -->
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+            <div class="visual-card card-1">
+                <div class="card-header">
+                    <div class="card-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="card-actions">
+                        <i class="{{ service.icon_class }}"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="code-line"></div>
+                    <div class="code-line short"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line medium"></div>
+                    <div class="code-line"></div>
+                </div>
+            </div>
+
+            <div class="visual-card card-2">
+                <div class="card-metric">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="metric-data">
+                        <span class="metric-value">+247%</span>
+                        <span class="metric-label">Growth</span>
+                    </div>
+                </div>
+                <div class="sparkline">
+                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                        <polyline 
+                            points="0,25 20,20 40,15 60,10 80,5 100,0" 
+                            fill="none" 
+                            stroke="url(#sparklineGradient)" 
+                            stroke-width="2"
+                        />
+                        <defs>
+                            <linearGradient id="sparklineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#a960ee" />
+                                <stop offset="100%" stop-color="#ff333d" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="visual-card card-3">
+                <div class="card-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-badge badge-1">
+                <i class="fas fa-rocket"></i>
+                <span>Fast Deploy</span>
+            </div>
+
+            <div class="floating-badge badge-2">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="500">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+<section class="service-list-page">
+    <!-- Page Header -->
+    <div class="service-list-header">
+        <div class="service-list-header-container">
+            <div class="service-list-header-content">
+                <h1 class="service-list-main-title">
+                    {% if selected_category %}
+                        {{ selected_category.name }} Services
+                    {% else %}
+                        Our Services
+                    {% endif %}
+                </h1>
+                <p class="service-list-main-description">
+                    {% if selected_category and selected_category.description %}
+                        {{ selected_category.description }}
+                    {% else %}
+                        Streamline work, save time, and share context across tools with our comprehensive suite of services.
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="service-list-content-container">
+        <!-- Sidebar - Categories Filter -->
+        <aside class="service-list-sidebar">
+            <div class="service-list-sidebar-sticky">
+                <h2 class="service-list-sidebar-title">Categories</h2>
+                <nav class="service-list-categories-nav" role="navigation" aria-label="Service categories">
+                    <ul class="service-list-categories-list">
+                        <!-- All Services Link -->
+                        <li class="service-list-category-item">
+                            <a href="{% url 'services:services_list' %}" 
+                               class="service-list-category-link {% if not selected_category %}active{% endif %}">
+                                <span class="service-list-category-name">All</span>
+                                {% if not selected_category %}
+                                    <span class="service-list-category-count">{{ services|length }}</span>
+                                {% endif %}
+                            </a>
+                        </li>
+
+                        <!-- Individual Categories -->
+                        {% for category in categories %}
+                        <li class="service-list-category-item">
+                            <a href="{% url 'services:category_services' category.slug %}" 
+                               class="service-list-category-link {% if selected_category.id == category.id %}active{% endif %}">
+                                <span class="service-list-category-name">{{ category.name }}</span>
+                                <span class="service-list-category-count">{{ category.service_count }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+
+                <!-- Request App CTA -->
+                <div class="service-list-sidebar-cta">
+                    <h3 class="service-list-sidebar-cta-title">Request a service</h3>
+                    <p class="service-list-sidebar-cta-text">Can't find what you're looking for? Let us know.</p>
+                    <a href="{% url 'contact' %}" class="service-list-sidebar-cta-btn">
+                        Submit a request
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Services Grid -->
+        <main class="service-list-main">
+            <!-- Section Header -->
+            <div class="service-list-section-header">
+                <h2 class="service-list-section-title">
+                    {% if selected_category %}
+                        {{ selected_category.name }}
+                    {% else %}
+                        Featured services
+                    {% endif %}
+                </h2>
+                <p class="service-list-section-description">
+                    {% if selected_category %}
+                        Explore our {{ selected_category.name|lower }} solutions designed to transform your business.
+                    {% else %}
+                        Streamline work, save time, and share context across tools.
+                    {% endif %}
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            {% if services %}
+            <div class="service-list-grid">
+                {% for service in services %}
+                <article class="service-list-card">
+                    <a href="{% url 'services:service_detail' service.slug %}" class="service-list-card-link">
+                        <!-- Service Icon -->
+                        <div class="service-list-card-icon">
+                            <i class="{{ service.icon_class }}"></i>
+                        </div>
+
+                        <!-- Service Content -->
+                        <div class="service-list-card-content">
+                            <h3 class="service-list-card-title">{{ service.title }}</h3>
+                            <p class="service-list-card-description">{{ service.short_description }}</p>
+
+                            <!-- Service Category Badge -->
+                            <div class="service-list-card-meta">
+                                <span class="service-list-card-category">{{ service.category.name }}</span>
+                            </div>
+
+                            <!-- Optional: Price & Delivery Info -->
+                            {% if service.price_starting_at or service.delivery_time_days %}
+                            <div class="service-list-card-info">
+                                {% if service.price_starting_at %}
+                                <span class="service-list-card-info-item">
+                                    <i class="fas fa-tag"></i>
+                                    {{ service.get_price_display }}
+                                </span>
+                                {% endif %}
+                                {% if service.delivery_time_days %}
+                                <span class="service-list-card-info-item">
+                                    <i class="fas fa-clock"></i>
+                                    {{ service.get_delivery_display }}
+                                </span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Hover Arrow -->
+                        <div class="service-list-card-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <!-- Empty State -->
+            <div class="service-list-empty-state">
+                <div class="service-list-empty-state-icon">
+                    <i class="fas fa-inbox"></i>
+                </div>
+                <h3 class="service-list-empty-state-title">No services found</h3>
+                <p class="service-list-empty-state-text">
+                    {% if selected_category %}
+                        We don't have any services in the {{ selected_category.name }} category yet.
+                    {% else %}
+                        We're currently updating our services catalog.
+                    {% endif %}
+                </p>
+                <a href="{% url 'services:services_list' %}" class="service-list-empty-state-btn">
+                    View all services
+                </a>
+            </div>
+            {% endif %}
+
+            <!-- CTA Section -->
+            <div class="service-list-cta-section">
+                <div class="service-list-cta-card">
+                    <div class="service-list-cta-content">
+                        <h2 class="service-list-cta-title">Ready to get started?</h2>
+                        <p class="service-list-cta-description">
+                            Let's discuss your project requirements and create a custom solution tailored to your business needs.
+                        </p>
+                    </div>
+                    <div class="service-list-cta-actions">
+                        <a href="#contact-form" class="service-list-cta-btn service-list-cta-btn-primary">
+                            Start Your Project
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="{% url 'services:services_list' %}" class="service-list-cta-btn service-list-cta-btn-secondary">
+                            Browse All Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+<!-- Mobile Category Filter Toggle -->
+<button class="service-list-mobile-filter-toggle" id="serviceListMobileFilterToggle" aria-label="Toggle category filter">
+    <i class="fas fa-filter"></i>
+    <span>Filter by Category</span>
+</button>
+
+<!-- Mobile Filter Overlay -->
+<div class="service-list-mobile-filter-overlay" id="serviceListMobileFilterOverlay"></div>
+{% endblock %}
+

@@ -1,0 +1,530 @@
+/* ========================================
+   MODULAR SOLUTIONS SECTION - Stripe Style
+   Complete Web Development Services Showcase
+   ======================================== */
+
+   .modular-solutions-section {
+    padding: 120px 24px;
+    background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative background accent */
+.modular-solutions-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(169, 96, 238, 0.2) 50%, 
+        transparent 100%);
+}
+
+.modular-solutions-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    align-items: center;
+}
+
+/* ========================================
+   LEFT CONTENT COLUMN
+   ======================================== */
+
+.modular-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modular-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--blendIntersection);
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.modular-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--shadeFiveColor);
+    margin: 0;
+}
+
+.modular-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #4b5563;
+    margin: 0;
+    max-width: 540px;
+}
+
+/* ========================================
+   RIGHT VISUAL COLUMN - SERVICES GRID
+   ======================================== */
+
+.modular-visual {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   BACKGROUND SERVICE GRID (Decorative)
+   ======================================== */
+
+.services-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.service-card-placeholder {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.service-card-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(169, 96, 238, 0.1), rgba(0, 72, 229, 0.1));
+    border-radius: 8px;
+    opacity: 0.5;
+}
+
+/* Staggered hover effects on placeholder cards */
+.services-grid:hover .service-card-placeholder {
+    opacity: 0.3;
+}
+
+.service-card-placeholder:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    border-color: rgba(169, 96, 238, 0.2);
+}
+
+/* ========================================
+   CONNECTION LINES SVG
+   ======================================== */
+
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.connection-lines line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 2s ease-out forwards;
+}
+
+.connection-lines line:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.connection-lines line:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.connection-lines line:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ========================================
+   FEATURED SERVICE CARDS
+   ======================================== */
+
+.featured-service-card {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 240px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    cursor: pointer;
+}
+
+.featured-service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+/* Card positioning */
+.card-web {
+    top: 50px;
+    right: 40px;
+}
+
+.card-design {
+    top: 250px;
+    right: 40px;
+}
+
+.card-ecommerce {
+    bottom: 100px;
+    right: 40px;
+}
+
+/* Card icon styling */
+.card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.card-web .card-icon {
+    background: linear-gradient(135deg, rgba(169, 96, 238, 0.15), rgba(122, 115, 255, 0.15));
+    color: var(--gradientColorZero);
+}
+
+.card-design .card-icon {
+    background: linear-gradient(135deg, rgba(0, 72, 229, 0.15), rgba(144, 224, 255, 0.15));
+    color: var(--blendIntersection);
+}
+
+.card-ecommerce .card-icon {
+    background: linear-gradient(135deg, rgba(255, 51, 61, 0.15), rgba(255, 203, 87, 0.15));
+    color: var(--gradientColorOne);
+}
+
+.featured-service-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--shadeFiveColor);
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* ========================================
+   PULSE ANIMATION FOR CARDS
+   ======================================== */
+
+@keyframes cardPulse {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(169, 96, 238, 0.25);
+    }
+}
+
+.featured-service-card {
+    animation: cardPulse 4s ease-in-out infinite;
+}
+
+.card-web {
+    animation-delay: 0s;
+}
+
+.card-design {
+    animation-delay: 1.3s;
+}
+
+.card-ecommerce {
+    animation-delay: 2.6s;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (768px - 1023px)
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .modular-solutions-section {
+        padding: 80px 24px;
+    }
+
+    .modular-solutions-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .modular-title {
+        font-size: 40px;
+    }
+
+    .modular-description {
+        font-size: 17px;
+        max-width: 100%;
+    }
+
+    .modular-visual {
+        height: 500px;
+    }
+
+    .featured-service-card {
+        min-width: 200px;
+        padding: 20px;
+    }
+
+    .card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-web {
+        top: 40px;
+        right: 20px;
+    }
+
+    .card-design {
+        top: 220px;
+        right: 20px;
+    }
+
+    .card-ecommerce {
+        bottom: 80px;
+        right: 20px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (320px - 767px)
+   ======================================== */
+
+@media (max-width: 767px) {
+    .modular-solutions-section {
+        padding: 60px 16px;
+    }
+
+    .modular-solutions-container {
+        gap: 40px;
+    }
+
+    .modular-label {
+        font-size: 14px;
+    }
+
+    .modular-title {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .modular-description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .modular-visual {
+        height: 400px;
+    }
+
+    /* Simplify visual for mobile */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 12px;
+    }
+
+    .connection-lines {
+        display: none;
+    }
+
+    .featured-service-card {
+        min-width: 160px;
+        padding: 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .card-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .card-title {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    /* Stack cards vertically on mobile */
+    .card-web {
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+
+    .card-design {
+        top: 160px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+
+    .card-ecommerce {
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+
+    /* Adjust hover effect for mobile */
+    .featured-service-card:hover {
+        transform: translateX(-50%) translateY(-4px) scale(1.02);
+    }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (< 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    .modular-solutions-section {
+        padding: 48px 16px;
+    }
+
+    .modular-title {
+        font-size: 28px;
+    }
+
+    .modular-description {
+        font-size: 15px;
+    }
+
+    .modular-visual {
+        height: 360px;
+    }
+
+    .featured-service-card {
+        min-width: 140px;
+        padding: 14px;
+    }
+
+    .card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .card-title {
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY FEATURES
+   ======================================== */
+
+/* Focus states for keyboard navigation */
+.featured-service-card:focus-visible {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 4px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .featured-service-card,
+    .service-card-placeholder,
+    .card-icon {
+        animation: none;
+        transition: none;
+    }
+
+    .connection-lines line {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+
+    .featured-service-card:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .featured-service-card {
+        border: 2px solid var(--shadeFiveColor);
+    }
+
+    .modular-title,
+    .card-title {
+        color: #000000;
+    }
+
+    .modular-description {
+        color: #333333;
+    }
+
+    .service-card-placeholder {
+        border-color: #000000;
+    }
+}
+
+/* Print styles */
+@media print {
+    .modular-solutions-section {
+        background: #ffffff;
+        page-break-inside: avoid;
+    }
+
+    .connection-lines,
+    .services-grid {
+        display: none;
+    }
+
+    .featured-service-card {
+        position: static;
+        display: inline-flex;
+        page-break-inside: avoid;
+    }
+}

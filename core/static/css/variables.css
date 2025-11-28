@@ -1,0 +1,16 @@
+/* Critical CSS Variables */
+:root {
+    --blendBackground: #80e9ff;
+    --blendIntersection: #0048e5;
+    --blendForeground: #7a73ff;
+    --gradientColorZero: #a960ee;
+    --gradientColorOne: #ff333d;
+    --gradientColorTwo: #90e0ff;
+    --gradientColorThree: #ffcb57;
+    --shadeOneColor: #02bcf5;
+    --shadeTwoColor: #0073e6;
+    --shadeThreeColor: #003ab9;
+    --shadeFourColor: #635bff;
+    --shadeFiveColor: #002c59;
+    --shadeSixColor: #09cbcb;
+}

@@ -1,0 +1,617 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}E-Commerce Solutions{% endblock %}
+{% block description %}Transform your retail business with our comprehensive e-commerce solutions. From custom shopping experiences to advanced analytics, we build platforms that drive sales and delight customers.{% endblock %}
+
+
+{% block content %}
+<!-- Hero Section -->
+<section class="ecom-hero-section">
+    <div class="ecom-hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="ecom-hero-container">
+        <div class="ecom-hero-content">
+            <!-- Badge -->
+            <div class="ecom-hero-badge" data-aos="fade-up">
+                <i class="fas fa-shopping-cart"></i>
+                <span>E-Commerce Expertise</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="ecom-hero-title" data-aos="fade-up" data-aos-delay="100">
+                Grow your retail business
+                <span class="gradient-text">online</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="ecom-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                We build e-commerce platforms that combine beautiful design with powerful 
+                functionality. From first click to final purchase, create experiences that convert.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="ecom-hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="#contact" class="ecom-btn-primary">
+                    Start Your Store
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#features" class="ecom-btn-secondary">
+                    Explore Features
+                </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="ecom-hero-trust" data-aos="fade-up" data-aos-delay="400">
+                <div class="trust-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>PCI Compliant</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-lock"></i>
+                    <span>SSL Secured</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Multi-Carrier Support</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual - Animated E-commerce Interface -->
+        <div class="ecom-hero-visual" data-aos="fade-left" data-aos-delay="200">
+            <!-- Product Card Animation -->
+            <div class="ecom-product-preview">
+                <div class="product-image">
+                    <div class="product-badge">Sale</div>
+                    <div class="product-heart">
+                        <i class="far fa-heart"></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.8</span>
+                    </div>
+                    <h3 class="product-name">Premium Product</h3>
+                    <div class="product-price">
+                        <span class="price-original">$199.00</span>
+                        <span class="price-current">$149.00</span>
+                    </div>
+                    <button class="product-add-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Floating Stats -->
+            <div class="floating-stat stat-1">
+                <i class="fas fa-arrow-up"></i>
+                <div class="stat-content">
+                    <span class="stat-value">+247%</span>
+                    <span class="stat-label">Sales Growth</span>
+                </div>
+            </div>
+
+            <div class="floating-stat stat-2">
+                <i class="fas fa-users"></i>
+                <div class="stat-content">
+                    <span class="stat-value">50K+</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+            </div>
+
+            <div class="floating-stat stat-3">
+                <i class="fas fa-chart-line"></i>
+                <div class="stat-content">
+                    <span class="stat-value">15.8%</span>
+                    <span class="stat-label">Conversion</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="ecom-stats-bar">
+    <div class="ecom-stats-container">
+        <div class="stat-block">
+            <span class="stat-number">$3M+</span>
+            <span class="stat-text">Processed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+            <span class="stat-number">500K+</span>
+            <span class="stat-text">Transactions</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+            <span class="stat-number">99.9%</span>
+            <span class="stat-text">Uptime</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-block">
+            <span class="stat-number">24/7</span>
+            <span class="stat-text">Support</span>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="ecom-features-section" id="features">
+    <div class="ecom-features-container">
+        <!-- Section Header -->
+        <div class="ecom-section-header">
+            <span class="section-label" data-aos="fade-up">Platform Features</span>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                Everything you need to sell online
+            </h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="200">
+                Our e-commerce platform combines powerful features with intuitive design, 
+                giving you all the tools to build a thriving online business.
+            </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="ecom-features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3 class="feature-title">Product Management</h3>
+                <p class="feature-description">
+                    Manage unlimited products with variants, inventory tracking, and bulk operations. 
+                    Import from CSV or connect to your existing systems.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Unlimited products & variants</li>
+                    <li><i class="fas fa-check"></i> Real-time inventory sync</li>
+                    <li><i class="fas fa-check"></i> Bulk editing & imports</li>
+                </ul>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3 class="feature-title">Payment Processing</h3>
+                <p class="feature-description">
+                    Accept payments globally with support for major cards, digital wallets, 
+                    and local payment methods. PCI compliant and secure.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> 135+ currencies supported</li>
+                    <li><i class="fas fa-check"></i> Apple Pay & Google Pay</li>
+                    <li><i class="fas fa-check"></i> Stripe, PayPal, Square</li>
+                </ul>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3 class="feature-title">Shipping & Fulfillment</h3>
+                <p class="feature-description">
+                    Integrate with major carriers for real-time rates, label printing, 
+                    and tracking. Automated fulfillment workflows.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Multi-carrier integration</li>
+                    <li><i class="fas fa-check"></i> Automated label printing</li>
+                    <li><i class="fas fa-check"></i> Real-time tracking</li>
+                </ul>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="feature-title">Mobile Commerce</h3>
+                <p class="feature-description">
+                    Responsive design that works beautifully on any device. Progressive Web App 
+                    support for app-like experiences.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Mobile-optimized checkout</li>
+                    <li><i class="fas fa-check"></i> Touch-friendly interface</li>
+                    <li><i class="fas fa-check"></i> PWA capabilities</li>
+                </ul>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3 class="feature-title">Analytics & Insights</h3>
+                <p class="feature-description">
+                    Understand your customers with detailed analytics, conversion tracking, 
+                    and actionable insights powered by AI.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Real-time dashboards</li>
+                    <li><i class="fas fa-check"></i> Customer behavior tracking</li>
+                    <li><i class="fas fa-check"></i> AI-powered recommendations</li>
+                </ul>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3 class="feature-title">Marketing Tools</h3>
+                <p class="feature-description">
+                    Built-in marketing tools including email campaigns, discount codes, 
+                    abandoned cart recovery, and SEO optimization.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Email marketing automation</li>
+                    <li><i class="fas fa-check"></i> Discount & promo codes</li>
+                    <li><i class="fas fa-check"></i> SEO-optimized pages</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Platform Showcase Section -->
+<section class="ecom-platform-section">
+    <div class="ecom-platform-container">
+        <!-- Left: Content -->
+        <div class="platform-content" data-aos="fade-right">
+            <span class="platform-label">Powerful Admin Dashboard</span>
+            <h2 class="platform-title">
+                Manage your entire business from one place
+            </h2>
+            <p class="platform-description">
+                Our intuitive admin dashboard gives you complete control over your e-commerce 
+                operations. Monitor sales, manage inventory, process orders, and analyze 
+                performance—all in real-time.
+            </p>
+            
+            <div class="platform-features">
+                <div class="platform-feature-item">
+                    <div class="platform-feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="platform-feature-content">
+                        <h4>Real-Time Monitoring</h4>
+                        <p>Track orders, inventory, and customer activity as it happens</p>
+                    </div>
+                </div>
+
+                <div class="platform-feature-item">
+                    <div class="platform-feature-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="platform-feature-content">
+                        <h4>Automation Rules</h4>
+                        <p>Set up workflows to automate repetitive tasks and save time</p>
+                    </div>
+                </div>
+
+                <div class="platform-feature-item">
+                    <div class="platform-feature-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div class="platform-feature-content">
+                        <h4>Team Management</h4>
+                        <p>Add team members with custom roles and permissions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Visual Dashboard Mockup -->
+        <div class="platform-visual" data-aos="fade-left">
+            <div class="dashboard-mockup">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header">
+                    <div class="dashboard-logo">Dashboard</div>
+                    <div class="dashboard-search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="dashboard-user">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+
+                <!-- Dashboard Stats -->
+                <div class="dashboard-stats">
+                    <div class="dashboard-stat-card">
+                        <div class="stat-icon revenue">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-label">Revenue</span>
+                            <span class="stat-value">$24,500</span>
+                            <span class="stat-change positive">+12.5%</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-stat-card">
+                        <div class="stat-icon orders">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-label">Orders</span>
+                            <span class="stat-value">1,247</span>
+                            <span class="stat-change positive">+8.2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Chart -->
+                <div class="dashboard-chart">
+                    <div class="chart-header">
+                        <span>Sales Overview</span>
+                        <span class="chart-period">Last 7 days</span>
+                    </div>
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 60%;"></div>
+                        <div class="chart-bar" style="height: 80%;"></div>
+                        <div class="chart-bar" style="height: 45%;"></div>
+                        <div class="chart-bar" style="height: 90%;"></div>
+                        <div class="chart-bar" style="height: 70%;"></div>
+                        <div class="chart-bar" style="height: 85%;"></div>
+                        <div class="chart-bar" style="height: 95%;"></div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="dashboard-orders">
+                    <div class="orders-header">Recent Orders</div>
+                    <div class="order-item">
+                        <div class="order-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="order-details">
+                            <span class="order-id">#ORD-1247</span>
+                            <span class="order-status processing">Processing</span>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="order-details">
+                            <span class="order-id">#ORD-1246</span>
+                            <span class="order-status shipped">Shipped</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Stack Section -->
+<section class="ecom-tech-section">
+    <div class="ecom-tech-container">
+        <div class="tech-header" data-aos="fade-up">
+            <span class="section-label">Technology Stack</span>
+            <h2 class="section-title">Built with modern, proven technologies</h2>
+            <p class="section-description">
+                We use industry-leading technologies to ensure your platform is fast, 
+                secure, and scalable.
+            </p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-card" data-aos="fade-up">
+                <i class="fab fa-python"></i>
+                <span>Django & Python</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="50">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-stripe"></i>
+                <span>Stripe</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="150">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-database"></i>
+                <span>PostgreSQL</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="250">
+                <i class="fas fa-server"></i>
+                <span>Redis</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Integration Section -->
+<section class="ecom-integration-section">
+    <div class="ecom-integration-container">
+        <div class="integration-content" data-aos="fade-left">
+            <span class="platform-label">Seamless Integrations</span>
+            <h2 class="platform-title">
+                Connect with the tools you already use
+            </h2>
+            <p class="platform-description">
+                Integrate with popular business tools, marketplaces, and services to create 
+                a unified commerce ecosystem. Our flexible API makes custom integrations easy.
+            </p>
+
+            <div class="integration-categories">
+                <div class="integration-category">
+                    <h4><i class="fas fa-store"></i> Marketplaces</h4>
+                    <p>Amazon, eBay, Etsy, Walmart</p>
+                </div>
+                <div class="integration-category">
+                    <h4><i class="fas fa-envelope"></i> Marketing</h4>
+                    <p>Mailchimp, Klaviyo, HubSpot</p>
+                </div>
+                <div class="integration-category">
+                    <h4><i class="fas fa-calculator"></i> Accounting</h4>
+                    <p>QuickBooks, Xero, FreshBooks</p>
+                </div>
+                <div class="integration-category">
+                    <h4><i class="fas fa-truck"></i> Shipping</h4>
+                    <p>FedEx, UPS, USPS, DHL</p>
+                </div>
+            </div>
+
+            <a href="#contact" class="integration-cta-btn">
+                View All Integrations
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="integration-visual" data-aos="fade-right">
+            <div class="integration-hub">
+                <div class="hub-center">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Your Store</span>
+                </div>
+                <div class="hub-connection connection-1">
+                    <div class="connection-dot"></div>
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fab fa-stripe"></i>
+                    </div>
+                </div>
+                <div class="hub-connection connection-2">
+                    <div class="connection-dot"></div>
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fab fa-mailchimp"></i>
+                    </div>
+                </div>
+                <div class="hub-connection connection-3">
+                    <div class="connection-dot"></div>
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fab fa-fedex"></i>
+                    </div>
+                </div>
+                <div class="hub-connection connection-4">
+                    <div class="connection-dot"></div>
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="ecom-pricing-section">
+    <div class="ecom-pricing-container">
+        <div class="pricing-header" data-aos="fade-up">
+            <span class="section-label">Transparent Pricing</span>
+            <h2 class="section-title">Choose the plan that fits your business</h2>
+            <p class="section-description">
+                Start small and scale as you grow. No hidden fees, no surprises.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Starter Plan -->
+            <div class="pricing-card" data-aos="fade-up">
+                <div class="pricing-header-card">
+                    <h3 class="pricing-plan-name">Starter</h3>
+                    <p class="pricing-plan-description">Perfect for small businesses</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Up to 100 products</li>
+                    <li><i class="fas fa-check"></i> Essential integrations</li>
+                    <li><i class="fas fa-check"></i> Mobile responsive</li>
+                    <li><i class="fas fa-check"></i> Basic analytics</li>
+                    <li><i class="fas fa-check"></i> Email support</li>
+                </ul>
+                <a href="{% url 'contact' %}" class="pricing-btn pricing-btn-secondary">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header-card">
+                    <h3 class="pricing-plan-name">Professional</h3>
+                    <p class="pricing-plan-description">For growing businesses</p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Unlimited products</li>
+                    <li><i class="fas fa-check"></i> All integrations</li>
+                    <li><i class="fas fa-check"></i> Advanced analytics</li>
+                    <li><i class="fas fa-check"></i> Multi-currency support</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                    <li><i class="fas fa-check"></i> Custom domain</li>
+                </ul>
+                <a href="{% url 'contact' %}" class="pricing-btn pricing-btn-primary">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-header-card">
+                    <h3 class="pricing-plan-name">Enterprise</h3>
+                    <p class="pricing-plan-description">For large-scale operations</p>
+                </div>
+                <div class="pricing-amount">
+                    <span class="pricing-price-custom">Custom</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Everything in Professional</li>
+                    <li><i class="fas fa-check"></i> Custom development</li>
+                    <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-check"></i> 24/7 phone support</li>
+                    <li><i class="fas fa-check"></i> SLA guarantee</li>
+                    <li><i class="fas fa-check"></i> White-label options</li>
+                </ul>
+                <a href="{% url 'contact' %}" class="pricing-btn pricing-btn-secondary">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="ecom-cta-section">
+    <div class="ecom-cta-container">
+        <div class="ecom-cta-content" data-aos="fade-up">
+            <h2 class="ecom-cta-title">Ready to transform your retail business?</h2>
+            <p class="ecom-cta-description">
+                Join hundreds of successful online stores powered by TovutiLab. 
+                Let's build something amazing together.
+            </p>
+            <div class="ecom-cta-actions">
+                <a href="{% url 'contact' %}" class="ecom-cta-btn-primary">
+                    Schedule a Demo
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="{% url 'services:services_list' %}" class="ecom-cta-btn-secondary">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

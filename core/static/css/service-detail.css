@@ -1,0 +1,1139 @@
+/* ========================================
+   SERVICE DETAIL PAGE STYLES
+   Stripe-Inspired Elegant Design
+   ======================================== */
+
+/* ========================================
+   BREADCRUMB NAVIGATION
+   ======================================== */
+
+   .breadcrumb-nav {
+    padding: 24px 0 16px;
+    background: #fafbfc;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.breadcrumb-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.breadcrumb-link {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+    color: var(--blendIntersection);
+}
+
+.breadcrumb-separator {
+    font-size: 10px;
+    color: #9ca3af;
+}
+
+.breadcrumb-current {
+    color: var(--shadeFiveColor);
+    font-weight: 500;
+}
+
+/* ========================================
+   SERVICE DETAIL SECTION
+   ======================================== */
+
+.service-detail-section {
+    padding: 48px 0 80px;
+    background: #ffffff;
+}
+
+.service-detail-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ========================================
+   MAIN CONTENT GRID
+   ======================================== */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 64px;
+    align-items: start;
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* ========================================
+   SERVICE HEADER
+   ======================================== */
+
+.service-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(0, 72, 229, 0.08);
+    border-radius: 100px;
+    color: var(--blendIntersection);
+    font-size: 14px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.category-badge i {
+    font-size: 16px;
+}
+
+.service-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--shadeFiveColor);
+    margin: 0;
+}
+
+.service-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+.meta-item i {
+    color: var(--blendIntersection);
+    font-size: 16px;
+}
+
+.service-intro {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* ========================================
+   SERVICE IMAGE
+   ======================================== */
+
+.service-image-wrapper {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.service-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================================
+   CONTENT SECTIONS
+   ======================================== */
+
+.section-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--shadeFiveColor);
+    margin: 0 0 24px 0;
+}
+
+.service-description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.description-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.description-content p {
+    margin: 0 0 16px 0;
+}
+
+.description-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   SERVICE FEATURES
+   ======================================== */
+
+.service-features {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: #fafbfc;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.feature-item:hover {
+    background: rgba(0, 72, 229, 0.04);
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gradientColorZero);
+    font-size: 18px;
+}
+
+.feature-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--shadeFiveColor);
+}
+
+/* ========================================
+   WHY CHOOSE US SECTION
+   ======================================== */
+
+.why-choose-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 48px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.benefit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(169, 96, 238, 0.1), rgba(255, 51, 61, 0.1));
+    border-radius: 12px;
+    color: var(--blendIntersection);
+    font-size: 24px;
+}
+
+.benefit-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--shadeFiveColor);
+    margin: 0;
+}
+
+.benefit-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ========================================
+   RELATED SERVICES
+   ======================================== */
+
+.related-services {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.related-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.related-service-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.related-service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 72, 229, 0.2);
+}
+
+.related-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.related-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-service-card:hover .related-image img {
+    transform: scale(1.05);
+}
+
+.related-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.related-category {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--blendIntersection);
+}
+
+.related-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--shadeFiveColor);
+    margin: 0;
+}
+
+.related-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+}
+
+.related-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blendIntersection);
+    margin-top: 8px;
+}
+
+.related-link i {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.related-service-card:hover .related-link i {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   SIDEBAR - STICKY INQUIRY FORM
+   ======================================== */
+
+.detail-sidebar {
+    position: relative;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ========================================
+   INQUIRY FORM CARD - THIN LIGHT BLUE BORDER
+   ======================================== */
+
+.inquiry-form-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 115, 230, 0.2);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(0, 115, 230, 0.08);
+}
+
+.form-header {
+    margin-bottom: 24px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--shadeFiveColor);
+    margin: 0 0 8px 0;
+}
+
+.form-subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--shadeFiveColor);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--shadeFiveColor);
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--blendIntersection);
+    box-shadow: 0 0 0 3px rgba(0, 72, 229, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+.form-error {
+    font-size: 13px;
+    color: #ef4444;
+    display: none;
+}
+
+.form-group.error .form-input,
+.form-group.error .form-select,
+.form-group.error .form-textarea {
+    border-color: #ef4444;
+}
+
+.form-group.error .form-error {
+    display: block;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+   ======================================== */
+
+.form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--gradientColorZero), var(--gradientColorOne));
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(169, 96, 238, 0.3);
+}
+
+.form-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(169, 96, 238, 0.4);
+}
+
+.form-submit-btn:active {
+    transform: translateY(0);
+}
+
+.form-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.form-submit-btn:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* ========================================
+   FORM NOTICES & MESSAGES
+   ======================================== */
+
+.form-notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.form-notice i {
+    color: var(--gradientColorZero);
+}
+
+.form-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-message.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.form-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* ========================================
+   CONTACT INFO CARD
+   ======================================== */
+
+.contact-info-card {
+    background: #fafbfc;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.contact-item i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 72, 229, 0.08);
+    border-radius: 8px;
+    color: var(--blendIntersection);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+}
+
+.contact-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--shadeFiveColor);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a.contact-value:hover {
+    color: var(--blendIntersection);
+}
+
+button.contact-value {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+}
+
+button.contact-value:hover {
+    color: var(--blendIntersection);
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+
+.service-cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--shadeFiveColor) 0%, var(--shadeThreeColor) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(169, 96, 238, 0.2), transparent);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.service-cta-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+}
+
+.cta-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+.cta-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cta-btn-primary,
+.cta-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-btn-primary {
+    background: #ffffff;
+    color: var(--shadeFiveColor);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn-primary i {
+    transition: transform 0.3s ease;
+}
+
+.cta-btn-primary:hover i {
+    transform: translateX(4px);
+}
+
+.cta-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.cta-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET (768px - 1023px)
+   ======================================== */
+
+@media (max-width: 1023px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .detail-sidebar {
+        order: -1;
+    }
+
+    .sidebar-sticky {
+        position: static;
+    }
+
+    .service-title {
+        font-size: 36px;
+    }
+
+    .section-heading {
+        font-size: 24px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .related-services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .service-cta-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .cta-content {
+        max-width: 100%;
+    }
+
+    .cta-title {
+        font-size: 32px;
+    }
+
+    .cta-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE (320px - 767px)
+   ======================================== */
+
+@media (max-width: 767px) {
+    .breadcrumb-nav {
+        padding: 16px 0 12px;
+    }
+
+    .breadcrumb-container {
+        padding: 0 16px;
+    }
+
+    .breadcrumb-list {
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .service-detail-section {
+        padding: 32px 0 64px;
+    }
+
+    .service-detail-container {
+        padding: 0 16px;
+    }
+
+    .detail-grid {
+        gap: 32px;
+    }
+
+    .detail-content {
+        gap: 32px;
+    }
+
+    .service-header {
+        gap: 12px;
+    }
+
+    .category-badge {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .service-title {
+        font-size: 28px;
+    }
+
+    .service-meta {
+        gap: 16px;
+    }
+
+    .meta-item {
+        font-size: 14px;
+    }
+
+    .service-intro {
+        font-size: 16px;
+    }
+
+    .service-image-wrapper {
+        border-radius: 12px;
+    }
+
+    .section-heading {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .description-content {
+        font-size: 15px;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .feature-item {
+        padding: 12px;
+    }
+
+    .why-choose-section {
+        gap: 24px;
+        padding: 32px 0;
+    }
+
+    .benefits-grid {
+        gap: 20px;
+    }
+
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .benefit-title {
+        font-size: 16px;
+    }
+
+    .benefit-description {
+        font-size: 13px;
+    }
+
+    .related-services {
+        gap: 24px;
+    }
+
+    .related-services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .related-image {
+        height: 160px;
+    }
+
+    .related-content {
+        padding: 16px;
+    }
+
+    .related-title {
+        font-size: 16px;
+    }
+
+    .inquiry-form-card {
+        padding: 24px;
+        border-radius: 12px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-subtitle {
+        font-size: 13px;
+    }
+
+    .inquiry-form {
+        gap: 16px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .form-submit-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    .contact-info-card {
+        padding: 20px;
+    }
+
+    .contact-item {
+        gap: 12px;
+    }
+
+    .contact-item i {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .contact-value {
+        font-size: 14px;
+    }
+
+    .service-cta-section {
+        padding: 48px 0;
+    }
+
+    .service-cta-container {
+        padding: 0 16px;
+        gap: 24px;
+    }
+
+    .cta-title {
+        font-size: 24px;
+    }
+
+    .cta-description {
+        font-size: 16px;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - SMALL MOBILE (< 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    .service-title {
+        font-size: 24px;
+    }
+
+    .section-heading {
+        font-size: 20px;
+    }
+
+    .inquiry-form-card {
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 18px;
+    }
+
+    .cta-title {
+        font-size: 22px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.form-input:focus-visible,
+.form-select:focus-visible,
+.form-textarea:focus-visible,
+.form-submit-btn:focus-visible,
+.cta-btn-primary:focus-visible,
+.cta-btn-secondary:focus-visible {
+    outline: 2px solid var(--blendIntersection);
+    outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .related-service-card,
+    .form-submit-btn,
+    .cta-btn-primary,
+    .cta-btn-secondary,
+    .related-image img,
+    .btn-icon,
+    .related-link i {
+        transition: none;
+    }
+
+    .related-service-card:hover,
+    .form-submit-btn:hover,
+    .cta-btn-primary:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .inquiry-form-card {
+        border: 2px solid var(--blendIntersection);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        border: 2px solid #000000;
+    }
+
+    .related-service-card {
+        border: 2px solid #000000;
+    }
+}
+
+/* Print styles */
+@media print {
+    .breadcrumb-nav,
+    .detail-sidebar,
+    .service-cta-section {
+        display: none;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-detail-section {
+        padding: 0;
+    }
+}

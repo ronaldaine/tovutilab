@@ -1,0 +1,287 @@
+{% load static %}
+<nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        {# Logo #}
+        <div class="nav-logo">
+            <a href="{% url 'home' %}" aria-label="TovutiLab Home">
+                <svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="24" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="currentColor">TovutiLab</text>
+                </svg>
+            </a>
+        </div>
+
+        {# Desktop Navigation #}
+        <div class="nav-links">
+            <div class="nav-item has-mega">
+                <button class="nav-link" aria-expanded="false" aria-haspopup="true" data-mega="services">
+                    Services
+                    <i class="fas fa-chevron-down nav-arrow"></i>
+                </button>
+            </div>
+
+            <div class="nav-item has-mega">
+                <button class="nav-link" aria-expanded="false" aria-haspopup="true" data-mega="solutions">
+                    Solutions
+                    <i class="fas fa-chevron-down nav-arrow"></i>
+                </button>
+            </div>
+
+            <div class="nav-item has-mega">
+                <button class="nav-link" aria-expanded="false" aria-haspopup="true" data-mega="developers">
+                    Developers
+                    <i class="fas fa-chevron-down nav-arrow"></i>
+                </button>
+            </div>
+
+            <div class="nav-item">
+                <a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a>
+            </div>
+
+            <div class="nav-item has-mega">
+                <button class="nav-link" aria-expanded="false" aria-haspopup="true" data-mega="company">
+                    Company
+                    <i class="fas fa-chevron-down nav-arrow"></i>
+                </button>
+            </div>
+        </div>
+
+        {# CTA Buttons #}
+        <div class="nav-actions">
+            <a href="#" class="nav-btn nav-btn-secondary">Support</a>
+            <a href="{% url 'contact' %}" class="nav-btn nav-btn-primary">Contact Sales</a>
+        </div>
+
+        {# Mobile Menu Toggle #}
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+
+    {# Mega Menu - Services #}
+    <div class="mega-menu" id="mega-services" role="menu" aria-label="Services menu">
+        <div class="mega-menu-container">
+            <div class="mega-menu-grid">
+                {% for category in service_categories|slice:":3" %}
+                <div class="mega-column">
+                    <h3 class="mega-title">{{ category.name }}</h3>
+                    <ul class="mega-list">
+                        {% for service in category.active_services|slice:":3" %}
+                        <li>
+                            <a href="{% url 'services:service_detail' service.slug %}" class="mega-link">
+                                <i class="{{ service.icon_class }}"></i>
+                                <div>
+                                    <strong>{{ service.title }}</strong>
+                                    <span>{{ service.short_description|truncatewords:8 }}</span>
+                                </div>
+                            </a>
+                        </li>
+                        {% endfor %}
+                        
+                        {# Link to view all services in category if more than 3 #}
+                        {% if category.active_services|length > 3 %}
+                        <li>
+                            <a href="{% url 'services:category_services' category.slug %}" class="mega-link">
+                                <i class="fas fa-arrow-right"></i>
+                                <div>
+                                    <strong>View all {{ category.name }}</strong>
+                                    <span>See {{ category.active_services|length }} services</span>
+                                </div>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% empty %}
+                {# Fallback if no categories exist #}
+                <div class="mega-column">
+                    <h3 class="mega-title">Services</h3>
+                    <ul class="mega-list">
+                        <li>
+                            <a href="{% url 'services:services_list' %}" class="mega-link">
+                                <i class="fas fa-list"></i>
+                                <div>
+                                    <strong>View All Services</strong>
+                                    <span>Explore our complete service catalog</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+    
+                {# Featured Service Card - Show first featured service #}
+                {% if featured_services %}
+                {% with featured_services.0 as featured_service %}
+                <div class="mega-column mega-featured">
+                    <h3 class="mega-title">Featured</h3>
+                    <div class="mega-card">
+                        <i class="{{ featured_service.icon_class }}"></i>
+                        <h4>{{ featured_service.title }}</h4>
+                        <p>{{ featured_service.short_description|truncatewords:15 }}</p>
+                        <a href="{% url 'services:service_detail' featured_service.slug %}" class="mega-card-link">Learn more →</a>
+                    </div>
+                </div>
+                {% endwith %}
+                {% else %}
+                {# Fallback if no featured service #}
+                <div class="mega-column mega-featured">
+                    <h3 class="mega-title">Featured</h3>
+                    <div class="mega-card">
+                        <i class="fas fa-star"></i>
+                        <h4>Enterprise Solutions</h4>
+                        <p>Custom platforms built for scale and performance</p>
+                        <a href="{% url 'services:services_list' %}" class="mega-card-link">Learn more →</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {# Mega Menu - Solutions #}
+    <div class="mega-menu" id="mega-solutions" role="menu" aria-label="Solutions menu">
+        <div class="mega-menu-container">
+            <div class="mega-menu-grid">
+                <div class="mega-column">
+                    <h3 class="mega-title">By Industry</h3>
+                    <ul class="mega-list">
+                        <li><a href="{% url 'ecommerce' %}" class="mega-link"><i class="fas fa-store"></i><div><strong>Retail & E-commerce</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-heartbeat"></i><div><strong>Healthcare</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-graduation-cap"></i><div><strong>Education</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-chart-pie"></i><div><strong>Finance</strong></div></a></li>
+                    </ul>
+                </div>
+
+                <div class="mega-column">
+                    <h3 class="mega-title">By Use Case</h3>
+                    <ul class="mega-list">
+                        <li><a href="#" class="mega-link"><i class="fas fa-globe"></i><div><strong>Corporate Websites</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-database"></i><div><strong>Data Platforms</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-comments"></i><div><strong>Social Platforms</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-cogs"></i><div><strong>SaaS Products</strong></div></a></li>
+                    </ul>
+                </div>
+
+                <div class="mega-column">
+                    <h3 class="mega-title">Resources</h3>
+                    <ul class="mega-list">
+                        <li><a href="#" class="mega-link"><i class="fas fa-book"></i><div><strong>Case Studies</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-file-alt"></i><div><strong>Whitepapers</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-video"></i><div><strong>Webinars</strong></div></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Mega Menu - Developers #}
+    <div class="mega-menu" id="mega-developers" role="menu" aria-label="Developers menu">
+        <div class="mega-menu-container">
+            <div class="mega-menu-grid">
+                <div class="mega-column">
+                    <h3 class="mega-title">Documentation</h3>
+                    <ul class="mega-list">
+                        <li><a href="#" class="mega-link"><i class="fas fa-book-open"></i><div><strong>API Reference</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-code"></i><div><strong>SDKs & Libraries</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-terminal"></i><div><strong>CLI Tools</strong></div></a></li>
+                    </ul>
+                </div>
+
+                <div class="mega-column">
+                    <h3 class="mega-title">Community</h3>
+                    <ul class="mega-list">
+                        <li><a href="#" class="mega-link"><i class="fab fa-github"></i><div><strong>Open Source</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-comments"></i><div><strong>Forums</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-blog"></i><div><strong>Tech Blog</strong></div></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Mega Menu - Company #}
+    <div class="mega-menu" id="mega-company" role="menu" aria-label="Company menu">
+        <div class="mega-menu-container">
+            <div class="mega-menu-grid">
+                <div class="mega-column">
+                    <h3 class="mega-title">About</h3>
+                    <ul class="mega-list">
+                        <li><a href="#" class="mega-link"><i class="fas fa-building"></i><div><strong>About Us</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-users"></i><div><strong>Team</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-briefcase"></i><div><strong>Careers</strong></div></a></li>
+                        <li><a href="#" class="mega-link"><i class="fas fa-newspaper"></i><div><strong>Press</strong></div></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Mobile Menu #}
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-item">
+                <button class="mobile-menu-link" data-mobile-section="services">
+                    Services <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="mobile-submenu" id="mobile-services">
+                    <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
+                    <a href="#">Custom Web Applications</a>
+                    <a href="#">E-commerce Platforms</a>
+                    <a href="#">Progressive Web Apps</a>
+                    <a href="#">UI/UX Design</a>
+                    <a href="#">Brand Identity</a>
+                    <a href="#">SEO & Marketing</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-item">
+                <button class="mobile-menu-link" data-mobile-section="solutions">
+                    Solutions <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="mobile-submenu" id="mobile-solutions">
+                    <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
+                    <a href="#">Retail & E-commerce</a>
+                    <a href="#">Healthcare</a>
+                    <a href="#">Education</a>
+                    <a href="#">Finance</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-item">
+                <button class="mobile-menu-link" data-mobile-section="developers">
+                    Developers <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="mobile-submenu" id="mobile-developers">
+                    <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
+                    <a href="#">API Reference</a>
+                    <a href="#">SDKs & Libraries</a>
+                    <a href="#">Open Source</a>
+                </div>
+            </div>
+
+            <a href="#" class="mobile-menu-link">Portfolio</a>
+
+            <div class="mobile-menu-item">
+                <button class="mobile-menu-link" data-mobile-section="company">
+                    Company <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="mobile-submenu" id="mobile-company">
+                    <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
+                    <a href="#">About Us</a>
+                    <a href="#">Team</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-actions">
+                <a href="#" class="mobile-btn mobile-btn-secondary">Contact Us</a>
+                <a href="#" class="mobile-btn mobile-btn-primary">Get a Quote</a>
+            </div>
+        </div>
+    </div>
+
+    {# Overlay for Mega Menus #}
+    <div class="nav-overlay"></div>
+</nav>

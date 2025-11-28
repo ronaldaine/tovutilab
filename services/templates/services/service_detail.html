@@ -1,0 +1,495 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ service.meta_title }}{% endblock %}
+{% block description %}{{ service.meta_description }}{% endblock %}
+
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" role="banner">
+    <!-- Animated Background -->
+    <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Badge -->
+            <div class="hero-badge" data-aos="fade-up">
+                <i class="fas fa-star"></i>
+                <span>Trusted by 500+ companies worldwide</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                {{ service.title }}
+                <span class="gradient-text">For Your Business</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                {{ service.short_description }}
+            </p>
+        </div>
+
+        <!-- Hero Visual (keeping your existing cards) -->
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+            <div class="visual-card card-1">
+                <div class="card-header">
+                    <div class="card-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="card-actions">
+                        <i class="{{ service.icon_class }}"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="code-line"></div>
+                    <div class="code-line short"></div>
+                    <div class="code-line"></div>
+                    <div class="code-line medium"></div>
+                    <div class="code-line"></div>
+                </div>
+            </div>
+
+            <div class="visual-card card-2">
+                <div class="card-metric">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="metric-data">
+                        <span class="metric-value">+247%</span>
+                        <span class="metric-label">Growth</span>
+                    </div>
+                </div>
+                <div class="sparkline">
+                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                        <polyline 
+                            points="0,25 20,20 40,15 60,10 80,5 100,0" 
+                            fill="none" 
+                            stroke="url(#sparklineGradient)" 
+                            stroke-width="2"
+                        />
+                        <defs>
+                            <linearGradient id="sparklineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#a960ee" />
+                                <stop offset="100%" stop-color="#ff333d" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="visual-card card-3">
+                <div class="card-icons">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-badge badge-1">
+                <i class="fas fa-rocket"></i>
+                <span>Fast Deploy</span>
+            </div>
+
+            <div class="floating-badge badge-2">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="500">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Service Detail Section -->
+<section class="service-detail-section">
+    <div class="service-detail-container">
+        <!-- Main Content Grid -->
+        <div class="detail-grid">
+            <!-- Left Column: Service Information -->
+            <div class="detail-content">
+                <!-- Service Header -->
+                <header class="service-header">
+                    <!-- Category Badge -->
+                    <div class="category-badge">
+                        <i class="{{ service.category.icon_class }}"></i>
+                        <span>{{ service.category.name }}</span>
+                    </div>
+
+                    <!-- Service Title -->
+                    <h2 class="service-title">{{ service.title }}</h2>
+
+                    <!-- Service Meta Info -->
+                    <div class="service-meta">
+                        {% if service.price_starting_at %}
+                        <div class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            <span>{{ service.get_price_display }}</span>
+                        </div>
+                        {% endif %}
+                        
+                        {% if service.delivery_time_days %}
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>{{ service.get_delivery_display }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Short Description -->
+                    <p class="service-intro">{{ service.short_description }}</p>
+                </header>
+
+                <!-- Service Image -->
+                <div class="service-image-wrapper">
+                    <img 
+                        src="{{ service.image_url }}" 
+                        alt="{{ service.title }}"
+                        class="service-image"
+                        loading="eager"
+                    >
+                </div>
+
+                <!-- Full Description -->
+                <div class="service-description">
+                    <h2 class="section-heading">What's Included</h2>
+                    <div class="description-content">
+                        {{ service.full_description|linebreaks }}
+                    </div>
+                </div>
+
+                <!-- Service Features -->
+                {% if service.features %}
+                <div class="service-features">
+                    <h2 class="section-heading">Key Features</h2>
+                    <ul class="features-list">
+                        {% for feature in service.features %}
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <span class="feature-text">{{ feature }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <!-- Why Choose Us -->
+                <div class="why-choose-section">
+                    <h2 class="section-heading">Why Choose Cascade Digital</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="benefit-title">Fast Delivery</h3>
+                            <p class="benefit-description">We deliver high-quality results within agreed timelines without compromising on quality.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="benefit-title">Proven Expertise</h3>
+                            <p class="benefit-description">15+ years of experience with 500+ successful projects across diverse industries.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="benefit-title">Dedicated Support</h3>
+                            <p class="benefit-description">24/7 support and ongoing maintenance to ensure your project's continued success.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Services -->
+                {% if related_services %}
+                <div class="related-services">
+                    <h2 class="section-heading">You May Also Like</h2>
+                    <div class="related-services-grid">
+                        {% for related in related_services %}
+                        <a href="{% url 'services:service_detail' slug=related.slug %}" class="related-service-card">
+                            <div class="related-image">
+                                <img src="{{ related.image_url }}" alt="{{ related.title }}" loading="lazy">
+                            </div>
+                            <div class="related-content">
+                                <span class="related-category">{{ related.category.name }}</span>
+                                <h3 class="related-title">{{ related.title }}</h3>
+                                <p class="related-description">{{ related.short_description|truncatewords:15 }}</p>
+                                <span class="related-link">
+                                    Learn more
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Right Column: Sticky Inquiry Form -->
+            <aside class="detail-sidebar">
+                <div class="sidebar-sticky">
+                    <!-- Service Inquiry Form -->
+                    <div class="inquiry-form-card">
+                        <div class="form-header">
+                            <h3 class="form-title">Get Started</h3>
+                            <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+                        </div>
+
+                        <form class="inquiry-form" id="serviceInquiryForm" method="post" action="{% url 'services:inquiry_submit' service_slug=service.slug %}" novalidate>
+                            {% csrf_token %}
+                            
+                            <!-- Honeypot field (hidden) -->
+                            {{ inquiry_form.website }}
+
+                            <!-- Full Name -->
+                            <div class="form-group {% if inquiry_form.full_name.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.full_name.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.full_name.label }}
+                                    {% if inquiry_form.full_name.field.required %}<span class="required">*</span>{% endif %}
+                                </label>
+                                {{ inquiry_form.full_name }}
+                                <span class="form-error">
+                                    {% if inquiry_form.full_name.errors %}
+                                        {{ inquiry_form.full_name.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group {% if inquiry_form.email.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.email.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.email.label }}
+                                    {% if inquiry_form.email.field.required %}<span class="required">*</span>{% endif %}
+                                </label>
+                                {{ inquiry_form.email }}
+                                <span class="form-error">
+                                    {% if inquiry_form.email.errors %}
+                                        {{ inquiry_form.email.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="form-group {% if inquiry_form.phone.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.phone.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.phone.label }}
+                                </label>
+                                {{ inquiry_form.phone }}
+                                <span class="form-error">
+                                    {% if inquiry_form.phone.errors %}
+                                        {{ inquiry_form.phone.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Company (Optional) -->
+                            <div class="form-group {% if inquiry_form.company.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.company.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.company.label }}
+                                </label>
+                                {{ inquiry_form.company }}
+                                <span class="form-error">
+                                    {% if inquiry_form.company.errors %}
+                                        {{ inquiry_form.company.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Project Type -->
+                            <div class="form-group {% if inquiry_form.project_type.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.project_type.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.project_type.label }}
+                                    {% if inquiry_form.project_type.field.required %}<span class="required">*</span>{% endif %}
+                                </label>
+                                {{ inquiry_form.project_type }}
+                                <span class="form-error">
+                                    {% if inquiry_form.project_type.errors %}
+                                        {{ inquiry_form.project_type.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Budget Range -->
+                            <div class="form-group {% if inquiry_form.budget_range.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.budget_range.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.budget_range.label }}
+                                    {% if inquiry_form.budget_range.field.required %}<span class="required">*</span>{% endif %}
+                                </label>
+                                {{ inquiry_form.budget_range }}
+                                <span class="form-error">
+                                    {% if inquiry_form.budget_range.errors %}
+                                        {{ inquiry_form.budget_range.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="form-group {% if inquiry_form.timeline.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.timeline.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.timeline.label }}
+                                    {% if inquiry_form.timeline.field.required %}<span class="required">*</span>{% endif %}
+                                </label>
+                                {{ inquiry_form.timeline }}
+                                <span class="form-error">
+                                    {% if inquiry_form.timeline.errors %}
+                                        {{ inquiry_form.timeline.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Project Description -->
+                            <div class="form-group {% if inquiry_form.project_description.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.project_description.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.project_description.label }}
+                                    {% if inquiry_form.project_description.field.required %}<span class="required">*</span>{% endif %}
+                                </label>
+                                {{ inquiry_form.project_description }}
+                                <span class="form-error">
+                                    {% if inquiry_form.project_description.errors %}
+                                        {{ inquiry_form.project_description.errors.0 }}
+                                    {% endif %}
+                                </span>
+                                {% if inquiry_form.project_description.help_text %}
+                                <span class="form-help">{{ inquiry_form.project_description.help_text }}</span>
+                                {% endif %}
+                            </div>
+
+                            <!-- Reference URL (Optional) -->
+                            <div class="form-group {% if inquiry_form.reference_url.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.reference_url.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.reference_url.label }}
+                                </label>
+                                {{ inquiry_form.reference_url }}
+                                <span class="form-error">
+                                    {% if inquiry_form.reference_url.errors %}
+                                        {{ inquiry_form.reference_url.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Additional Notes (Optional) -->
+                            <div class="form-group {% if inquiry_form.additional_notes.errors %}error{% endif %}">
+                                <label for="{{ inquiry_form.additional_notes.id_for_label }}" class="form-label">
+                                    {{ inquiry_form.additional_notes.label }}
+                                </label>
+                                {{ inquiry_form.additional_notes }}
+                                <span class="form-error">
+                                    {% if inquiry_form.additional_notes.errors %}
+                                        {{ inquiry_form.additional_notes.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Terms Acceptance -->
+                            <div class="form-group checkbox-group {% if inquiry_form.accept_terms.errors %}error{% endif %}">
+                                <label class="checkbox-label">
+                                    {{ inquiry_form.accept_terms }}
+                                    <span>{{ inquiry_form.accept_terms.label }}</span>
+                                </label>
+                                <span class="form-error">
+                                    {% if inquiry_form.accept_terms.errors %}
+                                        {{ inquiry_form.accept_terms.errors.0 }}
+                                    {% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="form-submit-btn">
+                                <span class="btn-text">Send Inquiry</span>
+                                <i class="fas fa-paper-plane btn-icon"></i>
+                            </button>
+
+                            <!-- Privacy Notice -->
+                            <p class="form-notice">
+                                <i class="fas fa-lock"></i>
+                                Your information is secure and will never be shared
+                            </p>
+
+                            <!-- Success/Error Message -->
+                            <div class="form-message" id="formMessage" style="display: none;"></div>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info Card -->
+                    <div class="contact-info-card">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Call Us</span>
+                                <a href="tel:+254701310224" class="contact-value">+254 701-310-224</a>
+                            </div>
+                        </div>
+                         <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Call Us</span>
+                                <a href="tel:+256786342199" class="contact-value">+256 786-342-199</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Email Us</span>
+                                <a href="mailto:sales@cascadedigital.com" class="contact-value">sales@tovutilab.co.ke</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-comments"></i>
+                            <div class="contact-details">
+                                <span class="contact-label">Live Chat</span>
+                                <button class="contact-value chat-trigger">Start a conversation</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="service-cta-section">
+    <div class="service-cta-container">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to get started?</h2>
+            <p class="cta-description">Let's discuss how we can help bring your project to life</p>
+        </div>
+        <div class="cta-actions">
+            <a href="#serviceInquiryForm" class="cta-btn-primary">
+                Request a Quote
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="{% url 'home' %}" class="cta-btn-secondary">
+                View All Services
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
