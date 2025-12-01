@@ -11,148 +11,194 @@
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section" role="banner">
-    <!-- Animated Background -->
+    <!-- Refined Gradient Background -->
     <div class="hero-background">
+        <div class="gradient-mesh"></div>
         <div class="gradient-orb orb-1"></div>
         <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
     </div>
 
     <!-- Hero Content -->
     <div class="hero-container">
         <div class="hero-content">
-            <!-- Badge -->
+            <!-- Trust Badge -->
             <div class="hero-badge" data-aos="fade-up">
-                <i class="fas fa-star"></i>
+                <svg class="badge-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 0L10.5 5.5L16 6.5L12 10.5L13 16L8 13L3 16L4 10.5L0 6.5L5.5 5.5L8 0Z" fill="url(#starGradient)"/>
+                    <defs>
+                        <linearGradient id="starGradient" x1="0" y1="0" x2="16" y2="16">
+                            <stop offset="0%" stop-color="#635bff"/>
+                            <stop offset="100%" stop-color="#0073e6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
                 <span>Trusted by 500+ companies worldwide</span>
             </div>
 
             <!-- Main Heading -->
             <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                Build the future of
-                <span class="gradient-text">digital experiences</span>
+                Digital infrastructure
+                <br />
+                <span class="gradient-text-refined">for modern businesses</span>
             </h1>
 
             <!-- Subheading -->
             <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                Transform your business with cutting-edge web applications, stunning designs, 
-                and innovative solutions that drive real results.
+                Millions of businesses of all sizes—from startups to Fortune 500s—use TovutiLab's software and services to build powerful web applications, manage digital operations, and scale their online presence.
             </p>
 
             <!-- CTA Buttons -->
             <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
-                <a href="#" class="hero-btn hero-btn-primary">
-                    Start Your Project
-                    <i class="fas fa-arrow-right"></i>
+                <a href="{% url 'contact' %}" class="hero-btn hero-btn-primary">
+                    <span>Start now</span>
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                 </a>
-                <a href="#" class="hero-btn hero-btn-secondary">
-                    <i class="fas fa-play-circle"></i>
-                    View Our Work
+                <a href="{% url 'contact' %}" class="hero-btn hero-btn-secondary">
+                    <span>Contact sales</span>
+                    <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                 </a>
             </div>
 
-            <!-- Social Proof -->
-            <div class="hero-proof" data-aos="fade-up" data-aos-delay="400">
-                <div class="proof-stats">
-                    <div class="proof-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>500+</strong> Projects Delivered</span>
-                    </div>
-                    <div class="proof-item">
-                        <i class="fas fa-users"></i>
-                        <span><strong>98%</strong> Client Satisfaction</span>
-                    </div>
-                    <div class="proof-item">
-                        <i class="fas fa-award"></i>
-                        <span><strong>50+</strong> Industry Awards</span>
-                    </div>
+            <!-- Feature Pills -->
+            <div class="hero-features" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-pill">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Custom development</span>
+                </div>
+                <div class="feature-pill">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10H17M10 3L10 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Global scale</span>
+                </div>
+                <div class="feature-pill">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <rect x="4" y="4" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Production-ready</span>
                 </div>
             </div>
         </div>
 
-        <!-- Hero Visual -->
-        <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
-            <div class="visual-card card-1">
-                <div class="card-header">
-                    <div class="card-dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+        <!-- Hero Visual - Refined Payment UI -->
+        <div class="hero-visual" data-aos="fade-up" data-aos-delay="200">
+            <!-- Main Dashboard Card -->
+            <div class="dashboard-card">
+                <!-- Card Header -->
+                <div class="dashboard-header">
+                    <div class="dashboard-title">
+                        <div class="title-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M2 8H18" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <span>Project analytics</span>
                     </div>
-                    <div class="card-actions">
-                        <i class="fas fa-code"></i>
-                    </div>
+                    <div class="dashboard-period">Last 30 days</div>
                 </div>
-                <div class="card-content">
-                    <div class="code-line"></div>
-                    <div class="code-line short"></div>
-                    <div class="code-line"></div>
-                    <div class="code-line medium"></div>
-                    <div class="code-line"></div>
-                </div>
-            </div>
 
-            <div class="visual-card card-2">
-                <div class="card-metric">
-                    <i class="fas fa-chart-line"></i>
-                    <div class="metric-data">
-                        <span class="metric-value">+247%</span>
-                        <span class="metric-label">Growth</span>
+                <!-- Revenue Display -->
+                <div class="revenue-display">
+                    <div class="revenue-label">Total value delivered</div>
+                    <div class="revenue-amount">$2,847,392</div>
+                    <div class="revenue-change positive">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>+12.5% from last month</span>
                     </div>
                 </div>
-                <div class="sparkline">
-                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
-                        <polyline 
-                            points="0,25 20,20 40,15 60,10 80,5 100,0" 
-                            fill="none" 
-                            stroke="url(#sparklineGradient)" 
-                            stroke-width="2"
-                        />
+
+                <!-- Chart Area -->
+                <div class="chart-area">
+                    <svg class="revenue-chart" viewBox="0 0 400 120" preserveAspectRatio="none">
+                        <!-- Grid lines -->
+                        <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(99, 91, 255, 0.1)" stroke-width="1"/>
+                        <line x1="0" y1="60" x2="400" y2="60" stroke="rgba(99, 91, 255, 0.1)" stroke-width="1"/>
+                        <line x1="0" y1="90" x2="400" y2="90" stroke="rgba(99, 91, 255, 0.1)" stroke-width="1"/>
+
+                        <!-- Area fill -->
+                        <path d="M0,100 L40,85 L80,75 L120,80 L160,60 L200,55 L240,45 L280,50 L320,35 L360,30 L400,25 L400,120 L0,120 Z"
+                              fill="url(#chartGradient)" opacity="0.3"/>
+
+                        <!-- Line -->
+                        <path d="M0,100 L40,85 L80,75 L120,80 L160,60 L200,55 L240,45 L280,50 L320,35 L360,30 L400,25"
+                              fill="none" stroke="url(#lineGradient)" stroke-width="3" stroke-linecap="round"/>
+
+                        <!-- Dots -->
+                        <circle cx="200" cy="55" r="5" fill="white" stroke="url(#lineGradient)" stroke-width="3"/>
+
                         <defs>
-                            <linearGradient id="sparklineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#a960ee" />
-                                <stop offset="100%" stop-color="#ff333d" />
+                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#635bff"/>
+                                <stop offset="100%" stop-color="#635bff" stop-opacity="0"/>
+                            </linearGradient>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#0073e6"/>
+                                <stop offset="50%" stop-color="#635bff"/>
+                                <stop offset="100%" stop-color="#a960ee"/>
                             </linearGradient>
                         </defs>
                     </svg>
                 </div>
-            </div>
 
-            <div class="visual-card card-3">
-                <div class="card-icons">
-                    <div class="tech-icon">
-                        <i class="fab fa-react"></i>
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">Projects</div>
+                        <div class="stat-value">1,234</div>
                     </div>
-                    <div class="tech-icon">
-                        <i class="fab fa-python"></i>
+                    <div class="stat-item">
+                        <div class="stat-label">Success rate</div>
+                        <div class="stat-value">99.2%</div>
                     </div>
-                    <div class="tech-icon">
-                        <i class="fab fa-node-js"></i>
-                    </div>
-                    <div class="tech-icon">
-                        <i class="fas fa-database"></i>
+                    <div class="stat-item">
+                        <div class="stat-label">Clients</div>
+                        <div class="stat-value">847</div>
                     </div>
                 </div>
             </div>
 
-            <div class="floating-badge badge-1">
-                <i class="fas fa-rocket"></i>
-                <span>Fast Deploy</span>
+            <!-- Floating Transaction Card -->
+            <div class="transaction-card">
+                <div class="transaction-header">
+                    <div class="transaction-icon success">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 8L7 11L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="transaction-details">
+                        <div class="transaction-name">Project deployed</div>
+                        <div class="transaction-time">2 minutes ago</div>
+                    </div>
+                    <div class="transaction-amount">Live</div>
+                </div>
             </div>
 
-            <div class="floating-badge badge-2">
-                <i class="fas fa-shield-alt"></i>
-                <span>Secure</span>
+            <!-- Floating Security Badge -->
+            <div class="security-badge">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2L3 5V9C3 13.5 6 17.5 10 18C14 17.5 17 13.5 17 9V5L10 2Z" stroke="url(#shieldGradient)" stroke-width="1.5" fill="none"/>
+                    <path d="M7 10L9 12L13 8" stroke="url(#shieldGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#0073e6"/>
+                            <stop offset="100%" stop-color="#635bff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>PCI Compliant</span>
             </div>
-        </div>
-    </div>
-
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="500">
-        <span>Scroll to explore</span>
-        <div class="scroll-arrow">
-            <i class="fas fa-chevron-down"></i>
         </div>
     </div>
 </section>

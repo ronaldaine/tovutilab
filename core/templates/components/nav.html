@@ -148,8 +148,8 @@
                     <h3 class="mega-title">By Industry</h3>
                     <ul class="mega-list">
                         <li><a href="{% url 'ecommerce' %}" class="mega-link"><i class="fas fa-store"></i><div><strong>Retail & E-commerce</strong></div></a></li>
-                        <li><a href="#" class="mega-link"><i class="fas fa-heartbeat"></i><div><strong>Healthcare</strong></div></a></li>
-                        <li><a href="#" class="mega-link"><i class="fas fa-graduation-cap"></i><div><strong>Education</strong></div></a></li>
+                        <li><a href="{% url 'healthcare' %}" class="mega-link"><i class="fas fa-heartbeat"></i><div><strong>Healthcare</strong></div></a></li>
+                        <li><a href="{% url 'education' %}" class="mega-link"><i class="fas fa-graduation-cap"></i><div><strong>Education</strong></div></a></li>
                         <li><a href="#" class="mega-link"><i class="fas fa-chart-pie"></i><div><strong>Finance</strong></div></a></li>
                     </ul>
                 </div>
@@ -227,12 +227,19 @@
                 </button>
                 <div class="mobile-submenu" id="mobile-services">
                     <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
-                    <a href="#">Custom Web Applications</a>
-                    <a href="#">E-commerce Platforms</a>
-                    <a href="#">Progressive Web Apps</a>
-                    <a href="#">UI/UX Design</a>
-                    <a href="#">Brand Identity</a>
-                    <a href="#">SEO & Marketing</a>
+                    {% for category in service_categories %}
+                        {% if category.active_services %}
+                            <div class="mobile-submenu-category">
+                                <h4>{{ category.name }}</h4>
+                                {% for service in category.active_services %}
+                                    <a href="{% url 'services:service_detail' service.slug %}">{{ service.title }}</a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <a href="{% url 'services:services_list' %}" class="mobile-submenu-view-all">
+                        View All Services <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -242,9 +249,9 @@
                 </button>
                 <div class="mobile-submenu" id="mobile-solutions">
                     <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
-                    <a href="#">Retail & E-commerce</a>
+                    <a href="{% url 'ecommerce' %}">Retail & E-commerce</a>
                     <a href="#">Healthcare</a>
-                    <a href="#">Education</a>
+                    <a href="{% url 'education' %}">Education</a>
                     <a href="#">Finance</a>
                 </div>
             </div>
@@ -261,7 +268,7 @@
                 </div>
             </div>
 
-            <a href="#" class="mobile-menu-link">Portfolio</a>
+            <a href="{% url 'portfolio' %}" class="mobile-menu-link">Portfolio</a>
 
             <div class="mobile-menu-item">
                 <button class="mobile-menu-link" data-mobile-section="company">
@@ -276,7 +283,7 @@
             </div>
 
             <div class="mobile-menu-actions">
-                <a href="#" class="mobile-btn mobile-btn-secondary">Contact Us</a>
+                <a href="{% url 'contact' %}" class="mobile-btn mobile-btn-secondary">Contact Us</a>
                 <a href="#" class="mobile-btn mobile-btn-primary">Get a Quote</a>
             </div>
         </div>

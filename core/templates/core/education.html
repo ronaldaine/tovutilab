@@ -1,0 +1,534 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Education Solutions | Modern Learning Platforms{% endblock %}
+{% block description %}Empower the next generation with modern learning platforms. Build engaging, scalable educational web applications that inspire students and simplify teaching.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/education.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="edu-hero-section">
+    <div class="edu-hero-background">
+        <div class="floating-particle particle-1"></div>
+        <div class="floating-particle particle-2"></div>
+        <div class="floating-particle particle-3"></div>
+        <div class="floating-particle particle-4"></div>
+    </div>
+
+    <div class="edu-hero-container">
+        <div class="edu-hero-content">
+            <!-- Badge -->
+            <div class="edu-hero-badge" data-aos="fade-up">
+                <i class="fas fa-book-reader"></i>
+                <span>Education Technology</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="edu-hero-title" data-aos="fade-up" data-aos-delay="100">
+                Empower the next generation with
+                <span class="gradient-text">modern learning platforms</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="edu-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Build engaging, scalable educational web applications that inspire students
+                and simplify teaching. From K-12 to higher education.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="edu-hero-actions" data-aos="fade-up" data-aos-delay="300">
+                <a href="{% url 'contact' %}" class="edu-btn-primary">
+                    Schedule a Demo
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#solutions" class="edu-btn-secondary">
+                    View Solutions
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Bar / Stats Section -->
+<section class="edu-stats-section">
+    <div class="edu-stats-container">
+        <div class="stat-item" data-aos="fade-up">
+            <span class="stat-number">500K+</span>
+            <span class="stat-label">Students Reached</span>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Schools & Universities</span>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">User Satisfaction</span>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
+        </div>
+    </div>
+</section>
+
+<!-- Solutions Overview Section -->
+<section class="edu-solutions-section" id="solutions">
+    <div class="edu-solutions-container">
+        <!-- Section Header -->
+        <div class="edu-section-header">
+            <span class="section-label" data-aos="fade-up">Our Solutions</span>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                Complete educational technology platform
+            </h2>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="200">
+                Everything you need to deliver exceptional learning experiences,
+                from classroom management to advanced analytics.
+            </p>
+        </div>
+
+        <!-- Solutions Grid -->
+        <div class="edu-solutions-grid">
+            <!-- Solution 1 -->
+            <div class="solution-card" data-aos="fade-up">
+                <div class="solution-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="solution-title">Learning Management Systems</h3>
+                <p class="solution-description">
+                    Complete LMS platforms with course management, assignments, grading, and analytics.
+                </p>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="solution-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3 class="solution-title">Virtual Classrooms</h3>
+                <p class="solution-description">
+                    Real-time video integration, screen sharing, breakout rooms, and interactive whiteboard.
+                </p>
+            </div>
+
+            <!-- Solution 3 -->
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="solution-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="solution-title">Student Portals</h3>
+                <p class="solution-description">
+                    Centralized dashboards for assignments, grades, schedules, and communication.
+                </p>
+            </div>
+
+            <!-- Solution 4 -->
+            <div class="solution-card" data-aos="fade-up">
+                <div class="solution-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 class="solution-title">Assessment & Testing</h3>
+                <p class="solution-description">
+                    Online quizzes, exams, auto-grading, plagiarism detection, and performance analytics.
+                </p>
+            </div>
+
+            <!-- Solution 5 -->
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="solution-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="solution-title">Parent Communication</h3>
+                <p class="solution-description">
+                    Real-time updates, progress reports, messaging, and event notifications.
+                </p>
+            </div>
+
+            <!-- Solution 6 -->
+            <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="solution-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="solution-title">Admin Dashboards</h3>
+                <p class="solution-description">
+                    Enrollment management, attendance tracking, reporting, and financial administration.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feature Showcase Section -->
+<section class="edu-feature-section">
+    <div class="edu-feature-container">
+        <!-- Content -->
+        <div class="feature-content" data-aos="fade-right">
+            <span class="feature-label">Platform Features</span>
+            <h2 class="feature-title">Everything educators need in one platform</h2>
+            <p class="feature-description">
+                Our comprehensive platform brings together all the tools you need to deliver
+                exceptional education experiences.
+            </p>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-item-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="feature-item-content">
+                        <h4>Interactive Course Builder</h4>
+                        <p>Drag-and-drop curriculum design with rich media support</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-item-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-item-content">
+                        <h4>Real-Time Collaboration</h4>
+                        <p>Simultaneous editing, comments, and discussions</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-item-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="feature-item-content">
+                        <h4>Advanced Analytics</h4>
+                        <p>Student progress, engagement metrics, predictive insights</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-item-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-item-content">
+                        <h4>Mobile-First Access</h4>
+                        <p>Responsive design, native app feel, offline capabilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="feature-visual" data-aos="fade-left">
+            <div class="lms-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-title">Learning Dashboard</div>
+                    <div class="mockup-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+
+                <div class="mockup-courses">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="course-details">
+                            <h5>Mathematics 101</h5>
+                            <div class="course-progress">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                            </div>
+                            <span class="progress-text">75% Complete</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="course-details">
+                            <h5>Chemistry Lab</h5>
+                            <div class="course-progress">
+                                <div class="progress-bar" style="width: 60%;"></div>
+                            </div>
+                            <span class="progress-text">60% Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mockup-assignments">
+                    <div class="assignment-header">Upcoming Assignments</div>
+                    <div class="assignment-item">
+                        <div class="assignment-info">
+                            <span class="assignment-name">Essay: Modern Literature</span>
+                            <span class="assignment-due">Due in 2 days</span>
+                        </div>
+                        <span class="assignment-status pending">Pending</span>
+                    </div>
+                    <div class="assignment-item">
+                        <div class="assignment-info">
+                            <span class="assignment-name">Math Quiz: Chapter 5</span>
+                            <span class="assignment-due">Due tomorrow</span>
+                        </div>
+                        <span class="assignment-status urgent">Urgent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Stack Section -->
+<section class="edu-tech-section">
+    <div class="edu-tech-container">
+        <div class="tech-header" data-aos="fade-up">
+            <span class="section-label">Technology Stack</span>
+            <h2 class="section-title">Built with proven, scalable technologies</h2>
+            <p class="section-description">
+                We use industry-leading technologies to ensure your platform is fast,
+                secure, and ready to scale.
+            </p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-card" data-aos="fade-up">
+                <i class="fab fa-python"></i>
+                <span>Django & Python</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="50">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-database"></i>
+                <span>PostgreSQL</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="150">
+                <i class="fas fa-server"></i>
+                <span>Redis</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-video"></i>
+                <span>WebRTC</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="250">
+                <i class="fab fa-aws"></i>
+                <span>AWS Cloud</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Use Cases Section -->
+<section class="edu-usecases-section">
+    <div class="edu-usecases-container">
+        <div class="usecases-header" data-aos="fade-up">
+            <span class="section-label">Use Cases</span>
+            <h2 class="section-title">Built for every educational need</h2>
+        </div>
+
+        <div class="usecases-grid">
+            <div class="usecase-card" data-aos="fade-up">
+                <div class="usecase-icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <h3>K-12 Schools</h3>
+                <p>Classroom management, parent portals, attendance tracking, and student progress monitoring.</p>
+            </div>
+
+            <div class="usecase-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="usecase-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Higher Education</h3>
+                <p>Course registration, research collaboration, alumni networks, and campus-wide systems.</p>
+            </div>
+
+            <div class="usecase-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="usecase-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Online Course Providers</h3>
+                <p>Content delivery, subscription management, certificates, and student engagement tools.</p>
+            </div>
+
+            <div class="usecase-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="usecase-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Corporate Training</h3>
+                <p>Employee onboarding, compliance training, skill development, and performance tracking.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Integration Section -->
+<section class="edu-integration-section">
+    <div class="edu-integration-container">
+        <div class="integration-content" data-aos="fade-right">
+            <span class="integration-label">Seamless Integrations</span>
+            <h2 class="integration-title">Connect with your existing tools</h2>
+            <p class="integration-description">
+                Integrate with popular educational platforms and tools to create a unified
+                learning ecosystem. Our flexible API makes custom integrations easy.
+            </p>
+
+            <div class="integration-list">
+                <div class="integration-category">
+                    <h4><i class="fab fa-google"></i> Google Ecosystem</h4>
+                    <p>Classroom, Drive, Meet, Calendar</p>
+                </div>
+                <div class="integration-category">
+                    <h4><i class="fab fa-microsoft"></i> Microsoft 365</h4>
+                    <p>Teams, OneDrive, Office Suite</p>
+                </div>
+                <div class="integration-category">
+                    <h4><i class="fas fa-video"></i> Video Platforms</h4>
+                    <p>Zoom, WebEx, Google Meet</p>
+                </div>
+                <div class="integration-category">
+                    <h4><i class="fas fa-graduation-cap"></i> LMS Platforms</h4>
+                    <p>Canvas, Moodle, Blackboard</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="integration-visual" data-aos="fade-left">
+            <div class="integration-hub">
+                <div class="hub-center">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Your Platform</span>
+                </div>
+                <div class="hub-connection connection-1">
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                </div>
+                <div class="hub-connection connection-2">
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                </div>
+                <div class="hub-connection connection-3">
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                </div>
+                <div class="hub-connection connection-4">
+                    <div class="connection-line"></div>
+                    <div class="connection-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="edu-pricing-section">
+    <div class="edu-pricing-container">
+        <div class="pricing-header" data-aos="fade-up">
+            <span class="section-label">Transparent Pricing</span>
+            <h2 class="section-title">Choose the plan that fits your institution</h2>
+            <p class="section-description">
+                Scalable pricing that grows with you. No hidden fees, no surprises.
+            </p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Starter Plan -->
+            <div class="pricing-card" data-aos="fade-up">
+                <h3 class="pricing-plan-name">Starter</h3>
+                <p class="pricing-plan-description">Perfect for small schools</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Up to 500 students</li>
+                    <li><i class="fas fa-check"></i> Basic LMS features</li>
+                    <li><i class="fas fa-check"></i> Email support</li>
+                    <li><i class="fas fa-check"></i> 10 GB storage</li>
+                    <li><i class="fas fa-check"></i> Mobile apps</li>
+                </ul>
+                <a href="{% url 'contact' %}" class="pricing-btn">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Professional Plan -->
+            <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="100">
+                <div class="pricing-badge">Most Popular</div>
+                <h3 class="pricing-plan-name">Professional</h3>
+                <p class="pricing-plan-description">For growing institutions</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Up to 5,000 students</li>
+                    <li><i class="fas fa-check"></i> Advanced analytics</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                    <li><i class="fas fa-check"></i> 100 GB storage</li>
+                    <li><i class="fas fa-check"></i> All integrations</li>
+                    <li><i class="fas fa-check"></i> Custom branding</li>
+                </ul>
+                <a href="{% url 'contact' %}" class="pricing-btn primary">
+                    Get Started
+                </a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="pricing-plan-name">Enterprise</h3>
+                <p class="pricing-plan-description">For large universities & districts</p>
+                <div class="pricing-amount">
+                    <span class="pricing-price-custom">Custom</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Unlimited students</li>
+                    <li><i class="fas fa-check"></i> Custom development</li>
+                    <li><i class="fas fa-check"></i> Dedicated support</li>
+                    <li><i class="fas fa-check"></i> Unlimited storage</li>
+                    <li><i class="fas fa-check"></i> SLA guarantee</li>
+                    <li><i class="fas fa-check"></i> On-premise deployment</li>
+                </ul>
+                <a href="{% url 'contact' %}" class="pricing-btn">
+                    Contact Sales
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="edu-cta-section">
+    <div class="edu-cta-container">
+        <div class="edu-cta-content" data-aos="fade-up">
+            <h2 class="edu-cta-title">Ready to transform education with technology?</h2>
+            <p class="edu-cta-description">
+                Join hundreds of educational institutions using TovutiLab's platforms to
+                deliver exceptional learning experiences.
+            </p>
+            <div class="edu-cta-actions">
+                <a href="{% url 'contact' %}" class="edu-cta-btn-primary">
+                    Get Started Today
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="{% url 'services:services_list' %}" class="edu-cta-btn-secondary">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100
+    });
+</script>
+{% endblock %}

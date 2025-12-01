@@ -247,3 +247,14 @@ def send_contact_notifications(request, inquiry):
     client_email.send(fail_silently=False)
     
     logger.info(f"Contact notifications sent for inquiry {inquiry.id}")
+
+
+def education(request):
+    return render(request, 'core/education.html')
+
+
+def healthcare(request):
+    return render(request, 'core/healthcare.html')
+
+def data_platforms(request):
+    return render(request, 'core/data_platforms.html')

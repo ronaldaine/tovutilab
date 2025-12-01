@@ -1,0 +1,704 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Healthcare Solutions | TovutiLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/healthcare.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block content %}
+
+{# Hero Section #}
+<section class="health-hero-section">
+    <div class="health-hero-content">
+        <div class="health-hero-badge" data-aos="fade-up">
+            <i class="fas fa-heartbeat"></i>
+            <span>Healthcare Technology</span>
+        </div>
+
+        <h1 class="health-hero-title" data-aos="fade-up" data-aos-delay="100">
+            Modern healthcare platforms that put
+            <span class="gradient-text">patients first</span>
+        </h1>
+
+        <p class="health-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Build HIPAA-compliant, secure web applications that improve patient outcomes and streamline healthcare operations. From small practices to large health systems.
+        </p>
+
+        <div class="health-hero-actions" data-aos="fade-up" data-aos-delay="300">
+            <a href="{% url 'contact' %}" class="health-btn health-btn-primary">
+                Request a Demo
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#solutions" class="health-btn health-btn-secondary">
+                View Solutions
+            </a>
+        </div>
+    </div>
+
+    {# Animated heartbeat visual #}
+    <div class="health-hero-visual" data-aos="fade-left" data-aos-delay="400">
+        <div class="heartbeat-container">
+            <svg class="heartbeat-line" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <path class="heartbeat-path" d="M0,30 L50,30 L55,15 L60,45 L65,20 L70,30 L200,30" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="heartbeat-pulse"></div>
+        </div>
+    </div>
+</section>
+
+{# Trust Bar / Stats Section #}
+<section class="health-stats-section">
+    <div class="health-stats-container">
+        <div class="health-stat-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="health-stat-number">1M+</div>
+            <div class="health-stat-label">Patient Records Managed</div>
+        </div>
+
+        <div class="health-stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="health-stat-number">200+</div>
+            <div class="health-stat-label">Healthcare Providers</div>
+        </div>
+
+        <div class="health-stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="health-stat-number">99.9%</div>
+            <div class="health-stat-label">HIPAA Compliance</div>
+        </div>
+
+        <div class="health-stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="health-stat-number">24/7</div>
+            <div class="health-stat-label">Support & Monitoring</div>
+        </div>
+    </div>
+</section>
+
+{# Solutions Overview Section #}
+<section id="solutions" class="health-solutions-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Comprehensive Healthcare Solutions</h2>
+        <p class="health-section-subtitle">
+            Powerful platforms designed for modern healthcare delivery
+        </p>
+    </div>
+
+    <div class="health-solutions-grid">
+        <div class="health-solution-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="solution-icon">
+                <i class="fas fa-file-medical"></i>
+            </div>
+            <h3 class="solution-title">Electronic Health Records (EHR/EMR)</h3>
+            <p class="solution-description">
+                Complete patient record systems with clinical documentation, e-prescribing, and lab integration
+            </p>
+        </div>
+
+        <div class="health-solution-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="solution-icon">
+                <i class="fas fa-user-md"></i>
+            </div>
+            <h3 class="solution-title">Patient Portals</h3>
+            <p class="solution-description">
+                Secure patient access to health records, test results, appointment scheduling, and messaging
+            </p>
+        </div>
+
+        <div class="health-solution-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="solution-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <h3 class="solution-title">Telemedicine Platforms</h3>
+            <p class="solution-description">
+                HIPAA-compliant video consultations, virtual waiting rooms, and remote patient monitoring
+            </p>
+        </div>
+
+        <div class="health-solution-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="solution-icon">
+                <i class="fas fa-hospital"></i>
+            </div>
+            <h3 class="solution-title">Practice Management</h3>
+            <p class="solution-description">
+                Appointment scheduling, billing, insurance verification, and revenue cycle management
+            </p>
+        </div>
+
+        <div class="health-solution-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="solution-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="solution-title">Healthcare Analytics</h3>
+            <p class="solution-description">
+                Population health insights, quality metrics, predictive analytics, and compliance reporting
+            </p>
+        </div>
+
+        <div class="health-solution-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="solution-icon">
+                <i class="fas fa-x-ray"></i>
+            </div>
+            <h3 class="solution-title">Medical Imaging & PACS</h3>
+            <p class="solution-description">
+                DICOM-compliant image storage, viewing, and sharing with integrated radiology workflows
+            </p>
+        </div>
+    </div>
+</section>
+
+{# Feature Showcase Section #}
+<section class="health-feature-section">
+    <div class="health-feature-container">
+        <div class="health-feature-content" data-aos="fade-right">
+            <h2 class="health-feature-title">Everything healthcare providers need in one platform</h2>
+
+            <div class="health-feature-list">
+                <div class="health-feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>HIPAA-Compliant Architecture</h3>
+                        <p>End-to-end encryption, comprehensive audit logs, and secure access controls</p>
+                    </div>
+                </div>
+
+                <div class="health-feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Interoperability Standards</h3>
+                        <p>HL7, FHIR, DICOM support for seamless data exchange</p>
+                    </div>
+                </div>
+
+                <div class="health-feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Clinical Decision Support</h3>
+                        <p>Real-time alerts, evidence-based guidelines, drug interaction checks</p>
+                    </div>
+                </div>
+
+                <div class="health-feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Mobile-First Access</h3>
+                        <p>Responsive design for providers and patients on any device</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="health-feature-visual" data-aos="fade-left">
+            <div class="patient-portal-mockup">
+                <div class="mockup-header">
+                    <div class="mockup-nav">
+                        <span class="mockup-dot"></span>
+                        <span class="mockup-dot"></span>
+                        <span class="mockup-dot"></span>
+                    </div>
+                    <div class="mockup-title">Patient Portal</div>
+                </div>
+
+                <div class="mockup-content">
+                    <div class="portal-dashboard">
+                        <div class="portal-card">
+                            <div class="portal-card-header">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Upcoming Appointments</span>
+                            </div>
+                            <div class="portal-card-item">
+                                <div class="appointment-date">Dec 15, 2025</div>
+                                <div class="appointment-details">Dr. Smith - Annual Checkup</div>
+                            </div>
+                        </div>
+
+                        <div class="portal-card">
+                            <div class="portal-card-header">
+                                <i class="fas fa-flask"></i>
+                                <span>Recent Test Results</span>
+                            </div>
+                            <div class="portal-card-item">
+                                <div class="test-name">Blood Work</div>
+                                <div class="test-status">Available</div>
+                            </div>
+                        </div>
+
+                        <div class="portal-card">
+                            <div class="portal-card-header">
+                                <i class="fas fa-pills"></i>
+                                <span>Medications</span>
+                            </div>
+                            <div class="portal-card-item">
+                                <div class="med-name">Prescription #1</div>
+                                <div class="med-refills">2 refills remaining</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Technology Stack Section #}
+<section class="health-tech-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Built with Modern, Secure Technologies</h2>
+        <p class="health-section-subtitle">
+            Industry-leading frameworks and tools for healthcare applications
+        </p>
+    </div>
+
+    <div class="health-tech-grid">
+        <div class="health-tech-item" data-aos="fade-up" data-aos-delay="0">
+            <i class="fab fa-python"></i>
+            <span>Django & Python</span>
+        </div>
+
+        <div class="health-tech-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fab fa-react"></i>
+            <span>React / Vue.js</span>
+        </div>
+
+        <div class="health-tech-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-database"></i>
+            <span>PostgreSQL</span>
+        </div>
+
+        <div class="health-tech-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-bolt"></i>
+            <span>Redis</span>
+        </div>
+
+        <div class="health-tech-item" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-video"></i>
+            <span>WebRTC</span>
+        </div>
+
+        <div class="health-tech-item" data-aos="fade-up" data-aos-delay="500">
+            <i class="fab fa-aws"></i>
+            <span>AWS / Azure</span>
+        </div>
+    </div>
+</section>
+
+{# Use Cases Section #}
+<section class="health-usecases-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Solutions for Every Healthcare Setting</h2>
+        <p class="health-section-subtitle">
+            Tailored platforms for diverse healthcare environments
+        </p>
+    </div>
+
+    <div class="health-usecases-container">
+        <div class="usecase-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="usecase-icon">
+                <i class="fas fa-clinic-medical"></i>
+            </div>
+            <h3 class="usecase-title">Private Practices</h3>
+            <p class="usecase-description">
+                EMR, scheduling, billing, and patient engagement tools for small to medium practices
+            </p>
+            <ul class="usecase-features">
+                <li><i class="fas fa-check"></i> Patient scheduling</li>
+                <li><i class="fas fa-check"></i> Electronic billing</li>
+                <li><i class="fas fa-check"></i> Digital records</li>
+            </ul>
+        </div>
+
+        <div class="usecase-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="usecase-icon">
+                <i class="fas fa-hospital-alt"></i>
+            </div>
+            <h3 class="usecase-title">Hospitals & Health Systems</h3>
+            <p class="usecase-description">
+                Enterprise EHR, departmental workflows, and seamless system integration
+            </p>
+            <ul class="usecase-features">
+                <li><i class="fas fa-check"></i> Multi-department coordination</li>
+                <li><i class="fas fa-check"></i> Enterprise analytics</li>
+                <li><i class="fas fa-check"></i> System integration</li>
+            </ul>
+        </div>
+
+        <div class="usecase-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="usecase-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3 class="usecase-title">Specialty Clinics</h3>
+            <p class="usecase-description">
+                Customized workflows for cardiology, orthopedics, mental health, and more
+            </p>
+            <ul class="usecase-features">
+                <li><i class="fas fa-check"></i> Specialty-specific forms</li>
+                <li><i class="fas fa-check"></i> Custom protocols</li>
+                <li><i class="fas fa-check"></i> Specialized reporting</li>
+            </ul>
+        </div>
+
+        <div class="usecase-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="usecase-icon">
+                <i class="fas fa-laptop-medical"></i>
+            </div>
+            <h3 class="usecase-title">Telehealth Providers</h3>
+            <p class="usecase-description">
+                Virtual care platforms, remote monitoring, and mobile health applications
+            </p>
+            <ul class="usecase-features">
+                <li><i class="fas fa-check"></i> Video consultations</li>
+                <li><i class="fas fa-check"></i> Remote monitoring</li>
+                <li><i class="fas fa-check"></i> Mobile apps</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{# Compliance & Security Section #}
+<section class="health-compliance-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Security & Compliance First</h2>
+        <p class="health-section-subtitle">
+            Built to meet the highest standards in healthcare data protection
+        </p>
+    </div>
+
+    <div class="health-compliance-container">
+        <div class="compliance-content" data-aos="fade-right">
+            <h3 class="compliance-subtitle">Compliance Standards</h3>
+            <div class="compliance-badges">
+                <div class="compliance-badge">
+                    <i class="fas fa-certificate"></i>
+                    <div class="badge-content">
+                        <strong>HIPAA</strong>
+                        <span>Health Insurance Portability and Accountability Act</span>
+                    </div>
+                </div>
+
+                <div class="compliance-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="badge-content">
+                        <strong>HITECH</strong>
+                        <span>Health Information Technology for Economic and Clinical Health</span>
+                    </div>
+                </div>
+
+                <div class="compliance-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="badge-content">
+                        <strong>SOC 2 Type II</strong>
+                        <span>System and Organization Controls</span>
+                    </div>
+                </div>
+
+                <div class="compliance-badge">
+                    <i class="fas fa-exchange-alt"></i>
+                    <div class="badge-content">
+                        <strong>HL7 / FHIR</strong>
+                        <span>Healthcare Interoperability Standards</span>
+                    </div>
+                </div>
+
+                <div class="compliance-badge">
+                    <i class="fas fa-globe"></i>
+                    <div class="badge-content">
+                        <strong>GDPR</strong>
+                        <span>International Healthcare Data Protection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="security-content" data-aos="fade-left">
+            <h3 class="compliance-subtitle">Security Features</h3>
+            <div class="security-features">
+                <div class="security-feature">
+                    <i class="fas fa-lock"></i>
+                    <div class="security-text">
+                        <strong>End-to-end encryption</strong>
+                        <span>Data protected at rest and in transit</span>
+                    </div>
+                </div>
+
+                <div class="security-feature">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="security-text">
+                        <strong>Multi-factor authentication</strong>
+                        <span>Enhanced access security</span>
+                    </div>
+                </div>
+
+                <div class="security-feature">
+                    <i class="fas fa-users-cog"></i>
+                    <div class="security-text">
+                        <strong>Role-based access control</strong>
+                        <span>Granular permissions management</span>
+                    </div>
+                </div>
+
+                <div class="security-feature">
+                    <i class="fas fa-clipboard-list"></i>
+                    <div class="security-text">
+                        <strong>Comprehensive audit trails</strong>
+                        <span>Complete activity logging</span>
+                    </div>
+                </div>
+
+                <div class="security-feature">
+                    <i class="fas fa-search"></i>
+                    <div class="security-text">
+                        <strong>Regular security audits</strong>
+                        <span>Ongoing vulnerability assessment</span>
+                    </div>
+                </div>
+
+                <div class="security-feature">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="security-text">
+                        <strong>Disaster recovery & backup</strong>
+                        <span>Business continuity assurance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Integration Section #}
+<section class="health-integration-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Seamless Integrations</h2>
+        <p class="health-section-subtitle">
+            Connect with the tools and systems you already use
+        </p>
+    </div>
+
+    <div class="health-integration-container">
+        <div class="integration-visual" data-aos="fade-right">
+            <div class="integration-hub">
+                <div class="hub-center">
+                    <i class="fas fa-hospital"></i>
+                    <span>Your Platform</span>
+                </div>
+
+                <div class="integration-node node-1">
+                    <i class="fas fa-notes-medical"></i>
+                    <span>EHR Systems</span>
+                </div>
+
+                <div class="integration-node node-2">
+                    <i class="fas fa-flask"></i>
+                    <span>Lab Systems</span>
+                </div>
+
+                <div class="integration-node node-3">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <span>Pharmacy</span>
+                </div>
+
+                <div class="integration-node node-4">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Billing</span>
+                </div>
+
+                <div class="integration-node node-5">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Devices</span>
+                </div>
+
+                <div class="integration-node node-6">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Payments</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="integration-content" data-aos="fade-left">
+            <h3 class="integration-category">EHR/EMR Systems</h3>
+            <ul class="integration-list">
+                <li><i class="fas fa-check-circle"></i> Epic</li>
+                <li><i class="fas fa-check-circle"></i> Cerner</li>
+                <li><i class="fas fa-check-circle"></i> Athenahealth</li>
+            </ul>
+
+            <h3 class="integration-category">Laboratory & Pharmacy</h3>
+            <ul class="integration-list">
+                <li><i class="fas fa-check-circle"></i> LabCorp</li>
+                <li><i class="fas fa-check-circle"></i> Quest Diagnostics</li>
+                <li><i class="fas fa-check-circle"></i> SureScripts</li>
+            </ul>
+
+            <h3 class="integration-category">Additional Integrations</h3>
+            <ul class="integration-list">
+                <li><i class="fas fa-check-circle"></i> Insurance verification APIs</li>
+                <li><i class="fas fa-check-circle"></i> Medical device integrations</li>
+                <li><i class="fas fa-check-circle"></i> Payment processors</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{# Testimonials Section #}
+<section class="health-testimonials-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Trusted by Healthcare Providers</h2>
+        <p class="health-section-subtitle">
+            See what our clients say about transforming their healthcare delivery
+        </p>
+    </div>
+
+    <div class="health-testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                    "TovutiLab's EHR platform has revolutionized how we manage patient care. The interface is intuitive and our staff adapted quickly. We've seen a 40% reduction in administrative time."
+                </p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-info">
+                    <strong>Dr. Sarah Mitchell</strong>
+                    <span>Chief Medical Officer, City General Hospital</span>
+                </div>
+            </div>
+            <div class="testimonial-metric">
+                <i class="fas fa-chart-line"></i>
+                <span>40% reduction in wait times</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                    "The patient portal has transformed our patient engagement. Appointment scheduling is seamless, and patients love having instant access to their records and test results."
+                </p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-info">
+                    <strong>Michael Chen, MD</strong>
+                    <span>Founder, Primary Care Associates</span>
+                </div>
+            </div>
+            <div class="testimonial-metric">
+                <i class="fas fa-users"></i>
+                <span>95% patient satisfaction</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-quote">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                    "Implementing their telemedicine platform expanded our reach to rural communities. The HIPAA-compliant video system is rock-solid, and the integration with our existing EHR was seamless."
+                </p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-info">
+                    <strong>Dr. Amanda Rodriguez</strong>
+                    <span>Director of Telehealth, Regional Health Network</span>
+                </div>
+            </div>
+            <div class="testimonial-metric">
+                <i class="fas fa-globe"></i>
+                <span>3x increase in service reach</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Pricing Section #}
+<section class="health-pricing-section">
+    <div class="health-section-header" data-aos="fade-up">
+        <h2 class="health-section-title">Flexible Pricing for Every Practice</h2>
+        <p class="health-section-subtitle">
+            Choose the plan that fits your organization's needs
+        </p>
+    </div>
+
+    <div class="health-pricing-grid">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="pricing-tier">Practice</div>
+            <div class="pricing-description">For small clinics and solo practitioners</div>
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Up to 5 providers</li>
+                <li><i class="fas fa-check"></i> Basic EHR functionality</li>
+                <li><i class="fas fa-check"></i> Patient portal</li>
+                <li><i class="fas fa-check"></i> Appointment scheduling</li>
+                <li><i class="fas fa-check"></i> Email support</li>
+            </ul>
+            <a href="{% url 'contact' %}" class="pricing-cta">Get Started</a>
+        </div>
+
+        <div class="pricing-card pricing-featured" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-tier">Professional</div>
+            <div class="pricing-description">For multi-provider groups and specialty clinics</div>
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Up to 25 providers</li>
+                <li><i class="fas fa-check"></i> Advanced EHR with templates</li>
+                <li><i class="fas fa-check"></i> Telemedicine integration</li>
+                <li><i class="fas fa-check"></i> Analytics & reporting</li>
+                <li><i class="fas fa-check"></i> Priority support</li>
+                <li><i class="fas fa-check"></i> Custom workflows</li>
+            </ul>
+            <a href="{% url 'contact' %}" class="pricing-cta">Get Started</a>
+        </div>
+
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-tier">Enterprise</div>
+            <div class="pricing-description">For hospitals, health systems, and large networks</div>
+            <ul class="pricing-features">
+                <li><i class="fas fa-check"></i> Unlimited providers</li>
+                <li><i class="fas fa-check"></i> Full EHR suite</li>
+                <li><i class="fas fa-check"></i> Multi-facility support</li>
+                <li><i class="fas fa-check"></i> Advanced analytics & BI</li>
+                <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                <li><i class="fas fa-check"></i> Custom integrations</li>
+                <li><i class="fas fa-check"></i> On-premise option</li>
+            </ul>
+            <a href="{% url 'contact' %}" class="pricing-cta">Contact Sales</a>
+        </div>
+    </div>
+</section>
+
+{# Final CTA Section #}
+<section class="health-final-cta-section">
+    <div class="health-final-cta-content" data-aos="fade-up">
+        <h2 class="health-final-cta-title">Ready to transform patient care with technology?</h2>
+        <p class="health-final-cta-subtitle">
+            Join hundreds of healthcare providers using TovutiLab's platforms to deliver exceptional care and improve outcomes.
+        </p>
+
+        <div class="health-final-cta-actions">
+            <a href="{% url 'contact' %}" class="health-btn health-btn-primary health-btn-large">
+                Schedule a Demo
+                <i class="fas fa-calendar-check"></i>
+            </a>
+            <a href="{% url 'contact' %}" class="health-btn health-btn-secondary health-btn-large">
+                Talk to our Developers
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+</script>
+{% endblock %}
