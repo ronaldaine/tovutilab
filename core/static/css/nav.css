@@ -56,15 +56,26 @@
     color: #ffffff;
     font-weight: 700;
     font-size: 24px;
-    transition: color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .nav-logo svg {
     fill: currentColor;
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
 .nav-logo a:hover {
     opacity: 0.8;
+}
+
+.nav-logo a:hover .logo-image {
+    transform: scale(1.02);
 }
 
 /* ========================================
@@ -551,6 +562,10 @@
 
     .nav-logo a {
         font-size: 20px;
+    }
+
+    .logo-image {
+        height: 32px;
     }
 
     .mobile-menu {

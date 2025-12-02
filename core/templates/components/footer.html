@@ -49,12 +49,12 @@
                         <ul class="footer-links">
                             <li><a href="#">Startups</a></li>
                             <li><a href="#">Enterprises</a></li>
-                            <li><a href="#">E-Commerce</a></li>
+                            <li><a href="{% url 'ecommerce' %}">E-Commerce</a></li>
                             <li><a href="#">SaaS Platforms</a></li>
                             <li><a href="#">Marketplaces</a></li>
-                            <li><a href="#">Healthcare</a></li>
-                            <li><a href="#">Finance</a></li>
-                            <li><a href="#">Education</a></li>
+                            <li><a href="{% url 'healthcare' %}">Healthcare</a></li>
+                            <li><a href="{% url 'finance' %}">Finance</a></li>
+                            <li><a href="{% url 'education' %}">Education</a></li>
                             <li><a href="#">Nonprofits</a></li>
                         </ul>
                     </div>
@@ -99,15 +99,7 @@
                     <!-- Left: Logo and Copyright -->
                     <div class="footer-brand">
                         <a href="/" class="footer-logo" aria-label="Cascade Digital Home">
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 0L32 16L16 32L0 16L16 0Z" fill="url(#footerLogoGradient)"/>
-                                <defs>
-                                    <linearGradient id="footerLogoGradient" x1="0" y1="0" x2="32" y2="32">
-                                        <stop offset="0%" stop-color="#a960ee"/>
-                                        <stop offset="100%" stop-color="#ff333d"/>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
+                            <img src="{% static 'img/TovutiLAB.png' %}" alt="TovutiLab" class="logo-image">
                             <span class="footer-logo-text">TovutiLab</span>
                         </a>
                         <p class="footer-copyright">© 2025 TovutiLab, Inc.</p>

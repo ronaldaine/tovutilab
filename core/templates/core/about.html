@@ -1,0 +1,479 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}About Us | TovutiLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+{% endblock %}
+
+{% block content %}
+
+{# Hero Section #}
+<section class="about-hero-section">
+    <div class="about-hero-content">
+        <div class="about-hero-badge" data-aos="fade-up">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>🇰🇪 Founded in Nairobi, Kenya</span>
+        </div>
+
+        <h1 class="about-hero-title" data-aos="fade-up" data-aos-delay="100">
+            Building the future of digital experiences from the
+            <span class="gradient-text">heart of Africa</span>
+        </h1>
+
+        <p class="about-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+            TovutiLab is a full-service digital agency combining African innovation with global standards to create world-class web applications.
+        </p>
+
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</section>
+
+{# Story Section #}
+<section class="about-story-section">
+    <div class="about-story-container">
+        <div class="about-story-content" data-aos="fade-right">
+            <h2 class="about-section-title">Our Story</h2>
+
+            <div class="story-text">
+                <p class="story-paragraph">
+                    TovutiLab was born from a simple belief: that exceptional digital experiences can be built anywhere, by anyone with vision and skill. Founded in 2024 by <strong>Aine Ronald</strong> and <strong>Duncan Makori</strong> in Nairobi, Kenya, we set out to prove that world-class technology solutions don't need Silicon Valley addresses.
+                </p>
+
+                <p class="story-paragraph story-highlight">
+                    We're not just building websites and applications—we're building bridges.
+                </p>
+
+                <p class="story-paragraph">
+                    Bridges between ambitious businesses and their digital futures. Bridges between African innovation and global markets. Bridges between what is and what could be.
+                </p>
+
+                <p class="story-paragraph">
+                    Today, we serve clients from small startups to large enterprises, across education, healthcare, e-commerce, and beyond. Every project we take on is an opportunity to demonstrate that Nairobi is not just on the map—it's leading the way.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-story-visual" data-aos="fade-left">
+            <div class="story-illustration">
+                <div class="illustration-circle circle-1"></div>
+                <div class="illustration-circle circle-2"></div>
+                <div class="illustration-circle circle-3"></div>
+                <div class="illustration-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Founders Section #}
+<section class="about-founders-section">
+    <div class="about-section-header" data-aos="fade-up">
+        <h2 class="about-section-title">Meet the Founders</h2>
+        <p class="about-section-subtitle">
+            The visionaries behind TovutiLab's mission to transform digital experiences
+        </p>
+    </div>
+
+    <div class="about-founders-grid">
+        <div class="founder-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="founder-avatar">
+                <div class="avatar-placeholder">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="founder-info">
+                <h3 class="founder-name">Aine Ronald</h3>
+                <div class="founder-title">Co-Founder & CEO</div>
+                <p class="founder-bio">
+                    With a background in software engineering and product design, Aine brings a unique blend of technical expertise and user-centered thinking to every project. His vision is to position TovutiLab as Africa's premier digital agency, known for innovation and excellence.
+                </p>
+                <div class="founder-social">
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="founder-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="founder-avatar">
+                <div class="avatar-placeholder">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="founder-info">
+                <h3 class="founder-name">Duncan Makori</h3>
+                <div class="founder-title">Co-Founder & CTO</div>
+                <p class="founder-bio">
+                    Duncan's deep expertise in full-stack development and cloud architecture ensures that TovutiLab delivers scalable, secure, and performant solutions. He's passionate about leveraging technology to solve real-world problems and mentoring the next generation of African developers.
+                </p>
+                <div class="founder-social">
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Mission, Vision & Values Section #}
+<section class="about-mvv-section">
+    <div class="about-mvv-grid">
+        <div class="mvv-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="mvv-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 class="mvv-title">Mission</h3>
+            <p class="mvv-description">
+                To empower businesses with exceptional digital solutions that drive growth, enhance user experiences, and set new standards for quality and innovation.
+            </p>
+        </div>
+
+        <div class="mvv-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="mvv-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h3 class="mvv-title">Vision</h3>
+            <p class="mvv-description">
+                To be Africa's leading digital agency, recognized globally for innovation, excellence, and the transformative impact of our work.
+            </p>
+        </div>
+
+        <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="mvv-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="mvv-title">Values</h3>
+            <ul class="mvv-values-list">
+                <li><i class="fas fa-check-circle"></i> <strong>Excellence:</strong> We don't just meet standards—we set them</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Innovation:</strong> We embrace new ideas and cutting-edge technologies</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Integrity:</strong> We're transparent, honest, and reliable</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Collaboration:</strong> We work as partners, not vendors</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Impact:</strong> We build solutions that make a real difference</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{# Why Nairobi Section #}
+<section class="about-nairobi-section">
+    <div class="about-nairobi-container">
+        <div class="about-nairobi-content" data-aos="fade-right">
+            <h2 class="about-section-title">Why Nairobi?</h2>
+
+            <p class="nairobi-description">
+                Nairobi has emerged as one of Africa's leading tech hubs, home to innovative startups, global tech companies, and a thriving developer community. Known as <strong>"Silicon Savannah,"</strong> the city combines world-class talent, entrepreneurial spirit, and a unique perspective on solving global challenges.
+            </p>
+
+            <div class="nairobi-benefits">
+                <h3 class="benefits-title">Being based in Nairobi gives us access to:</h3>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-users"></i> A diverse, highly skilled talent pool</li>
+                    <li><i class="fas fa-lightbulb"></i> A vibrant startup and innovation ecosystem</li>
+                    <li><i class="fas fa-globe-africa"></i> Unique insights into emerging markets</li>
+                    <li><i class="fas fa-dollar-sign"></i> Cost-effective, high-quality service delivery</li>
+                    <li><i class="fas fa-clock"></i> A time zone that works for clients across Africa, Europe, and beyond</li>
+                </ul>
+            </div>
+
+            <p class="nairobi-footer">
+                We're proud to contribute to Nairobi's growing reputation as a center of technological excellence.
+            </p>
+        </div>
+
+        <div class="about-nairobi-visual" data-aos="fade-left">
+            <div class="nairobi-map">
+                <div class="map-pin">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <div class="map-label">Nairobi, Kenya</div>
+                <div class="map-badge">Silicon Savannah</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# What We Do Section #}
+<section class="about-services-section">
+    <div class="about-section-header" data-aos="fade-up">
+        <h2 class="about-section-title">What We Do</h2>
+        <p class="about-section-subtitle">
+            Full-service digital solutions for modern businesses
+        </p>
+    </div>
+
+    <div class="about-services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="service-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3 class="service-title">Custom Web Development</h3>
+            <p class="service-description">
+                Full-stack web applications built with Django, React, and modern frameworks
+            </p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="service-title">Mobile-First Design</h3>
+            <p class="service-description">
+                Responsive, accessible interfaces that work beautifully on any device
+            </p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3 class="service-title">E-commerce Solutions</h3>
+            <p class="service-description">
+                Complete online stores with payment integration and inventory management
+            </p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3 class="service-title">Healthcare Platforms</h3>
+            <p class="service-description">
+                HIPAA-compliant systems for patient management, telemedicine, and EHR
+            </p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3 class="service-title">Education Technology</h3>
+            <p class="service-description">
+                Learning management systems and student engagement platforms
+            </p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-icon">
+                <i class="fas fa-plug"></i>
+            </div>
+            <h3 class="service-title">API Development & Integration</h3>
+            <p class="service-description">
+                Robust APIs and third-party integrations for seamless workflows
+            </p>
+        </div>
+    </div>
+</section>
+
+{# Our Approach Section #}
+<section class="about-approach-section">
+    <div class="about-section-header" data-aos="fade-up">
+        <h2 class="about-section-title">Our Approach</h2>
+        <p class="about-section-subtitle">
+            A proven process for delivering exceptional results
+        </p>
+    </div>
+
+    <div class="about-approach-timeline">
+        <div class="approach-step" data-aos="fade-right" data-aos-delay="0">
+            <div class="step-number">01</div>
+            <div class="step-content">
+                <h3 class="step-title">Discovery & Strategy</h3>
+                <p class="step-description">
+                    We start by understanding your business, users, and goals
+                </p>
+            </div>
+        </div>
+
+        <div class="approach-step" data-aos="fade-left" data-aos-delay="100">
+            <div class="step-number">02</div>
+            <div class="step-content">
+                <h3 class="step-title">Design & Prototyping</h3>
+                <p class="step-description">
+                    We create intuitive, beautiful designs and validate them with prototypes
+                </p>
+            </div>
+        </div>
+
+        <div class="approach-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-number">03</div>
+            <div class="step-content">
+                <h3 class="step-title">Development & Testing</h3>
+                <p class="step-description">
+                    We build with quality and security in mind, testing rigorously at every stage
+                </p>
+            </div>
+        </div>
+
+        <div class="approach-step" data-aos="fade-left" data-aos-delay="300">
+            <div class="step-number">04</div>
+            <div class="step-content">
+                <h3 class="step-title">Launch & Optimization</h3>
+                <p class="step-description">
+                    We deploy confidently and continuously optimize based on real-world performance
+                </p>
+            </div>
+        </div>
+
+        <div class="approach-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-number">05</div>
+            <div class="step-content">
+                <h3 class="step-title">Support & Growth</h3>
+                <p class="step-description">
+                    We're partners in your success, providing ongoing support and enhancements
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Team/Culture Section #}
+<section class="about-team-section">
+    <div class="about-section-header" data-aos="fade-up">
+        <h2 class="about-section-title">Our Team</h2>
+        <p class="about-section-subtitle">
+            United by a passion for great work
+        </p>
+    </div>
+
+    <div class="about-team-content" data-aos="fade-up">
+        <p class="team-description">
+            We're a diverse team of designers, developers, strategists, and problem-solvers united by a passion for great work. We believe in:
+        </p>
+
+        <div class="team-values-grid">
+            <div class="team-value-item">
+                <i class="fas fa-book"></i>
+                <span>Continuous learning and skill development</span>
+            </div>
+
+            <div class="team-value-item">
+                <i class="fas fa-balance-scale"></i>
+                <span>Work-life balance and mental health</span>
+            </div>
+
+            <div class="team-value-item">
+                <i class="fas fa-laptop-house"></i>
+                <span>Remote-first, flexible work culture</span>
+            </div>
+
+            <div class="team-value-item">
+                <i class="fas fa-hands-helping"></i>
+                <span>Giving back to the developer community</span>
+            </div>
+
+            <div class="team-value-item">
+                <i class="fas fa-smile"></i>
+                <span>Building a company we're proud to be part of</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Stats Section #}
+<section class="about-stats-section">
+    <div class="about-stats-grid">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Delivered</div>
+        </div>
+
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+        </div>
+
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number">2024</div>
+            <div class="stat-label">Founded</div>
+        </div>
+    </div>
+</section>
+
+{# Technologies Section #}
+<section class="about-tech-section">
+    <div class="about-section-header" data-aos="fade-up">
+        <h2 class="about-section-title">Technologies We Love</h2>
+        <p class="about-section-subtitle">
+            Modern tools and frameworks for building exceptional applications
+        </p>
+    </div>
+
+    <div class="about-tech-grid">
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="0">
+            <i class="fab fa-python"></i>
+            <span>Django / Python</span>
+        </div>
+
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fab fa-react"></i>
+            <span>React / Vue.js</span>
+        </div>
+
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-database"></i>
+            <span>PostgreSQL / MongoDB</span>
+        </div>
+
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="fab fa-aws"></i>
+            <span>AWS / DigitalOcean</span>
+        </div>
+
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="400">
+            <i class="fab fa-stripe"></i>
+            <span>Stripe / M-Pesa</span>
+        </div>
+
+        <div class="tech-item" data-aos="fade-up" data-aos-delay="500">
+            <i class="fab fa-github"></i>
+            <span>GitHub / GitLab</span>
+        </div>
+    </div>
+</section>
+
+{# Final CTA Section #}
+<section class="about-cta-section">
+    <div class="about-cta-content" data-aos="fade-up">
+        <h2 class="about-cta-title">Ready to work with us?</h2>
+        <p class="about-cta-subtitle">
+            Whether you're a startup with a bold idea or an enterprise seeking a reliable partner, we'd love to hear from you.
+        </p>
+
+        <div class="about-cta-actions">
+            <a href="{% url 'contact' %}" class="about-btn about-btn-primary">
+                Start a Project
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="{% url 'contact' %}" class="about-btn about-btn-secondary">
+                Join Our Team
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+</script>
+{% endblock %}

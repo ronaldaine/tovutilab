@@ -4,9 +4,7 @@
         {# Logo #}
         <div class="nav-logo">
             <a href="{% url 'home' %}" aria-label="TovutiLab Home">
-                <svg width="140" height="32" viewBox="0 0 140 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="0" y="24" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="currentColor">TovutiLab</text>
-                </svg>
+                <img src="{% static 'img/TovutiLAB.png' %}" alt="TovutiLab" class="logo-image">
             </a>
         </div>
 
@@ -150,7 +148,7 @@
                         <li><a href="{% url 'ecommerce' %}" class="mega-link"><i class="fas fa-store"></i><div><strong>Retail & E-commerce</strong></div></a></li>
                         <li><a href="{% url 'healthcare' %}" class="mega-link"><i class="fas fa-heartbeat"></i><div><strong>Healthcare</strong></div></a></li>
                         <li><a href="{% url 'education' %}" class="mega-link"><i class="fas fa-graduation-cap"></i><div><strong>Education</strong></div></a></li>
-                        <li><a href="#" class="mega-link"><i class="fas fa-chart-pie"></i><div><strong>Finance</strong></div></a></li>
+                        <li><a href="{% url 'finance' %}" class="mega-link"><i class="fas fa-chart-pie"></i><div><strong>Finance</strong></div></a></li>
                     </ul>
                 </div>
 
@@ -158,7 +156,7 @@
                     <h3 class="mega-title">By Use Case</h3>
                     <ul class="mega-list">
                         <li><a href="#" class="mega-link"><i class="fas fa-globe"></i><div><strong>Corporate Websites</strong></div></a></li>
-                        <li><a href="#" class="mega-link"><i class="fas fa-database"></i><div><strong>Data Platforms</strong></div></a></li>
+                        <li><a href="{% url 'data-platforms' %}" class="mega-link"><i class="fas fa-database"></i><div><strong>Data Platforms</strong></div></a></li>
                         <li><a href="#" class="mega-link"><i class="fas fa-comments"></i><div><strong>Social Platforms</strong></div></a></li>
                         <li><a href="#" class="mega-link"><i class="fas fa-cogs"></i><div><strong>SaaS Products</strong></div></a></li>
                     </ul>
@@ -208,7 +206,7 @@
                 <div class="mega-column">
                     <h3 class="mega-title">About</h3>
                     <ul class="mega-list">
-                        <li><a href="#" class="mega-link"><i class="fas fa-building"></i><div><strong>About Us</strong></div></a></li>
+                        <li><a href="{% url 'about' %}" class="mega-link"><i class="fas fa-building"></i><div><strong>About Us</strong></div></a></li>
                         <li><a href="#" class="mega-link"><i class="fas fa-users"></i><div><strong>Team</strong></div></a></li>
                         <li><a href="#" class="mega-link"><i class="fas fa-briefcase"></i><div><strong>Careers</strong></div></a></li>
                         <li><a href="#" class="mega-link"><i class="fas fa-newspaper"></i><div><strong>Press</strong></div></a></li>
@@ -250,9 +248,9 @@
                 <div class="mobile-submenu" id="mobile-solutions">
                     <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
                     <a href="{% url 'ecommerce' %}">Retail & E-commerce</a>
-                    <a href="#">Healthcare</a>
+                    <a href="{% url 'healthcare' %}">Healthcare</a>
                     <a href="{% url 'education' %}">Education</a>
-                    <a href="#">Finance</a>
+                    <a href="{% url 'finance' %}">Finance</a>
                 </div>
             </div>
 
@@ -276,7 +274,7 @@
                 </button>
                 <div class="mobile-submenu" id="mobile-company">
                     <button class="mobile-back"><i class="fas fa-chevron-left"></i> Back</button>
-                    <a href="#">About Us</a>
+                    <a href="{% url 'about' %}">About Us</a>
                     <a href="#">Team</a>
                     <a href="#">Careers</a>
                 </div>

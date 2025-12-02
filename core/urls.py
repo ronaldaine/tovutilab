@@ -9,4 +9,8 @@ urlpatterns = [
     path('contact/success/', views.contact_success, name='contact_success'),
     path('education/', views.education, name='education'),
     path('healthcare/', views.healthcare, name='healthcare'),
+    path('about/', views.about, name='about'),
+    path('finance/', views.finance, name='finance'),
+    path('data-platforms/', views.data_platforms, name='data-platforms'),
+    
 ]

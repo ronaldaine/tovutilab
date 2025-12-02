@@ -258,3 +258,15 @@ def healthcare(request):
 
 def data_platforms(request):
     return render(request, 'core/data_platforms.html')
+
+def about(request):
+    context = {
+        'page_title': 'About Us',
+    }
+    return render(request, 'core/about.html', context)
+
+def finance(request):
+    return render(request, 'core/finance.html')
+
+def data_platforms(request):
+    return render(request, 'core/data_platforms.html')
