@@ -1,5 +1,5 @@
 /* ========================================
-   SERVICES LIST PAGE - Stripe-Inspired Design
+   SERVICES LIST PAGE - Mobile-Fixed Version
    Production-ready, mobile-first responsive layout
    All classes prefixed with "service-list-"
    ======================================== */
@@ -8,7 +8,7 @@
    PAGE HEADER
    ======================================== */
 
-   .service-list-page {
+.service-list-page {
     width: 100%;
     min-height: 100vh;
     background: #ffffff;
@@ -191,6 +191,8 @@
 
 .service-list-main {
     min-width: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .service-list-section-header {
@@ -220,6 +222,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin-bottom: 64px;
+    position: relative;
+    z-index: 1;
 }
 
 .service-list-card {
@@ -229,6 +233,8 @@
     transition: all 0.3s ease;
     overflow: hidden;
     position: relative;
+    /* Ensure cards are clickable on mobile */
+    touch-action: manipulation;
 }
 
 .service-list-card::before {
@@ -241,6 +247,7 @@
     background: linear-gradient(90deg, var(--blendIntersection), var(--gradientColorZero));
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .service-list-card:hover {
@@ -261,6 +268,9 @@
     color: inherit;
     height: 100%;
     position: relative;
+    /* Critical: Enable touch/click on mobile */
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 72, 229, 0.1);
 }
 
 /* Service Icon */
@@ -274,6 +284,7 @@
     border-radius: 12px;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
+    pointer-events: none;
 }
 
 .service-list-card:hover .service-list-card-icon {
@@ -288,6 +299,7 @@
 /* Service Content */
 .service-list-card-content {
     flex: 1;
+    pointer-events: none;
 }
 
 .service-list-card-title {
@@ -357,6 +369,7 @@
     opacity: 0;
     transform: translateX(-10px);
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .service-list-card:hover .service-list-card-arrow {
@@ -503,7 +516,7 @@
 }
 
 /* ========================================
-   MOBILE FILTER TOGGLE (HIDDEN ON DESKTOP)
+   MOBILE FILTER TOGGLE - Fixed Positioning
    ======================================== */
 
 .service-list-mobile-filter-toggle {
@@ -511,7 +524,7 @@
     position: fixed;
     bottom: 24px;
     right: 24px;
-    z-index: 100;
+    z-index: 1000;
     padding: 14px 20px;
     background: var(--blendIntersection);
     color: #ffffff;
@@ -522,6 +535,8 @@
     box-shadow: 0 8px 24px rgba(0, 72, 229, 0.4);
     cursor: pointer;
     transition: transform 0.2s ease;
+    /* Ensure button is always clickable */
+    pointer-events: auto;
 }
 
 .service-list-mobile-filter-toggle:hover {
@@ -540,13 +555,15 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 98;
+    z-index: 998;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .service-list-mobile-filter-overlay.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* ========================================
@@ -595,6 +612,7 @@
 
 /* ========================================
    RESPONSIVE - MOBILE (320px - 767px)
+   CRITICAL FIX: Proper z-index layering
    ======================================== */
 
 @media (max-width: 767px) {
@@ -617,10 +635,10 @@
     .service-list-content-container {
         grid-template-columns: 1fr;
         gap: 0;
-        padding: 32px 16px 64px;
+        padding: 32px 16px 100px; /* Extra bottom padding for filter button */
     }
 
-    /* Hide sidebar on mobile */
+    /* CRITICAL: Sidebar positioning fix */
     .service-list-sidebar {
         position: fixed;
         top: 64px;
@@ -628,16 +646,20 @@
         bottom: 0;
         width: 280px;
         background: #ffffff;
-        z-index: 99;
+        z-index: 999;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
         overflow-y: auto;
         padding: 24px;
         box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+        /* CRITICAL: Don't block clicks when hidden */
+        pointer-events: none;
     }
 
     .service-list-sidebar.active {
         transform: translateX(0);
+        /* CRITICAL: Enable clicks when visible */
+        pointer-events: auto;
     }
 
     .service-list-sidebar-sticky {
@@ -652,6 +674,12 @@
 
     .service-list-mobile-filter-overlay {
         display: block;
+    }
+
+    /* CRITICAL: Ensure main content is above hidden sidebar */
+    .service-list-main {
+        position: relative;
+        z-index: 1;
     }
 
     .service-list-section-header {
@@ -672,8 +700,16 @@
         margin-bottom: 48px;
     }
 
+    /* CRITICAL: Ensure cards are fully clickable on mobile */
+    .service-list-card {
+        position: relative;
+        z-index: 1;
+    }
+
     .service-list-card-link {
         padding: 24px 20px;
+        /* Enhance touch targets */
+        min-height: 44px;
     }
 
     .service-list-card-icon {
@@ -697,6 +733,9 @@
     .service-list-card-arrow {
         bottom: 20px;
         right: 20px;
+        /* Show arrow on mobile */
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .service-list-cta-section {
@@ -735,7 +774,8 @@
 
 .service-list-category-link:focus-visible,
 .service-list-sidebar-cta-btn:focus-visible,
-.service-list-card:focus-visible,
+.service-list-card:focus-within,
+.service-list-card-link:focus-visible,
 .service-list-cta-btn:focus-visible,
 .service-list-mobile-filter-toggle:focus-visible {
     outline: 2px solid var(--blendIntersection);
@@ -750,7 +790,8 @@
     .service-list-category-link,
     .service-list-sidebar-cta-btn,
     .service-list-cta-btn,
-    .service-list-mobile-filter-toggle {
+    .service-list-mobile-filter-toggle,
+    .service-list-sidebar {
         transition: none;
     }
 
