@@ -66,12 +66,8 @@
                             <li><a href="#">Documentation</a></li>
                             <li><a href="#">Guides & Tutorials</a></li>
                             <li><a href="#">Case Studies</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                            <li><a href="#">Webinars</a></li>
-                            <li><a href="#">Downloads</a></li>
-                            <li><a href="#">Support Center</a></li>
-                            <li><a href="#">API Reference</a></li>
+                            <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
+                            <li><a href="{% url 'support-center' %}">Support Center</a></li>
                         </ul>
                     </div>
     
@@ -79,7 +75,7 @@
                     <div class="footer-column">
                         <h3 class="footer-heading">Company</h3>
                         <ul class="footer-links">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
                             <li><a href="#">Careers</a></li>
                             <li><a href="#">Our Team</a></li>
                             <li><a href="#">Press & Media</a></li>
@@ -90,9 +86,59 @@
                             <li><a href="#">Sitemap</a></li>
                         </ul>
                     </div>
+
+                    <!-- Column 5: Contact Information -->
+                    <div class="footer-column footer-contact">
+                        <h3 class="footer-heading">Contact</h3>
+
+                        <!-- Location 1: Headquarters -->
+                        <div class="contact-location">
+                            <h4 class="contact-location-title">Headquarters</h4>
+
+                            <div class="contact-item">
+                                <a href="mailto:hello@tovutilab.com" class="contact-link" aria-label="Email headquarters">
+                                    <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                                    <span>hello@tovutilab.com</span>
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <a href="tel:+254701310224" class="contact-link" aria-label="Call headquarters">
+                                    <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                                    <span>+254 701 310 224</span>
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <a href="https://maps.google.com/?q=TovutiLab+Nairobi" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="View headquarters location on map">
+                                    <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+                                    <span>Nairobi, Kenya</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Location 2: East Africa -->
+                        <div class="contact-location contact-location-secondary">
+                            <h4 class="contact-location-title">East Africa</h4>
+
+                            <div class="contact-item">
+                                <a href="mailto:partners@tovutilab.com" class="contact-link" aria-label="Email East Africa office">
+                                    <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                                    <span>partners@tovutilab.com</span>
+                                </a>
+                            </div>
+
+                            <div class="contact-item">
+                                <a href="tel:+254786342199" class="contact-link" aria-label="Call East Africa office">
+                                    <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                                    <span>+256 786 342 199</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-    
+
             <!-- Footer Bottom Bar -->
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
@@ -107,7 +153,7 @@
     
                     <!-- Center: Legal Links -->
                     <div class="footer-legal">
-                        <a href="#">Privacy Policy</a>
+                        <a href="{% url 'privacy-policy' %}">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
                         <a href="#">Cookie Policy</a>
                         <a href="#">Accessibility</a>

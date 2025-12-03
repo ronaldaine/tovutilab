@@ -1,0 +1,754 @@
+/* ========================================
+   PORTFOLIO MODAL - Editorial Luxury Design
+   Mobile-First, Production-Ready
+   ======================================== */
+
+:root {
+    --modal-primary: #0048e5;
+    --modal-secondary: #a960ee;
+    --modal-accent: #ff333d;
+    --modal-text-primary: #0a2540;
+    --modal-text-secondary: #425466;
+    --modal-text-muted: #697386;
+    --modal-bg: #ffffff;
+    --modal-border: #e3e8ee;
+    --modal-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+    --modal-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08);
+    --modal-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.08), 0 24px 48px rgba(0, 0, 0, 0.12);
+    --modal-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.1), 0 32px 64px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   MODAL CONTAINER & BACKDROP
+   ======================================== */
+
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 14, 39, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-modal.active .portfolio-modal-backdrop {
+    opacity: 1;
+}
+
+/* ========================================
+   MODAL CONTENT - Mobile First
+   ======================================== */
+
+.portfolio-modal-content {
+    position: relative;
+    z-index: 1000;
+    background: var(--modal-bg);
+    border-radius: 1rem;
+    max-width: 100%;
+    max-height: 90vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: var(--modal-shadow-xl);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* Custom scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 91, 255, 0.3) transparent;
+}
+
+.portfolio-modal.active .portfolio-modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.portfolio-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.portfolio-modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.portfolio-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(99, 91, 255, 0.3);
+    border-radius: 4px;
+}
+
+.portfolio-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 91, 255, 0.5);
+}
+
+/* ========================================
+   MODAL HEADER - Elegant Editorial
+   ======================================== */
+
+.portfolio-modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--modal-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    animation: slideDown 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.portfolio-modal-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--modal-text-primary);
+    margin: 0;
+    letter-spacing: -0.02em;
+    flex: 1;
+}
+
+.portfolio-modal-close {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 91, 255, 0.08);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--modal-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-modal-close:hover {
+    background: rgba(99, 91, 255, 0.15);
+    transform: rotate(90deg);
+}
+
+.portfolio-modal-close:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* ========================================
+   GALLERY - Cinematic Presentation
+   ======================================== */
+
+.portfolio-modal-gallery {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 100%);
+    padding: 2rem 1.25rem;
+    animation: fadeIn 500ms cubic-bezier(0.4, 0, 0.2, 1) 100ms backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portfolio-modal-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--modal-shadow-lg);
+    background: #000;
+}
+
+.portfolio-modal-image-container::before {
+    content: '';
+    display: block;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+}
+
+.portfolio-modal-main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-modal-main-image.loaded {
+    opacity: 1;
+}
+
+/* Image Navigation */
+.portfolio-modal-image-nav {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 5;
+}
+
+.portfolio-modal-image-prev,
+.portfolio-modal-image-next {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: var(--modal-text-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-modal-image-prev:hover,
+.portfolio-modal-image-next:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-modal-image-prev:active,
+.portfolio-modal-image-next:active {
+    transform: translateY(0) scale(0.95);
+}
+
+/* Image Counter */
+.portfolio-modal-image-counter {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    color: var(--modal-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.02em;
+}
+
+/* ========================================
+   MODAL BODY - Editorial Layout
+   ======================================== */
+
+.portfolio-modal-body {
+    padding: 2rem 1.25rem;
+    animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) 200ms backwards;
+}
+
+/* Category & Tags Section */
+.portfolio-modal-meta-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--modal-border);
+}
+
+.portfolio-modal-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(0, 72, 229, 0.1), rgba(169, 96, 238, 0.1));
+    border: 1px solid rgba(0, 72, 229, 0.2);
+    border-radius: 100px;
+    color: var(--modal-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.portfolio-modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.portfolio-modal-tag {
+    padding: 0.375rem 0.875rem;
+    background: rgba(99, 91, 255, 0.08);
+    border: 1px solid rgba(99, 91, 255, 0.15);
+    border-radius: 0.375rem;
+    color: var(--modal-text-secondary);
+    font-size: 0.813rem;
+    font-weight: 500;
+    transition: all 200ms ease;
+}
+
+.portfolio-modal-tag:hover {
+    background: rgba(99, 91, 255, 0.15);
+    border-color: rgba(99, 91, 255, 0.3);
+}
+
+/* Description Section */
+.portfolio-modal-description-section {
+    margin-bottom: 2.5rem;
+}
+
+.portfolio-modal-description-section h3 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--modal-text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.01em;
+}
+
+.portfolio-modal-description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--modal-text-secondary);
+    margin: 0;
+}
+
+/* Metrics Section */
+.portfolio-modal-metrics-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 72, 229, 0.03), rgba(169, 96, 238, 0.03));
+    border: 1px solid var(--modal-border);
+    border-radius: 0.75rem;
+}
+
+.portfolio-modal-metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.portfolio-modal-metric-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portfolio-modal-metric-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--modal-primary), var(--modal-secondary));
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.portfolio-modal-metric-content {
+    flex: 1;
+}
+
+.portfolio-modal-metric-label {
+    display: block;
+    font-size: 0.813rem;
+    color: var(--modal-text-muted);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.portfolio-modal-metric-value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--modal-text-primary);
+    letter-spacing: -0.01em;
+}
+
+/* Details Grid */
+.portfolio-modal-details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--modal-bg);
+    border: 1px solid var(--modal-border);
+    border-radius: 0.75rem;
+}
+
+.portfolio-modal-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.portfolio-modal-detail-label {
+    font-size: 0.813rem;
+    color: var(--modal-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.portfolio-modal-detail-value {
+    font-size: 1rem;
+    color: var(--modal-text-primary);
+    font-weight: 600;
+}
+
+/* Technologies Section */
+.portfolio-modal-technologies-section {
+    margin-bottom: 2rem;
+}
+
+.portfolio-modal-technologies-section h3 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--modal-text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.01em;
+}
+
+.portfolio-modal-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+.portfolio-modal-tech-badge {
+    padding: 0.625rem 1.125rem;
+    background: linear-gradient(135deg, rgba(0, 72, 229, 0.08), rgba(169, 96, 238, 0.08));
+    border: 1px solid rgba(99, 91, 255, 0.2);
+    border-radius: 0.5rem;
+    color: var(--modal-text-primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-modal-tech-badge:hover {
+    background: linear-gradient(135deg, rgba(0, 72, 229, 0.15), rgba(169, 96, 238, 0.15));
+    border-color: rgba(99, 91, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--modal-shadow-sm);
+}
+
+/* ========================================
+   MODAL FOOTER - Premium CTAs
+   ======================================== */
+
+.portfolio-modal-footer {
+    padding: 2rem 1.25rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+    border-top: 1px solid var(--modal-border);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeIn 700ms cubic-bezier(0.4, 0, 0.2, 1) 300ms backwards;
+}
+
+.portfolio-modal-cta-primary,
+.portfolio-modal-cta-secondary {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.625rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.01em;
+}
+
+.portfolio-modal-cta-primary {
+    background: linear-gradient(135deg, var(--modal-primary), var(--modal-secondary));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 72, 229, 0.25);
+}
+
+.portfolio-modal-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 72, 229, 0.35);
+}
+
+.portfolio-modal-cta-primary:active {
+    transform: translateY(-1px);
+}
+
+.portfolio-modal-cta-secondary {
+    background: rgba(99, 91, 255, 0.08);
+    color: var(--modal-primary);
+    border: 1px solid rgba(99, 91, 255, 0.2);
+}
+
+.portfolio-modal-cta-secondary:hover {
+    background: rgba(99, 91, 255, 0.15);
+    border-color: rgba(99, 91, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: var(--modal-shadow-sm);
+}
+
+.portfolio-modal-cta-secondary:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   TABLET (768px - 1023px)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .portfolio-modal {
+        padding: 2rem;
+    }
+
+    .portfolio-modal-content {
+        max-width: 700px;
+    }
+
+    .portfolio-modal-header {
+        padding: 2rem 2.5rem;
+    }
+
+    .portfolio-modal-title {
+        font-size: 2rem;
+    }
+
+    .portfolio-modal-gallery {
+        padding: 2.5rem;
+    }
+
+    .portfolio-modal-body {
+        padding: 2.5rem;
+    }
+
+    .portfolio-modal-description-section h3,
+    .portfolio-modal-technologies-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .portfolio-modal-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-modal-details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-modal-footer {
+        padding: 2rem 2.5rem;
+        flex-direction: row;
+    }
+
+    .portfolio-modal-cta-primary,
+    .portfolio-modal-cta-secondary {
+        width: auto;
+        flex: 1;
+    }
+
+    .portfolio-modal-image-nav {
+        bottom: 2rem;
+    }
+
+    .portfolio-modal-image-prev,
+    .portfolio-modal-image-next {
+        width: 48px;
+        height: 48px;
+        font-size: 1.125rem;
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .portfolio-modal-content {
+        max-width: 900px;
+    }
+
+    .portfolio-modal-header {
+        padding: 2.5rem 3rem;
+    }
+
+    .portfolio-modal-title {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-modal-gallery {
+        padding: 3rem;
+    }
+
+    .portfolio-modal-body {
+        padding: 3rem;
+    }
+
+    .portfolio-modal-description {
+        font-size: 1.063rem;
+        line-height: 1.8;
+    }
+
+    .portfolio-modal-metrics {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portfolio-modal-details-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .portfolio-modal-footer {
+        padding: 2.5rem 3rem;
+    }
+
+    .portfolio-modal-image-counter {
+        font-size: 0.938rem;
+        padding: 0.625rem 1.25rem;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.portfolio-modal-close:focus-visible,
+.portfolio-modal-cta-primary:focus-visible,
+.portfolio-modal-cta-secondary:focus-visible,
+.portfolio-modal-image-prev:focus-visible,
+.portfolio-modal-image-next:focus-visible {
+    outline: 3px solid var(--modal-primary);
+    outline-offset: 3px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-modal,
+    .portfolio-modal-backdrop,
+    .portfolio-modal-content,
+    .portfolio-modal-header,
+    .portfolio-modal-gallery,
+    .portfolio-modal-body,
+    .portfolio-modal-footer,
+    .portfolio-modal-close,
+    .portfolio-modal-image-prev,
+    .portfolio-modal-image-next,
+    .portfolio-modal-cta-primary,
+    .portfolio-modal-cta-secondary,
+    .portfolio-modal-tech-badge {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .portfolio-modal-close:hover,
+    .portfolio-modal-image-prev:hover,
+    .portfolio-modal-image-next:hover,
+    .portfolio-modal-cta-primary:hover,
+    .portfolio-modal-cta-secondary:hover,
+    .portfolio-modal-tech-badge:hover {
+        transform: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .portfolio-modal-content {
+        border: 2px solid var(--modal-text-primary);
+    }
+
+    .portfolio-modal-category,
+    .portfolio-modal-tag,
+    .portfolio-modal-tech-badge {
+        border-width: 2px;
+    }
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.portfolio-modal-image-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(99, 91, 255, 0.2);
+    border-top-color: var(--modal-primary);
+    border-radius: 50%;
+    animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ========================================
+   UTILITY - Body Scroll Lock
+   ======================================== */
+
+body.modal-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0);
+}

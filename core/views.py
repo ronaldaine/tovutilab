@@ -270,3 +270,15 @@ def finance(request):
 
 def data_platforms(request):
     return render(request, 'core/data_platforms.html')
+
+def privacy_policy(request):
+    context = {
+        'page_title': 'Privacy Policy',
+    }
+    return render(request, 'core/privacy_policy.html', context)
+
+def support(request):
+    context = {
+        'page_title': 'Support',
+    }
+    return render(request, 'core/support.html', context)

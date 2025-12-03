@@ -1,0 +1,246 @@
+[
+  {
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Web Development",
+      "slug": "web-development",
+      "description": "Insights and tutorials on modern web development, frameworks, and best practices",
+      "icon_class": "fas fa-code",
+      "display_order": 1,
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+      "name": "UI/UX Design",
+      "slug": "ui-ux-design",
+      "description": "Design principles, user experience insights, and creative inspiration",
+      "icon_class": "fas fa-palette",
+      "display_order": 2,
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Digital Strategy",
+      "slug": "digital-strategy",
+      "description": "Business insights, digital transformation, and growth strategies",
+      "icon_class": "fas fa-chart-line",
+      "display_order": 3,
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Industry Insights",
+      "slug": "industry-insights",
+      "description": "Latest trends, news, and analysis from the tech industry",
+      "icon_class": "fas fa-lightbulb",
+      "display_order": 4,
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Django",
+      "slug": "django",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Python",
+      "slug": "python",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 3,
+    "fields": {
+      "name": "React",
+      "slug": "react",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Performance",
+      "slug": "performance",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 5,
+    "fields": {
+      "name": "API",
+      "slug": "api",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 6,
+    "fields": {
+      "name": "Design Systems",
+      "slug": "design-systems",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 7,
+    "fields": {
+      "name": "Best Practices",
+      "slug": "best-practices",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 8,
+    "fields": {
+      "name": "SEO",
+      "slug": "seo",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 9,
+    "fields": {
+      "name": "Security",
+      "slug": "security",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 10,
+    "fields": {
+      "name": "Tutorial",
+      "slug": "tutorial",
+      "is_active": true,
+      "created_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "Building Scalable Web Applications with Django and React",
+      "slug": "building-scalable-web-applications-django-react",
+      "excerpt": "Learn how to architect modern web applications that can handle millions of users by combining Django's powerful backend with React's dynamic frontend capabilities.",
+      "content": "<h2>Introduction</h2>\n\n<p>In today's digital landscape, scalability isn't just a nice-to-have feature—it's a fundamental requirement. At TovutiLab, we've built dozens of high-traffic web applications, and we've learned that the combination of Django and React provides an exceptional foundation for scalable solutions.</p>\n\n<h2>Why Django and React?</h2>\n\n<p>Django brings robust backend capabilities with its batteries-included philosophy, while React excels at creating responsive, dynamic user interfaces. Together, they form a powerful stack that can handle everything from small startups to enterprise-level applications.</p>\n\n<h3>Key Benefits</h3>\n\n<ul>\n<li><strong>Separation of Concerns:</strong> Clean API layer between frontend and backend</li>\n<li><strong>Developer Experience:</strong> Both frameworks have excellent tooling and documentation</li>\n<li><strong>Performance:</strong> React's virtual DOM and Django's ORM optimization</li>\n<li><strong>Security:</strong> Built-in protection against common vulnerabilities</li>\n<li><strong>Community:</strong> Large, active communities with extensive package ecosystems</li>\n</ul>\n\n<h2>Architecture Patterns</h2>\n\n<p>When building scalable applications, architecture is everything. We recommend a microservices-inspired approach where Django serves as the API backend, handling business logic, database operations, and authentication, while React manages the presentation layer.</p>\n\n<blockquote>The key to scalability is designing your system to handle growth from day one, not retrofitting it later when you're already struggling with performance issues.</blockquote>\n\n<h3>API Design</h3>\n\n<p>Use Django REST Framework to create a clean, RESTful API. This provides a clear contract between your frontend and backend, making it easier to scale and maintain both independently.</p>\n\n<pre><code>from rest_framework import viewsets\nfrom .models import Product\nfrom .serializers import ProductSerializer\n\nclass ProductViewSet(viewsets.ModelViewSet):\n    queryset = Product.objects.all()\n    serializer_class = ProductSerializer\n    filterset_fields = ['category', 'price']\n    search_fields = ['name', 'description']</code></pre>\n\n<h2>Performance Optimization</h2>\n\n<p>Performance is crucial for scalability. Here are our top strategies:</p>\n\n<ol>\n<li><strong>Database Optimization:</strong> Use select_related and prefetch_related to minimize queries</li>\n<li><strong>Caching:</strong> Implement Redis for session storage and frequently accessed data</li>\n<li><strong>CDN Integration:</strong> Serve static assets through a CDN</li>\n<li><strong>Code Splitting:</strong> Break your React bundle into smaller chunks</li>\n<li><strong>Lazy Loading:</strong> Load components and images only when needed</li>\n</ol>\n\n<h2>Deployment Considerations</h2>\n\n<p>Scalable deployment requires careful planning. We typically recommend containerization with Docker and orchestration with Kubernetes for larger applications. For smaller projects, services like Heroku or DigitalOcean App Platform provide excellent scalability with less complexity.</p>\n\n<h2>Conclusion</h2>\n\n<p>Building scalable web applications is both an art and a science. With Django and React, you have powerful tools at your disposal. The key is to plan for scale from the beginning, make smart architectural decisions, and continuously monitor and optimize your application's performance.</p>\n\n<p>At TovutiLab, we specialize in building these kinds of scalable solutions. If you're planning a web application and want expert guidance, <a href=\"/contact/\">get in touch with our team</a>.</p>",
+      "category": 1,
+      "author": 1,
+      "featured_image_url": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=600&fit=crop",
+      "status": "published",
+      "published_at": "2024-11-15T09:00:00Z",
+      "is_featured": true,
+      "allow_comments": true,
+      "view_count": 1247,
+      "meta_title": "Building Scalable Web Apps with Django & React | TovutiLab",
+      "meta_description": "Learn best practices for building scalable web applications using Django and React. Expert insights from TovutiLab's development team.",
+      "created_at": "2024-11-10T10:00:00Z",
+      "updated_at": "2024-11-15T09:00:00Z"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+      "title": "Modern Design Systems: Creating Consistency at Scale",
+      "slug": "modern-design-systems-creating-consistency",
+      "excerpt": "Discover how design systems can transform your product development process, improve team collaboration, and ensure a consistent user experience across all touchpoints.",
+      "content": "<h2>What is a Design System?</h2>\n\n<p>A design system is more than just a style guide or component library—it's a comprehensive collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications. Think of it as the DNA of your product's user interface.</p>\n\n<h2>Why Your Team Needs a Design System</h2>\n\n<p>As products grow and teams expand, maintaining consistency becomes increasingly challenging. A well-crafted design system solves this problem by providing a single source of truth for design decisions.</p>\n\n<h3>Key Benefits</h3>\n\n<ul>\n<li><strong>Faster Development:</strong> Reusable components accelerate the design and development process</li>\n<li><strong>Consistency:</strong> Unified look and feel across all products and platforms</li>\n<li><strong>Better Collaboration:</strong> Common language between designers and developers</li>\n<li><strong>Quality Assurance:</strong> Built-in accessibility and usability standards</li>\n<li><strong>Scalability:</strong> Easy to extend and maintain as your product grows</li>\n</ul>\n\n<h2>Core Components of a Design System</h2>\n\n<p>Every successful design system includes several fundamental elements:</p>\n\n<h3>1. Design Tokens</h3>\n\n<p>These are the foundational variables that define your visual language—colors, typography, spacing, and more. They ensure consistency across all platforms and make it easy to implement themes or rebrand when needed.</p>\n\n<pre><code>// Example design tokens\nconst colors = {\n  primary: '#0048e5',\n  secondary: '#635bff',\n  success: '#22c55e',\n  error: '#ef4444'\n};\n\nconst spacing = {\n  xs: '0.25rem',\n  sm: '0.5rem',\n  md: '1rem',\n  lg: '1.5rem',\n  xl: '2rem'\n};</code></pre>\n\n<h3>2. Component Library</h3>\n\n<p>A comprehensive set of UI components built to be flexible, accessible, and consistent. Each component should be thoroughly documented with usage guidelines, code examples, and accessibility considerations.</p>\n\n<h3>3. Documentation</h3>\n\n<p>Clear, comprehensive documentation is crucial. It should explain not just how to use components, but also when and why to use them. Include real-world examples and code snippets.</p>\n\n<blockquote>A design system is only as good as its documentation. If team members can't easily understand and implement it, it will fail.</blockquote>\n\n<h2>Building Your Design System</h2>\n\n<p>Creating a design system is an iterative process. Here's our recommended approach:</p>\n\n<ol>\n<li><strong>Audit Existing Patterns:</strong> Document what you already have</li>\n<li><strong>Define Design Principles:</strong> Establish the core values that guide decisions</li>\n<li><strong>Create Design Tokens:</strong> Start with the foundational elements</li>\n<li><strong>Build Core Components:</strong> Focus on the most frequently used elements first</li>\n<li><strong>Document Everything:</strong> Make it easy for others to use</li>\n<li><strong>Iterate and Evolve:</strong> Continuously improve based on feedback</li>\n</ol>\n\n<h2>Popular Design System Examples</h2>\n\n<p>Looking for inspiration? Study these industry-leading design systems:</p>\n\n<ul>\n<li><strong>Material Design</strong> by Google - Comprehensive and well-documented</li>\n<li><strong>Human Interface Guidelines</strong> by Apple - Focus on iOS and macOS platforms</li>\n<li><strong>Polaris</strong> by Shopify - Excellent for e-commerce applications</li>\n<li><strong>Atlassian Design System</strong> - Great for enterprise products</li>\n<li><strong>IBM Carbon</strong> - Strong focus on accessibility</li>\n</ul>\n\n<h2>Maintaining Your Design System</h2>\n\n<p>A design system is never \"done.\" It requires ongoing maintenance and evolution. Assign ownership, establish governance processes, and create feedback loops with your users (both designers and developers).</p>\n\n<h2>Conclusion</h2>\n\n<p>Investing in a design system pays dividends in improved efficiency, consistency, and product quality. While it requires upfront effort, the long-term benefits far outweigh the initial cost.</p>\n\n<p>At TovutiLab, we help companies design and implement custom design systems tailored to their specific needs. <a href=\"/services/\">Explore our design services</a> to learn more.</p>",
+      "category": 2,
+      "author": 1,
+      "featured_image_url": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=600&fit=crop",
+      "status": "published",
+      "published_at": "2024-11-20T14:30:00Z",
+      "is_featured": true,
+      "allow_comments": true,
+      "view_count": 892,
+      "meta_title": "Modern Design Systems: Creating Consistency at Scale",
+      "meta_description": "Learn how to build and maintain design systems that improve collaboration, ensure consistency, and accelerate product development.",
+      "created_at": "2024-11-18T10:00:00Z",
+      "updated_at": "2024-11-20T14:30:00Z"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 3,
+    "fields": {
+      "title": "API Security Best Practices: Protecting Your Digital Assets",
+      "slug": "api-security-best-practices",
+      "excerpt": "APIs are the backbone of modern applications, but they're also a prime target for attackers. Learn essential security practices to protect your APIs and user data.",
+      "content": "<h2>The Critical Importance of API Security</h2>\n\n<p>In today's interconnected digital ecosystem, APIs serve as the nervous system of modern applications. They enable seamless communication between services, power mobile apps, and facilitate third-party integrations. However, this connectivity also creates vulnerabilities that malicious actors can exploit.</p>\n\n<h2>Common API Security Threats</h2>\n\n<p>Understanding the threats is the first step in defending against them. Here are the most common API security risks:</p>\n\n<ul>\n<li><strong>Broken Authentication:</strong> Weak or improperly implemented authentication mechanisms</li>\n<li><strong>Excessive Data Exposure:</strong> APIs returning more data than necessary</li>\n<li><strong>Lack of Rate Limiting:</strong> Allowing unlimited requests that can lead to DDoS attacks</li>\n<li><strong>Injection Attacks:</strong> SQL, NoSQL, or command injection vulnerabilities</li>\n<li><strong>Security Misconfiguration:</strong> Default configurations, unnecessary features, or verbose error messages</li>\n</ul>\n\n<h2>Essential Security Practices</h2>\n\n<h3>1. Authentication and Authorization</h3>\n\n<p>Never trust, always verify. Implement robust authentication mechanisms like OAuth 2.0 or JWT tokens, and ensure proper authorization checks on every endpoint.</p>\n\n<pre><code>from rest_framework.permissions import IsAuthenticated\nfrom rest_framework.decorators import api_view, permission_classes\n\n@api_view(['GET'])\n@permission_classes([IsAuthenticated])\ndef secure_endpoint(request):\n    # Only authenticated users can access this\n    return Response({'data': 'sensitive information'})</code></pre>\n\n<h3>2. Rate Limiting and Throttling</h3>\n\n<p>Protect your API from abuse by implementing rate limiting. This prevents both accidental overuse and malicious attacks.</p>\n\n<blockquote>A well-configured rate limiting strategy can prevent 95% of DDoS attacks while maintaining a smooth experience for legitimate users.</blockquote>\n\n<h3>3. Input Validation</h3>\n\n<p>Never trust user input. Validate, sanitize, and escape all data before processing. Use serializers and validation libraries to enforce data integrity.</p>\n\n<h3>4. Encryption in Transit and at Rest</h3>\n\n<p>Always use HTTPS for API communication. Additionally, encrypt sensitive data at rest using industry-standard encryption algorithms. Never store passwords in plain text—use strong hashing algorithms like bcrypt or Argon2.</p>\n\n<h3>5. API Key Management</h3>\n\n<p>Implement secure API key generation, rotation, and revocation mechanisms. Never expose API keys in client-side code or version control systems.</p>\n\n<h2>Monitoring and Logging</h2>\n\n<p>Security isn't a one-time implementation—it requires continuous monitoring. Implement comprehensive logging and set up alerts for suspicious activities:</p>\n\n<ul>\n<li>Failed authentication attempts</li>\n<li>Unusual traffic patterns</li>\n<li>Repeated requests from single IPs</li>\n<li>Access to deprecated endpoints</li>\n<li>Rate limit violations</li>\n</ul>\n\n<h2>Security Testing</h2>\n\n<p>Regular security audits and penetration testing are essential. Use tools like:</p>\n\n<ul>\n<li><strong>OWASP ZAP:</strong> Automated security scanner</li>\n<li><strong>Postman:</strong> API testing with security checks</li>\n<li><strong>Burp Suite:</strong> Professional penetration testing</li>\n<li><strong>SonarQube:</strong> Static code analysis for vulnerabilities</li>\n</ul>\n\n<h2>Documentation and Communication</h2>\n\n<p>Clear API documentation isn't just for developers—it's also a security measure. Document authentication requirements, rate limits, and expected behavior. This helps prevent misuse and makes security policies explicit.</p>\n\n<h2>The Zero Trust Approach</h2>\n\n<p>Modern API security follows the zero trust principle: never assume security, always verify. This means:</p>\n\n<ol>\n<li>Verify every request, regardless of source</li>\n<li>Apply the principle of least privilege</li>\n<li>Assume breach and limit blast radius</li>\n<li>Monitor and audit everything</li>\n</ol>\n\n<h2>Conclusion</h2>\n\n<p>API security is not optional—it's fundamental to protecting your business and users. By implementing these best practices, you create multiple layers of defense that significantly reduce your attack surface.</p>\n\n<p>At TovutiLab, security is built into every project from day one. Our team conducts thorough security audits and implements industry-leading practices. <a href=\"/contact/\">Contact us</a> to discuss securing your APIs.</p>",
+      "category": 1,
+      "author": 1,
+      "featured_image_url": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&h=600&fit=crop",
+      "status": "published",
+      "published_at": "2024-11-25T11:00:00Z",
+      "is_featured": false,
+      "allow_comments": true,
+      "view_count": 634,
+      "meta_title": "API Security Best Practices: Protect Your Digital Assets",
+      "meta_description": "Essential security practices for protecting APIs from common threats. Learn authentication, rate limiting, encryption, and more from security experts.",
+      "created_at": "2024-11-22T10:00:00Z",
+      "updated_at": "2024-11-25T11:00:00Z"
+    }
+  },
+  {
+    "model": "blog.post",
+    "pk": 4,
+    "fields": {
+      "title": "The Future of Web Development: Trends to Watch in 2025",
+      "slug": "future-web-development-trends-2025",
+      "excerpt": "Explore the emerging technologies and methodologies that will shape web development in 2025. From AI-powered development tools to edge computing, discover what's next.",
+      "content": "<h2>Introduction</h2>\n\n<p>The web development landscape is evolving faster than ever. As we look toward 2025, several trends are emerging that will fundamentally change how we build and deploy web applications. At TovutiLab, we stay ahead of these trends to deliver cutting-edge solutions to our clients.</p>\n\n<h2>AI-Powered Development Tools</h2>\n\n<p>Artificial intelligence is revolutionizing the development process. From code completion to automated testing, AI tools are becoming indispensable members of development teams.</p>\n\n<h3>Key Developments:</h3>\n\n<ul>\n<li><strong>AI Code Assistants:</strong> Tools like GitHub Copilot and Anthropic's Claude are transforming how developers write code</li>\n<li><strong>Automated Testing:</strong> AI-powered test generation and maintenance</li>\n<li><strong>Bug Detection:</strong> Intelligent systems that identify potential issues before they reach production</li>\n<li><strong>Performance Optimization:</strong> AI analyzing and optimizing application performance</li>\n</ul>\n\n<blockquote>By 2025, developers who effectively leverage AI tools will be 10x more productive than those who don't. The question isn't whether to adopt AI, but how to integrate it most effectively.</blockquote>\n\n<h2>Edge Computing and Serverless Architecture</h2>\n\n<p>The shift toward edge computing continues to accelerate. By processing data closer to users, applications can achieve unprecedented performance and reliability.</p>\n\n<h3>Benefits of Edge Computing:</h3>\n\n<ul>\n<li>Reduced latency by serving content from locations near users</li>\n<li>Improved reliability through distributed architecture</li>\n<li>Better data privacy and compliance</li>\n<li>Cost optimization by reducing bandwidth usage</li>\n</ul>\n\n<h2>WebAssembly Mainstream Adoption</h2>\n\n<p>WebAssembly (Wasm) is finally reaching mainstream adoption, enabling near-native performance in web browsers. This opens up entirely new categories of web applications.</p>\n\n<pre><code>// Example: Rust compiled to WebAssembly\n#[wasm_bindgen]\npub fn process_image(data: &[u8]) -> Vec<u8> {\n    // High-performance image processing\n    // Running at near-native speed in the browser\n    transform(data)\n}</code></pre>\n\n<h3>Use Cases:</h3>\n\n<ul>\n<li>Video and image editing in the browser</li>\n<li>3D modeling and CAD applications</li>\n<li>High-performance games</li>\n<li>Scientific computing and data visualization</li>\n</ul>\n\n<h2>Progressive Web Apps (PWAs) Evolution</h2>\n\n<p>PWAs continue to blur the line between web and native applications. With improving browser APIs and capabilities, PWAs are becoming the default choice for many projects.</p>\n\n<h3>New PWA Capabilities:</h3>\n\n<ul>\n<li>Advanced file system access</li>\n<li>Better offline functionality</li>\n<li>Hardware integration (Bluetooth, NFC, USB)</li>\n<li>App store distribution</li>\n</ul>\n\n<h2>JAMstack and Static Site Generation</h2>\n\n<p>The JAMstack architecture (JavaScript, APIs, and Markup) continues to gain traction, offering exceptional performance, security, and developer experience.</p>\n\n<h3>Popular JAMstack Frameworks:</h3>\n\n<ul>\n<li><strong>Next.js:</strong> React-based with hybrid rendering</li>\n<li><strong>Gatsby:</strong> GraphQL-powered static sites</li>\n<li><strong>Astro:</strong> Partial hydration for optimal performance</li>\n<li><strong>SvelteKit:</strong> Compiler-based approach</li>\n</ul>\n\n<h2>Web3 and Decentralized Applications</h2>\n\n<p>While the hype has cooled, Web3 technologies are maturing and finding practical applications beyond speculation. Decentralized identity, tokenization, and smart contracts are being integrated into mainstream applications.</p>\n\n<h2>Improved Developer Experience</h2>\n\n<p>Developer experience (DX) is becoming a primary focus. Better tooling, clearer documentation, and more intuitive frameworks are making web development more accessible and enjoyable.</p>\n\n<h3>DX Improvements:</h3>\n\n<ul>\n<li>Lightning-fast build tools (Vite, esbuild, swc)</li>\n<li>Better TypeScript integration across the stack</li>\n<li>Improved hot module replacement</li>\n<li>Visual development environments</li>\n</ul>\n\n<h2>Sustainability in Web Development</h2>\n\n<p>Environmental consciousness is entering web development. Developers are increasingly focused on building energy-efficient applications with smaller carbon footprints.</p>\n\n<h3>Green Web Practices:</h3>\n\n<ul>\n<li>Optimizing assets to reduce data transfer</li>\n<li>Using efficient algorithms and data structures</li>\n<li>Choosing green hosting providers</li>\n<li>Measuring and reporting carbon impact</li>\n</ul>\n\n<h2>Micro-Frontends</h2>\n\n<p>Large organizations are adopting micro-frontend architectures to enable teams to work independently while maintaining a cohesive user experience.</p>\n\n<h2>Enhanced Privacy and Security</h2>\n\n<p>With increasing regulations and user awareness, privacy-first development is becoming standard. Techniques like differential privacy, federated learning, and zero-knowledge proofs are entering mainstream web development.</p>\n\n<h2>Conclusion</h2>\n\n<p>The future of web development is bright and full of exciting possibilities. Success will come to those who stay curious, continuously learn, and adapt to new technologies while maintaining focus on fundamentals: performance, security, and user experience.</p>\n\n<p>At TovutiLab, we're not just watching these trends—we're actively implementing them in our projects. Whether you need a cutting-edge PWA, a high-performance WebAssembly application, or a scalable edge-computing solution, we have the expertise to bring your vision to life.</p>\n\n<p><a href=\"/services/\">Explore our services</a> or <a href=\"/contact/\">get in touch</a> to discuss your next project.</p>",
+      "category": 4,
+      "author": 1,
+      "featured_image_url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=600&fit=crop",
+      "status": "published",
+      "published_at": "2024-11-28T08:00:00Z",
+      "is_featured": true,
+      "allow_comments": true,
+      "view_count": 1453,
+      "meta_title": "Future of Web Development: Top Trends for 2025 | TovutiLab",
+      "meta_description": "Discover the emerging web development trends that will shape 2025. AI tools, edge computing, WebAssembly, and more insights from industry experts.",
+      "created_at": "2024-11-26T10:00:00Z",
+      "updated_at": "2024-11-28T08:00:00Z"
+    }
+  }
+]
