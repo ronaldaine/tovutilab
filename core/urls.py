@@ -12,5 +12,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('finance/', views.finance, name='finance'),
     path('data-platforms/', views.data_platforms, name='data-platforms'),
+    path('privacy/', views.privacy_policy, name='privacy-policy'),
+    path('support-center/', views.support, name='support-center'),
     
 ]

@@ -1,0 +1,385 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+{% block description %}{{ meta_description }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Blog Hero Section -->
+<section class="blog-hero-section">
+    <!-- Animated Background -->
+    <div class="blog-hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="blog-hero-container">
+        <!-- Hero Content -->
+        <div class="blog-hero-content">
+            <!-- Badge -->
+            <div class="blog-badge" data-aos="fade-up">
+                <i class="fas fa-blog"></i>
+                <span>TovutiLab Insights</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="blog-hero-title" data-aos="fade-up" data-aos-delay="100">
+                {% if selected_category %}
+                    {{ selected_category.name }}
+                {% elif selected_tag %}
+                    #{{ selected_tag.name }}
+                {% elif search_query %}
+                    Search Results
+                {% else %}
+                    Stories, insights, and ideas
+                {% endif %}
+            </h1>
+
+            <!-- Subheading -->
+            <p class="blog-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                {% if selected_category %}
+                    {{ selected_category.description|default:"Explore our latest articles and insights" }}
+                {% elif selected_tag %}
+                    Articles tagged with {{ selected_tag.name }}
+                {% elif search_query %}
+                    Results for "{{ search_query }}"
+                {% else %}
+                    Explore our latest articles on web development, design, and digital innovation
+                {% endif %}
+            </p>
+
+            <!-- Search Bar -->
+            <div class="blog-search-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <form action="{% url 'blog:post_list' %}" method="get" class="blog-search-form">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input
+                            type="text"
+                            name="search"
+                            class="search-input"
+                            placeholder="Search articles..."
+                            value="{{ search_query|default:'' }}"
+                        >
+                        {% if search_query %}
+                        <button type="button" class="search-clear" onclick="this.form.search.value=''; this.form.submit();">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="search-submit">
+                        Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Content Section -->
+<section class="blog-content-section">
+    <div class="blog-content-container">
+        <!-- Main Content Area -->
+        <div class="blog-main-content">
+            <!-- Filter Tabs -->
+            <div class="blog-filter-tabs">
+                <a href="{% url 'blog:post_list' %}" class="filter-tab {% if not selected_category and not selected_tag %}active{% endif %}">
+                    All Articles
+                </a>
+                {% for category in categories %}
+                <a href="{% url 'blog:post_list' %}?category={{ category.slug }}"
+                   class="filter-tab {% if selected_category.slug == category.slug %}active{% endif %}">
+                    <i class="{{ category.icon_class }}"></i>
+                    {{ category.name }}
+                    <span class="tab-count">{{ category.post_count }}</span>
+                </a>
+                {% endfor %}
+            </div>
+
+            <!-- Featured Post (First post if no search/filter) -->
+            {% if posts and not selected_category and not selected_tag and not search_query and posts.number == 1 %}
+            {% with first_post=posts.0 %}
+            <article class="featured-post" data-aos="fade-up">
+                <a href="{{ first_post.get_absolute_url }}" class="featured-post-link">
+                    {% if first_post.featured_image_url %}
+                    <div class="featured-post-image">
+                        <img src="{{ first_post.featured_image_url }}" alt="{{ first_post.title }}" loading="eager">
+                        <div class="featured-post-overlay"></div>
+                    </div>
+                    {% endif %}
+
+                    <div class="featured-post-content">
+                        <div class="featured-post-meta">
+                            <span class="post-category">
+                                <i class="{{ first_post.category.icon_class }}"></i>
+                                {{ first_post.category.name }}
+                            </span>
+                            <span class="post-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                {{ first_post.published_at|date:"M d, Y" }}
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                {{ first_post.get_reading_time }} min read
+                            </span>
+                        </div>
+
+                        <h2 class="featured-post-title">{{ first_post.title }}</h2>
+
+                        {% if first_post.excerpt %}
+                        <p class="featured-post-excerpt">{{ first_post.excerpt }}</p>
+                        {% endif %}
+
+                        <div class="featured-post-footer">
+                            <div class="post-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="author-info">
+                                    <span class="author-name">{{ first_post.author.get_full_name|default:first_post.author.username }}</span>
+                                    <span class="author-role">Author</span>
+                                </div>
+                            </div>
+
+                            <div class="post-tags">
+                                {% for tag in first_post.tags.all|slice:":3" %}
+                                <span class="post-tag">#{{ tag.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {% endwith %}
+            {% endif %}
+
+            <!-- Blog Posts Grid -->
+            <div class="blog-posts-grid">
+                {% for post in posts %}
+                    {% if forloop.first and not selected_category and not selected_tag and not search_query and posts.number == 1 %}
+                        {# Skip first post as it's featured #}
+                    {% else %}
+                    <article class="blog-post-card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'100'|divisibleby:'3'|yesno:'0,100,200' }}">
+                        <a href="{{ post.get_absolute_url }}" class="post-card-link">
+                            {% if post.featured_image_url %}
+                            <div class="post-card-image">
+                                <img src="{{ post.featured_image_url }}" alt="{{ post.title }}" loading="lazy">
+                                <div class="post-card-overlay"></div>
+                                {% if post.is_featured %}
+                                <div class="featured-badge">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+
+                            <div class="post-card-content">
+                                <div class="post-card-meta">
+                                    <span class="post-category">
+                                        <i class="{{ post.category.icon_class }}"></i>
+                                        {{ post.category.name }}
+                                    </span>
+                                    <span class="post-read-time">
+                                        <i class="fas fa-clock"></i>
+                                        {{ post.get_reading_time }} min
+                                    </span>
+                                </div>
+
+                                <h3 class="post-card-title">{{ post.title }}</h3>
+
+                                {% if post.excerpt %}
+                                <p class="post-card-excerpt">{{ post.excerpt|truncatewords:20 }}</p>
+                                {% endif %}
+
+                                <div class="post-card-footer">
+                                    <div class="post-author-small">
+                                        <i class="fas fa-user-circle"></i>
+                                        <span>{{ post.author.get_full_name|default:post.author.username }}</span>
+                                    </div>
+                                    <span class="post-date">{{ post.published_at|date:"M d" }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    {% endif %}
+                {% empty %}
+                <div class="no-posts-message">
+                    <div class="no-posts-icon">
+                        <i class="fas fa-inbox"></i>
+                    </div>
+                    <h3>No articles found</h3>
+                    <p>{% if search_query %}Try adjusting your search terms{% else %}Check back soon for new content{% endif %}</p>
+                    {% if search_query or selected_category or selected_tag %}
+                    <a href="{% url 'blog:post_list' %}" class="btn-view-all">View All Articles</a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if posts.has_other_pages %}
+            <nav class="blog-pagination" aria-label="Blog pagination">
+                <div class="pagination-wrapper">
+                    {% if posts.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}{% if selected_category %}&category={{ selected_category.slug }}{% endif %}{% if selected_tag %}&tag={{ selected_tag.slug }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}"
+                       class="pagination-btn pagination-prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Previous</span>
+                    </a>
+                    {% else %}
+                    <span class="pagination-btn pagination-disabled">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Previous</span>
+                    </span>
+                    {% endif %}
+
+                    <div class="pagination-pages">
+                        {% for page_num in posts.paginator.page_range %}
+                            {% if posts.number == page_num %}
+                            <span class="pagination-page active">{{ page_num }}</span>
+                            {% elif page_num > posts.number|add:'-3' and page_num < posts.number|add:'3' %}
+                            <a href="?page={{ page_num }}{% if selected_category %}&category={{ selected_category.slug }}{% endif %}{% if selected_tag %}&tag={{ selected_tag.slug }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}"
+                               class="pagination-page">{{ page_num }}</a>
+                            {% elif page_num == 1 or page_num == posts.paginator.num_pages %}
+                            <a href="?page={{ page_num }}{% if selected_category %}&category={{ selected_category.slug }}{% endif %}{% if selected_tag %}&tag={{ selected_tag.slug }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}"
+                               class="pagination-page">{{ page_num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    {% if posts.has_next %}
+                    <a href="?page={{ posts.next_page_number }}{% if selected_category %}&category={{ selected_category.slug }}{% endif %}{% if selected_tag %}&tag={{ selected_tag.slug }}{% endif %}{% if search_query %}&search={{ search_query }}{% endif %}"
+                       class="pagination-btn pagination-next">
+                        <span>Next</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    {% else %}
+                    <span class="pagination-btn pagination-disabled">
+                        <span>Next</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    {% endif %}
+                </div>
+
+                <div class="pagination-info">
+                    Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+                </div>
+            </nav>
+            {% endif %}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+            <!-- Featured Posts Widget -->
+            {% if featured_posts %}
+            <div class="sidebar-widget" data-aos="fade-up">
+                <h3 class="widget-title">
+                    <i class="fas fa-star"></i>
+                    Featured Articles
+                </h3>
+                <div class="featured-posts-list">
+                    {% for post in featured_posts %}
+                    <a href="{{ post.get_absolute_url }}" class="featured-post-item">
+                        {% if post.featured_image_url %}
+                        <div class="featured-post-thumb">
+                            <img src="{{ post.featured_image_url }}" alt="{{ post.title }}" loading="lazy">
+                        </div>
+                        {% endif %}
+                        <div class="featured-post-info">
+                            <h4 class="featured-post-name">{{ post.title|truncatewords:10 }}</h4>
+                            <span class="featured-post-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                {{ post.published_at|date:"M d" }}
+                            </span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Categories Widget -->
+            {% if categories %}
+            <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="widget-title">
+                    <i class="fas fa-folder"></i>
+                    Categories
+                </h3>
+                <div class="categories-list">
+                    {% for category in categories %}
+                    <a href="{% url 'blog:post_list' %}?category={{ category.slug }}"
+                       class="category-item {% if selected_category.slug == category.slug %}active{% endif %}">
+                        <i class="{{ category.icon_class }}"></i>
+                        <span class="category-name">{{ category.name }}</span>
+                        <span class="category-count">{{ category.post_count }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Popular Tags Widget -->
+            {% if popular_tags %}
+            <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="widget-title">
+                    <i class="fas fa-tags"></i>
+                    Popular Tags
+                </h3>
+                <div class="tags-cloud">
+                    {% for tag in popular_tags %}
+                    <a href="{% url 'blog:post_list' %}?tag={{ tag.slug }}"
+                       class="tag-item {% if selected_tag.slug == tag.slug %}active{% endif %}">
+                        #{{ tag.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Newsletter Widget -->
+            <div class="sidebar-widget newsletter-widget" data-aos="fade-up" data-aos-delay="300">
+                <div class="newsletter-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="widget-title">Stay Updated</h3>
+                <p class="newsletter-text">Get the latest articles and insights delivered to your inbox.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-submit">
+                        Subscribe
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="blog-cta-section">
+    <div class="blog-cta-container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2 class="cta-title">Ready to start your project?</h2>
+            <p class="cta-description">Let's build something amazing together</p>
+        </div>
+        <div class="cta-actions" data-aos="fade-up" data-aos-delay="100">
+            <a href="{% url 'contact' %}" class="cta-btn-primary">
+                Get Started
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="{% url 'services:services_list' %}" class="cta-btn-secondary">
+                View Services
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/blog.js' %}" defer></script>
+{% endblock %}

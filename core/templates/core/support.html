@@ -1,0 +1,508 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Support Center - Get Help & Answers{% endblock %}
+{% block description %}Access comprehensive support resources, FAQs, and contact our expert team. We're here to help you succeed with your digital projects.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/support.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="support-hero-section">
+    <div class="support-hero-background">
+        <div class="gradient-mesh"></div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <div class="support-hero-container">
+        <div class="support-hero-content">
+            <!-- Trust Badge -->
+            <div class="support-hero-badge" data-aos="fade-up">
+                <svg class="badge-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 1L3 4V8C3 11.5 5.5 14.5 8 15C10.5 14.5 13 11.5 13 8V4L8 1Z" fill="url(#supportGradient)"/>
+                    <defs>
+                        <linearGradient id="supportGradient" x1="0" y1="0" x2="16" y2="16">
+                            <stop offset="0%" stop-color="#635bff"/>
+                            <stop offset="100%" stop-color="#0073e6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>24/7 Support Available</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="support-hero-title" data-aos="fade-up" data-aos-delay="100">
+                How can we
+                <br />
+                <span class="gradient-text-refined">help you today?</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="support-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Get instant answers to common questions, explore our documentation, or connect with our support team. We're committed to your success.
+            </p>
+
+            <!-- Quick Links -->
+            <div class="support-hero-links" data-aos="fade-up" data-aos-delay="300">
+                <a href="#faq" class="support-quick-link">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                        <path d="M10 14V14.01M10 11C10 9.5 11.5 9 11.5 7.5C11.5 6.5 10.5 6 10 6C9 6 8 6.5 8 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Browse FAQs</span>
+                </a>
+                <a href="#contact" class="support-quick-link">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 5L10 10L17 5M3 5V15H17V5H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Methods Section -->
+<section class="support-contact-methods">
+    <div class="support-methods-container">
+        <div class="support-methods-grid">
+            <!-- Email Support -->
+            <div class="support-method-card" data-aos="fade-up">
+                <div class="method-icon-wrapper">
+                    <svg class="method-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 8L12 13L21 8M3 8V18H21V8H3Z" stroke="url(#emailGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="emailGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#635bff"/>
+                                <stop offset="100%" stop-color="#0073e6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="method-title">Email Support</h3>
+                <p class="method-description">Send us a detailed message and we'll respond within 24 hours.</p>
+                <a href="mailto:hello@tovutilab.com" class="method-link">
+                    info@tovutilab.com
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Phone Support -->
+            <div class="support-method-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="method-icon-wrapper">
+                    <svg class="method-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 20.1 19.1 21 18 21C9.716 21 3 14.284 3 6C3 4.9 3.9 4 5 4Z" stroke="url(#phoneGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="phoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#635bff"/>
+                                <stop offset="100%" stop-color="#0073e6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="method-title">Phone Support</h3>
+                <p class="method-description">Speak directly with our team during business hours.</p>
+                <a href="tel:+254701310224" class="method-link">
+                    +254 701 310 224
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="support-method-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="method-icon-wrapper">
+                    <svg class="method-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 2V5M16 2V5M3 9H21M5 4H19C20.1 4 21 4.9 21 6V20C21 21.1 20.1 22 19 22H5C3.9 22 3 21.1 3 20V6C3 4.9 3.9 4 5 4Z" stroke="url(#formGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="formGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#635bff"/>
+                                <stop offset="100%" stop-color="#0073e6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h3 class="method-title">Project Inquiry</h3>
+                <p class="method-description">Fill out our comprehensive form to get a custom quote.</p>
+                <a href="{% url 'contact' %}" class="method-link">
+                    Start a project
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="support-faq-section" id="faq">
+    <div class="support-faq-container">
+        <!-- Section Header -->
+        <div class="support-section-header" data-aos="fade-up">
+            <p class="section-label">Frequently Asked Questions</p>
+            <h2 class="section-title">Quick answers to common questions</h2>
+            <p class="section-description">
+                Can't find what you're looking for? Contact our support team for personalized assistance.
+            </p>
+        </div>
+
+        <!-- FAQ Categories -->
+        <div class="faq-categories">
+            <!-- General Questions -->
+            <div class="faq-category" data-aos="fade-up">
+                <div class="faq-category-header">
+                    <div class="faq-category-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M10 14V10M10 6V6.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="faq-category-title">General</h3>
+                </div>
+
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">What services does TovutiLab offer?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>TovutiLab specializes in custom web application development, e-commerce solutions, API development, mobile apps, and digital transformation consulting. We work with businesses of all sizes to create scalable, secure, and user-friendly digital solutions tailored to your specific needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">Where is TovutiLab located?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our headquarters is in Nairobi, Kenya, with a regional office serving East Africa. However, we work with clients globally and have experience delivering projects across multiple continents and time zones.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">Do you work with international clients?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! We have extensive experience working with international clients across different time zones. We use modern collaboration tools and maintain flexible working hours to ensure seamless communication regardless of your location.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects & Pricing -->
+            <div class="faq-category" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-category-header">
+                    <div class="faq-category-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 10L9 12L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="faq-category-title">Projects & Pricing</h3>
+                </div>
+
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">How much does a typical project cost?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Project costs vary significantly based on scope, complexity, and requirements. Simple websites start around $5,000, while complex web applications can range from $20,000 to $100,000+. We provide detailed quotes after understanding your specific needs through our consultation process.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">What is your typical project timeline?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Timelines depend on project complexity. A basic website takes 4-6 weeks, while custom web applications typically require 3-6 months. We provide detailed project timelines during the planning phase and maintain transparent communication throughout development.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">Do you offer payment plans?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer flexible payment structures based on project milestones. Typically, we require 30-50% upfront, with the remainder distributed across development milestones and final delivery. We're happy to discuss payment terms that work for your budget.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Questions -->
+            <div class="faq-category" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-category-header">
+                    <div class="faq-category-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7 8L3 12L7 16M13 8L17 12L13 16M11 4L9 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="faq-category-title">Technical</h3>
+                </div>
+
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">What technologies do you use?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We specialize in modern web technologies including Django/Python, React, Vue.js, Node.js, PostgreSQL, and cloud platforms (AWS, Google Cloud, Azure). We select technologies based on your project requirements, scalability needs, and long-term maintenance considerations.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">Do you provide hosting and maintenance?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer comprehensive hosting solutions and ongoing maintenance packages. This includes server management, security updates, performance monitoring, backups, and technical support. We can host on our infrastructure or help you set up your own.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">Will I own the source code?</span>
+                            <svg class="faq-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10H15M10 5V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. Upon final payment, you receive full ownership of all source code, designs, and intellectual property created for your project. We provide complete documentation and can train your team if needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="faq-cta" data-aos="fade-up">
+            <p class="faq-cta-text">Still have questions?</p>
+            <a href="{% url 'contact' %}" class="faq-cta-btn">
+                <span>Contact our team</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Office Locations Section -->
+<section class="support-offices-section" id="contact">
+    <div class="support-offices-container">
+        <!-- Section Header -->
+        <div class="support-section-header" data-aos="fade-up">
+            <p class="section-label">Our Offices</p>
+            <h2 class="section-title">Get in touch with our teams</h2>
+            <p class="section-description">
+                Reach out to our offices across East Africa for localized support and partnerships.
+            </p>
+        </div>
+
+        <!-- Office Cards -->
+        <div class="offices-grid">
+            <!-- Headquarters -->
+            <div class="office-card" data-aos="fade-up">
+                <div class="office-badge">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <rect x="2" y="4" width="12" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
+                        <path d="M6 4V2H10V4M8 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Headquarters</span>
+                </div>
+
+                <h3 class="office-title">Nairobi Office</h3>
+                <p class="office-description">
+                    Our main office and development center, home to our core team of designers, developers, and project managers.
+                </p>
+
+                <div class="office-details">
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 7L10 11L17 7M3 7V15H17V7H3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Email</span>
+                            <a href="mailto:hello@tovutilab.com" class="office-detail-value">info@tovutilab.com</a>
+                        </div>
+                    </div>
+
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 3H8L10 8L7.5 9.5C8.57 11.67 10.33 13.43 12.5 14.5L14 12L19 14V18C19 18.55 18.55 19 18 19C9.716 19 3 12.284 3 4C3 3.45 3.45 3 4 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Phone</span>
+                            <a href="tel:+254701310224" class="office-detail-value">+254 701 310 224</a>
+                        </div>
+                    </div>
+
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7C9.44772 7 9 7.44772 9 8C9 8.55228 9.44772 9 10 9Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 18C10 18 16 13 16 8C16 4.686 13.314 2 10 2C6.686 2 4 4.686 4 8C4 13 10 18 10 18Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Location</span>
+                            <a href="https://maps.google.com/?q=TovutiLab+Nairobi" target="_blank" rel="noopener" class="office-detail-value">Nairobi, Kenya</a>
+                        </div>
+                    </div>
+
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 5V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Hours</span>
+                            <span class="office-detail-value">Mon-Fri: 9:00 AM - 6:00 PM EAT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- East Africa Office -->
+            <div class="office-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="office-badge office-badge-secondary">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M8 2V8H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Regional Office</span>
+                </div>
+
+                <h3 class="office-title">East Africa Operations</h3>
+                <p class="office-description">
+                    Our regional office supporting clients across East Africa with localized partnerships and business development.
+                </p>
+
+                <div class="office-details">
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 7L10 11L17 7M3 7V15H17V7H3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Email</span>
+                            <a href="mailto:partners@tovutilab.com" class="office-detail-value">ronald@tovutilab.com</a>
+                        </div>
+                    </div>
+
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 3H8L10 8L7.5 9.5C8.57 11.67 10.33 13.43 12.5 14.5L14 12L19 14V18C19 18.55 18.55 19 18 19C9.716 19 3 12.284 3 4C3 3.45 3.45 3 4 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Phone</span>
+                            <a href="tel:+254786342199" class="office-detail-value">+256 786 342 199</a>
+                        </div>
+                    </div>
+
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 9C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7C9.44772 7 9 7.44772 9 8C9 8.55228 9.44772 9 10 9Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 18C10 18 16 13 16 8C16 4.686 13.314 2 10 2C6.686 2 4 4.686 4 8C4 13 10 18 10 18Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Region</span>
+                            <span class="office-detail-value">East Africa</span>
+                        </div>
+                    </div>
+
+                    <div class="office-detail-item">
+                        <div class="office-detail-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 5V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="office-detail-content">
+                            <span class="office-detail-label">Hours</span>
+                            <span class="office-detail-value">Mon-Fri: 9:00 AM - 6:00 PM EAT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="support-cta-section">
+    <div class="support-cta-container">
+        <div class="support-cta-content" data-aos="fade-up">
+            <h2 class="support-cta-title">Ready to start your project?</h2>
+            <p class="support-cta-description">
+                Let's discuss how TovutiLab can help bring your digital vision to life. Our team is ready to provide expert guidance and exceptional service.
+            </p>
+            <div class="support-cta-actions">
+                <a href="{% url 'contact' %}" class="support-cta-btn-primary">
+                    <span>Get started</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="{% url 'services:services_list' %}" class="support-cta-btn-secondary">
+                    <span>View services</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/support.js' %}" defer></script>
+{% endblock %}

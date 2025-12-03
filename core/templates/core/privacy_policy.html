@@ -1,0 +1,687 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Privacy Policy | TovutiLab{% endblock %}
+{% block description %}Learn how TovutiLab collects, uses, and protects your personal information. Read our comprehensive privacy policy.{% endblock %}
+
+{% block extra_css %}
+<style>
+/* ========================================
+   PRIVACY POLICY PAGE - Stripe-Inspired
+   Mobile-First, Production-Ready
+   ======================================== */
+
+:root {
+    --policy-text-primary: #0a2540;
+    --policy-text-secondary: #425466;
+    --policy-text-muted: #697386;
+    --policy-accent: #635bff;
+    --policy-border: #e3e8ee;
+    --policy-bg-light: #f6f9fc;
+}
+
+.privacy-policy-page {
+    min-height: 100vh;
+    background: #ffffff;
+    padding-top: 72px;
+}
+
+/* ========================================
+   HERO SECTION - Mobile First
+   ======================================== */
+
+.privacy-hero {
+    background: linear-gradient(180deg, var(--policy-bg-light) 0%, #ffffff 100%);
+    border-bottom: 1px solid var(--policy-border);
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+}
+
+.privacy-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(99, 91, 255, 0.08);
+    border: 1px solid rgba(99, 91, 255, 0.2);
+    border-radius: 100px;
+    color: var(--policy-accent);
+    font-size: 0.813rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--policy-text-primary);
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+}
+
+.privacy-hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--policy-text-secondary);
+    margin: 0 0 1rem 0;
+}
+
+.privacy-last-updated {
+    font-size: 0.875rem;
+    color: var(--policy-text-muted);
+    font-weight: 500;
+}
+
+/* ========================================
+   MAIN CONTENT - Two Column Layout
+   ======================================== */
+
+.privacy-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ========================================
+   TABLE OF CONTENTS - Mobile First
+   ======================================== */
+
+.privacy-toc {
+    background: var(--policy-bg-light);
+    border: 1px solid var(--policy-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.privacy-toc-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--policy-text-primary);
+    margin: 0 0 1rem 0;
+}
+
+.privacy-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.privacy-toc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--policy-text-secondary);
+    text-decoration: none;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+
+.privacy-toc-link:hover {
+    background: rgba(99, 91, 255, 0.08);
+    color: var(--policy-accent);
+}
+
+.privacy-toc-link i {
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+/* ========================================
+   CONTENT SECTIONS
+   ======================================== */
+
+.privacy-content {
+    max-width: 100%;
+}
+
+.privacy-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 100px;
+}
+
+.privacy-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--policy-text-primary);
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--policy-border);
+    letter-spacing: -0.01em;
+}
+
+.privacy-section-content {
+    font-size: 0.938rem;
+    line-height: 1.75;
+    color: var(--policy-text-secondary);
+}
+
+.privacy-section-content p {
+    margin: 0 0 1.25rem 0;
+}
+
+.privacy-section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-section-content strong {
+    color: var(--policy-text-primary);
+    font-weight: 600;
+}
+
+.privacy-section-content a {
+    color: var(--policy-accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(99, 91, 255, 0.3);
+    transition: border-color 0.2s ease;
+}
+
+.privacy-section-content a:hover {
+    border-bottom-color: var(--policy-accent);
+}
+
+/* Lists */
+.privacy-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.privacy-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+}
+
+.privacy-list li::marker {
+    color: var(--policy-accent);
+    font-weight: 600;
+}
+
+/* Highlight Box */
+.privacy-highlight {
+    background: rgba(99, 91, 255, 0.05);
+    border-left: 3px solid var(--policy-accent);
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+}
+
+.privacy-highlight p {
+    margin: 0;
+    font-size: 0.938rem;
+    color: var(--policy-text-primary);
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
+.privacy-contact-section {
+    background: linear-gradient(135deg, rgba(99, 91, 255, 0.05), rgba(0, 115, 230, 0.05));
+    border: 1px solid var(--policy-border);
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.privacy-contact-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--policy-text-primary);
+    margin: 0 0 0.75rem 0;
+}
+
+.privacy-contact-text {
+    font-size: 0.938rem;
+    line-height: 1.6;
+    color: var(--policy-text-secondary);
+    margin: 0 0 1.5rem 0;
+}
+
+.privacy-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.938rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--policy-accent);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(99, 91, 255, 0.2);
+}
+
+.privacy-contact-btn:hover {
+    background: #5851df;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(99, 91, 255, 0.3);
+}
+
+/* ========================================
+   TABLET (768px+)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .privacy-policy-page {
+        padding-top: 80px;
+    }
+
+    .privacy-hero {
+        padding: 4rem 2rem 3rem;
+    }
+
+    .privacy-hero-title {
+        font-size: 3rem;
+    }
+
+    .privacy-hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .privacy-content-wrapper {
+        padding: 4rem 2rem;
+    }
+
+    .privacy-section-title {
+        font-size: 1.75rem;
+    }
+
+    .privacy-section-content {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   DESKTOP (1024px+)
+   ======================================== */
+
+@media (min-width: 1024px) {
+    .privacy-content-wrapper {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    .privacy-toc {
+        position: sticky;
+        top: 100px;
+        width: 280px;
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .privacy-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .privacy-section {
+        margin-bottom: 4rem;
+    }
+
+    .privacy-section-title {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.privacy-toc-link:focus-visible,
+.privacy-contact-btn:focus-visible,
+.privacy-section-content a:focus-visible {
+    outline: 2px solid var(--policy-accent);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .privacy-toc-link,
+    .privacy-contact-btn {
+        transition: none;
+    }
+
+    .privacy-contact-btn:hover {
+        transform: none;
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="privacy-policy-page">
+    <!-- Hero Section -->
+    <section class="privacy-hero">
+        <div class="privacy-hero-container">
+            <div class="privacy-hero-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Legal</span>
+            </div>
+            <h1 class="privacy-hero-title">Privacy Policy</h1>
+            <p class="privacy-hero-subtitle">
+                Your privacy is important to us. This policy outlines how we collect, use, and protect your personal information.
+            </p>
+            <p class="privacy-last-updated">
+                <strong>Last Updated:</strong> December 2, 2025
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="privacy-content-wrapper">
+        <!-- Table of Contents -->
+        <aside class="privacy-toc">
+            <h2 class="privacy-toc-title">Contents</h2>
+            <nav>
+                <ul class="privacy-toc-list">
+                    <li>
+                        <a href="#introduction" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Introduction
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#information-collection" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Information We Collect
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#how-we-use" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            How We Use Your Information
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#information-sharing" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Information Sharing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#data-security" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Data Security
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#your-rights" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Your Rights
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cookies" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Cookies & Tracking
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#children" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Children's Privacy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#changes" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Policy Changes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="privacy-toc-link">
+                            <i class="fas fa-chevron-right"></i>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Content Sections -->
+        <main class="privacy-content">
+            <!-- Introduction -->
+            <section id="introduction" class="privacy-section">
+                <h2 class="privacy-section-title">1. Introduction</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        Welcome to TovutiLab ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                    </p>
+                    <p>
+                        By using our services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our services.
+                    </p>
+                    <div class="privacy-highlight">
+                        <p>
+                            <strong>Important:</strong> This policy applies to all information collected through our website, services, and any related communications.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Information Collection -->
+            <section id="information-collection" class="privacy-section">
+                <h2 class="privacy-section-title">2. Information We Collect</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        We collect information that you provide directly to us, information we obtain automatically when you use our services, and information from third-party sources.
+                    </p>
+
+                    <p><strong>Information You Provide:</strong></p>
+                    <ul class="privacy-list">
+                        <li><strong>Contact Information:</strong> Name, email address, phone number, company name</li>
+                        <li><strong>Project Information:</strong> Project requirements, budget, timeline, and specifications</li>
+                        <li><strong>Communication Data:</strong> Messages, feedback, and correspondence with us</li>
+                        <li><strong>Payment Information:</strong> Billing address and payment details (processed securely by third-party providers)</li>
+                        <li><strong>Account Information:</strong> Username, password, and preferences if you create an account</li>
+                    </ul>
+
+                    <p><strong>Information Collected Automatically:</strong></p>
+                    <ul class="privacy-list">
+                        <li><strong>Device Information:</strong> IP address, browser type, operating system, device identifiers</li>
+                        <li><strong>Usage Data:</strong> Pages visited, time spent, links clicked, referral sources</li>
+                        <li><strong>Location Data:</strong> General geographic location based on IP address</li>
+                        <li><strong>Cookies & Tracking:</strong> Data collected through cookies, web beacons, and similar technologies</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- How We Use Information -->
+            <section id="how-we-use" class="privacy-section">
+                <h2 class="privacy-section-title">3. How We Use Your Information</h2>
+                <div class="privacy-section-content">
+                    <p>We use the information we collect for various purposes, including:</p>
+
+                    <ul class="privacy-list">
+                        <li><strong>Provide Services:</strong> To deliver the services you request and fulfill our contractual obligations</li>
+                        <li><strong>Communication:</strong> To respond to your inquiries, send updates, and provide customer support</li>
+                        <li><strong>Improve Services:</strong> To analyze usage patterns and enhance our website and services</li>
+                        <li><strong>Marketing:</strong> To send promotional materials and information about our services (with your consent)</li>
+                        <li><strong>Security:</strong> To protect against fraud, unauthorized access, and security incidents</li>
+                        <li><strong>Legal Compliance:</strong> To comply with legal obligations and enforce our terms of service</li>
+                        <li><strong>Business Operations:</strong> To manage our business, including analytics and internal reporting</li>
+                    </ul>
+
+                    <div class="privacy-highlight">
+                        <p>
+                            <strong>Marketing Communications:</strong> You can opt out of marketing emails at any time by clicking the unsubscribe link or contacting us directly.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Information Sharing -->
+            <section id="information-sharing" class="privacy-section">
+                <h2 class="privacy-section-title">4. Information Sharing and Disclosure</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        We do not sell your personal information. We may share your information in the following circumstances:
+                    </p>
+
+                    <ul class="privacy-list">
+                        <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf (hosting, analytics, payment processing)</li>
+                        <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                        <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
+                        <li><strong>Protection of Rights:</strong> To protect our rights, property, or safety, or that of our users</li>
+                        <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information</li>
+                    </ul>
+
+                    <p>
+                        All third-party service providers are required to maintain the confidentiality and security of your information and are prohibited from using it for any purpose other than providing services to us.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Data Security -->
+            <section id="data-security" class="privacy-section">
+                <h2 class="privacy-section-title">5. Data Security</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+                    </p>
+
+                    <p><strong>Our security measures include:</strong></p>
+                    <ul class="privacy-list">
+                        <li>SSL/TLS encryption for data transmission</li>
+                        <li>Secure server infrastructure with regular security updates</li>
+                        <li>Access controls and authentication requirements</li>
+                        <li>Regular security audits and vulnerability assessments</li>
+                        <li>Employee training on data privacy and security</li>
+                        <li>Incident response procedures for data breaches</li>
+                    </ul>
+
+                    <div class="privacy-highlight">
+                        <p>
+                            <strong>Please Note:</strong> While we strive to protect your information, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Your Rights -->
+            <section id="your-rights" class="privacy-section">
+                <h2 class="privacy-section-title">6. Your Privacy Rights</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        Depending on your location, you may have certain rights regarding your personal information:
+                    </p>
+
+                    <ul class="privacy-list">
+                        <li><strong>Access:</strong> Request access to the personal information we hold about you</li>
+                        <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                        <li><strong>Deletion:</strong> Request deletion of your personal information (subject to legal obligations)</li>
+                        <li><strong>Portability:</strong> Request a copy of your data in a structured, machine-readable format</li>
+                        <li><strong>Restriction:</strong> Request restriction of processing of your personal information</li>
+                        <li><strong>Objection:</strong> Object to processing of your personal information for certain purposes</li>
+                        <li><strong>Withdraw Consent:</strong> Withdraw consent for processing where consent was the legal basis</li>
+                    </ul>
+
+                    <p>
+                        To exercise any of these rights, please contact us using the information provided in the Contact Us section. We will respond to your request within the timeframe required by applicable law.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Cookies -->
+            <section id="cookies" class="privacy-section">
+                <h2 class="privacy-section-title">7. Cookies and Tracking Technologies</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        We use cookies and similar tracking technologies to collect information about your browsing activities and to personalize your experience.
+                    </p>
+
+                    <p><strong>Types of cookies we use:</strong></p>
+                    <ul class="privacy-list">
+                        <li><strong>Essential Cookies:</strong> Required for the website to function properly</li>
+                        <li><strong>Performance Cookies:</strong> Help us understand how visitors interact with our website</li>
+                        <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+                        <li><strong>Marketing Cookies:</strong> Track your browsing to deliver relevant advertisements</li>
+                    </ul>
+
+                    <p>
+                        You can control cookies through your browser settings. Note that disabling cookies may affect the functionality of our website. For more information, please review our Cookie Policy.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Children's Privacy -->
+            <section id="children" class="privacy-section">
+                <h2 class="privacy-section-title">8. Children's Privacy</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18 years of age.
+                    </p>
+                    <p>
+                        If we become aware that we have collected personal information from a child under 18 without parental consent, we will take steps to delete that information promptly. If you believe we have collected information from a child, please contact us immediately.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Changes to Policy -->
+            <section id="changes" class="privacy-section">
+                <h2 class="privacy-section-title">9. Changes to This Privacy Policy</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors.
+                    </p>
+                    <p>
+                        When we make changes, we will update the "Last Updated" date at the top of this policy. If we make material changes, we will provide additional notice, such as by email or through a prominent notice on our website.
+                    </p>
+                    <p>
+                        We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="privacy-section">
+                <h2 class="privacy-section-title">10. Contact Us</h2>
+                <div class="privacy-section-content">
+                    <p>
+                        If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+                    </p>
+
+                    <ul class="privacy-list">
+                        <li><strong>Email:</strong> <a href="mailto:privacy@tovutilab.com">privacy@tovutilab.com</a></li>
+                        <li><strong>Contact Form:</strong> <a href="{% url 'contact' %}">Submit an inquiry</a></li>
+                        <li><strong>Address:</strong> TovutiLab, [Your Business Address]</li>
+                    </ul>
+
+                    <p>
+                        We will respond to your inquiry as soon as possible, typically within 30 days.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <div class="privacy-contact-section">
+                <h3 class="privacy-contact-title">Have Questions About Your Privacy?</h3>
+                <p class="privacy-contact-text">
+                    Our team is here to help. Contact us if you have any questions or concerns about how we handle your personal information.
+                </p>
+                <a href="{% url 'contact' %}" class="privacy-contact-btn">
+                    Contact Us
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}

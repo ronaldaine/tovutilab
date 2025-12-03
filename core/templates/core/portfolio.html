@@ -521,6 +521,102 @@
                 Clear Filters
             </button>
         </div>
+
+        <!-- Portfolio Modal -->
+        <div class="portfolio-modal" id="portfolioModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <!-- Backdrop -->
+            <div class="portfolio-modal-backdrop" id="modalBackdrop"></div>
+
+            <!-- Modal Content -->
+            <div class="portfolio-modal-content">
+                <!-- Header -->
+                <div class="portfolio-modal-header">
+                    <h2 class="portfolio-modal-title" id="modalTitle"></h2>
+                    <button class="portfolio-modal-close" id="modalCloseBtn" aria-label="Close modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Gallery Section -->
+                <div class="portfolio-modal-gallery">
+                    <div class="portfolio-modal-image-container">
+                        <div class="portfolio-modal-image-loading"></div>
+                        <img class="portfolio-modal-main-image" id="modalMainImage" src="" alt="">
+                        <div class="portfolio-modal-image-nav">
+                            <button class="portfolio-modal-image-prev" id="modalImagePrev" aria-label="Previous image">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="portfolio-modal-image-counter" id="modalImageCounter">
+                                <span id="modalImageCurrent">1</span>
+                                <span> / </span>
+                                <span id="modalImageTotal">1</span>
+                            </div>
+                            <button class="portfolio-modal-image-next" id="modalImageNext" aria-label="Next image">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Body: Project Details -->
+                <div class="portfolio-modal-body">
+                    <!-- Category & Tags -->
+                    <div class="portfolio-modal-meta-section">
+                        <span class="portfolio-modal-category" id="modalCategory"></span>
+                        <div class="portfolio-modal-tags" id="modalTags"></div>
+                    </div>
+
+                    <!-- Full Description -->
+                    <div class="portfolio-modal-description-section">
+                        <h3>Project Overview</h3>
+                        <p class="portfolio-modal-description" id="modalDescription"></p>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="portfolio-modal-metrics-section">
+                        <div class="portfolio-modal-metrics" id="modalMetrics"></div>
+                    </div>
+
+                    <!-- Project Details Grid -->
+                    <div class="portfolio-modal-details-grid">
+                        <div class="portfolio-modal-detail-item">
+                            <span class="portfolio-modal-detail-label">Year</span>
+                            <span class="portfolio-modal-detail-value" id="modalYear"></span>
+                        </div>
+                        <div class="portfolio-modal-detail-item">
+                            <span class="portfolio-modal-detail-label">Team Size</span>
+                            <span class="portfolio-modal-detail-value" id="modalTeamSize"></span>
+                        </div>
+                        <div class="portfolio-modal-detail-item">
+                            <span class="portfolio-modal-detail-label">Duration</span>
+                            <span class="portfolio-modal-detail-value" id="modalDuration"></span>
+                        </div>
+                        <div class="portfolio-modal-detail-item">
+                            <span class="portfolio-modal-detail-label">Result</span>
+                            <span class="portfolio-modal-detail-value" id="modalResult"></span>
+                        </div>
+                    </div>
+
+                    <!-- Technologies Section -->
+                    <div class="portfolio-modal-technologies-section">
+                        <h3>Technologies Used</h3>
+                        <div class="portfolio-modal-technologies" id="modalTechnologies"></div>
+                    </div>
+                </div>
+
+                <!-- Footer: CTA -->
+                <div class="portfolio-modal-footer">
+                    <a class="portfolio-modal-cta-primary" id="modalWebsiteLink" href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>Visit Website</span>
+                    </a>
+                    <button class="portfolio-modal-cta-secondary" id="modalContactBtn">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Get Similar Project</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
